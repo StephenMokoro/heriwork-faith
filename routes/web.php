@@ -1,11 +1,28 @@
 <?php
 
-use App\Http\Controllers\contactController;
-use App\Http\Controllers\joinwaitinglist;
-use App\Http\Controllers\loginAuth;
 use Illuminate\Support\Facades\Route;
-use App\Models\employer;
-use RealRashid\sweetAlert\Facades\Alert;
+use App\Models\Contact;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ViewEmployerController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ViewStudentController;
+use App\Http\Controllers\workstudyController;
+use App\Http\Controllers\Select2AutocompleteController;
+
+
+Route::get('user-registration',[EmployerController::class,'index'] );
+
+Route::post('user-store', [EmployerController::class,'userPostRegistration'] );
+
+Route::get('user-login', [EmployerController::class,'userLoginIndex']);
+
+Route::post('login',[EmployerController::class,'userPostLogin'] );
+
+Route::get('dashboard',[EmployerController::class,'dashboard'] );
+
+Route::get('logout', [EmployerController::class,'logout']);
 
 
 
@@ -13,27 +30,69 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('service', 'service');
-Route::get('/index', [contactController::class, 'addview']);
-Route::post('/index', [contactController::class, 'addcontact']);
 
-Route::get('waitinglist', function(){
-    return view('joinwaitinglist');
+Route::get('/contact',function(){
+    return view('welcome');
+
 });
 
-Route::post('waitinglist', function(){
-   $employ = new employer();
+Route::post('/contact',function(){
+   $contact = new Contact();
+   $contact->name = request('name');
+   $contact->email = request('email');
+   $contact->subject = request('subject');
+   $contact->message = request('message');
 
-   $employ->firstname = request('firstname');
-   $employ->lastname = request('lastname');
-   $employ->email = request('email');
-   $employ->phonenumber = request('phonenumber');
-   $employ->profession= request('profession');
-   $employ->profile= request('profile');
+    $contact->save();
 
-   $employ->save();
-   return redirect('index');
+    return view('welcome');
+
 });
+
+Route::get('adminlogin', [AuthController::class, 'index'])->name('login');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('logouts', [AuthController::class, 'logouts'])->name('logouts');
+
+
+
+Route::controller(StudentController::class)->group(function(){
+
+    Route::get('login', 'index')->name('login');
+
+    Route::get('registration', 'registration')->name('registration');
+
+    Route::get('logout', 'logout')->name('logout');
+
+    Route::post('validate_registration', 'validate_registration')->name('sample.validate_registration');
+
+    Route::post('validate_login', 'validate_login')->name('sample.validate_login');
+
+    Route::get('dashboard', 'dashboard')->name('dashboard');
+
+});
+ 
+Route::view('viewemployer','auth.viewemployer');
+
+Route::view('student_registration','student.student_registration');
+Route::view('employer_registration','employer.employer_registration');
+Route::view('org_registration','organization.org_registration');
+Route::view('student_login','student.student_login');
+
+Route::view('student_login','student.student_login');
+Route::view('employer_login','employer.employer_login');
+Route::view('org_login','organization.org_login');
+Route::view('student_login','student.student_login');
+
+
+Route::resource('students', ViewStudentController::class);
+Route::resource('employers', ViewEmployerController::class);
+
+Route::view('homes','employer.home');
+Route::resource('post', workstudyController::class);
+Route::view('button','button');
 Route::view('login','login');
 
-Route::post('login',[loginAuth::class, 'index']);
+Route::get('select2', [Select2AutocompleteController::class,'index']);
+Route::get('/select2-autocomplete-ajax', [Select2AutocompleteController::class,'dataAjax']);
+

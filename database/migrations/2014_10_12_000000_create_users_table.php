@@ -8,28 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->id('employer_id');
+            $table->string('employer_first_name');
+            $table->string('employer_last_name');
             $table->string('password');
-            $table->rememberToken();
+            $table->string('employer_phone');
+            $table->string('personal_email');
+            $table->boolean('status')->default(0);
             $table->timestamps();
+    
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('users');
     }
