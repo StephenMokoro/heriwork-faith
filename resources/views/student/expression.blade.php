@@ -1,4 +1,4 @@
-              <!DOCTYPE html>
+<!DOCTYPE html>
               <html>
 
               <head>
@@ -45,15 +45,14 @@
 
                   </div>
                 </header><!-- End Header -->
-                <section id="hero" class="hero d-flex align-items-center">
-              <br><br>
+                <br><br><br>
                 <div class="container mt-4">
                   <div class="row">
                     <div class="col-md-8 offset-md-2">
                       <div class="card">
                         <div class="card-header">
                           <h6></h6>
-                          <h4>Welcome to Heriwork</h4>
+                          <h4>Provide your accurate details</h4>
                         </div>
                         <div class="card-body">
                           
@@ -61,17 +60,16 @@
                             <form action="{{ route('sample.validate_registration') }}" method="POST" class="">
                               @csrf
                               <div class="row gy-4">
-                                <br>
                                 <div class="col-md-12">
                                   <select class="itemName form-control" name="school_name" id="school"></select>
                                   @if ($errors->has('school_name'))
                                   <span class="text-danger">{{ $errors->first('school_name') }}</span>
                                   @endif
                                 </div>
-                                <p>If your school is listed kindly contact the Financial aid student office for further guidance. Else, if school not listed please provide accurate details in the form below </p>
+                                <p>If your school is not listed below please fill up the form below. We will contact you. </p>
 
                                 <div class="col-md-12">
-                                  <input type="text" name="others" class="form-control" placeholder="Add school name">
+                                  <input type="text" name="others" class="form-control" placeholder="Add school">
                                   @if ($errors->has('others'))
                                   <span class="text-danger">{{ $errors->first('others') }}</span>
                                   @endif
@@ -107,7 +105,7 @@
                                 
                                 <div class="col-md-12 text-center">
 
-                                  <button class="btn btn-primary" style="background-color:rgba(5, 17, 93, 0.9);" type="submit">Submit</button>
+                                  <button class="btn btn-primary" type="submit">Register</button>
                                 </div>
                                 <div class="col-md-12 text-center">
                                   <p> <a href="{{url('student_login')}}">Already have an account? Sign In</a>
@@ -122,7 +120,7 @@
                     </div>
                   </div>
                 </div>
-                </section>
+
                 <!-- ======= Footer ======= -->
                 <br><br>
                 <footer id="footer" class="footer">
@@ -172,7 +170,7 @@
               </body>
               <script type="text/javascript">
                 $('.itemName').select2({
-                  placeholder: 'Search School',
+                  placeholder: 'Select School',
                   ajax: {
                     url: '/select2-autocomplete-ajax',
                     dataType: 'json',

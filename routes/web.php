@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Contact;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\EmployerController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\internshipController;
 use App\Http\Controllers\ViewEmployerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ViewStudentController;
 use App\Http\Controllers\workstudyController;
 use App\Http\Controllers\Select2AutocompleteController;
-
+use App\Models\Expressiontable;
 
 Route::get('user-registration',[EmployerController::class,'index'] );
 
@@ -22,9 +22,10 @@ Route::post('login',[EmployerController::class,'userPostLogin'] );
 
 Route::get('dashboard',[EmployerController::class,'dashboard'] );
 
-Route::get('logout', [EmployerController::class,'logout']);
+Route::get('/logout', [EmployerController::class,'logout']);
 
 
+Route::view('pending','employer.pending');
 
 Route::get('/', function () {
     return view('welcome');
@@ -61,9 +62,6 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('login', 'index')->name('login');
 
     Route::get('registration', 'registration')->name('registration');
-
-    Route::get('logout', 'logout')->name('logout');
-
     Route::post('validate_registration', 'validate_registration')->name('sample.validate_registration');
 
     Route::post('validate_login', 'validate_login')->name('sample.validate_login');
@@ -89,10 +87,15 @@ Route::resource('students', ViewStudentController::class);
 Route::resource('employers', ViewEmployerController::class);
 
 Route::view('homes','employer.home');
-Route::resource('post', workstudyController::class);
 Route::view('button','button');
-Route::view('login','login');
+Route::view('signup','signup');
 
 Route::get('select2', [Select2AutocompleteController::class,'index']);
 Route::get('/select2-autocomplete-ajax', [Select2AutocompleteController::class,'dataAjax']);
 
+Route::view('signin','signin');
+Route::resource('post', internshipController::class);
+// Route::get('/login',[Expressiontable::class,'login']);
+Route::post('/check',[Expressiontable::class,'check_user']);
+
+Route::view('card','card');

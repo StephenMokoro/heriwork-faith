@@ -13,8 +13,8 @@ class Employer extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     use HasFactory;
-    protected $primaryKey = 'employer_id';
+    protected $primaryKey = 'employer_auto_id';
+    protected $fillable =['employer_first_name','employer_last_name','employer_full_name','password','employer_phone','personal_email','status'];
 
-    protected $fillable =['employer_first_name','employer_last_name','password','employer_phone','personal_email','status'];
 
 }

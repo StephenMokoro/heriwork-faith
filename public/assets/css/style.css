@@ -39,13 +39,9 @@ section {
   overflow: hidden;
 }
 
-.section-header {
-  text-align: center;
-  padding-bottom: 40px;
-}
+
 
 .section-header h2 {
-  font-size: 13px;
   letter-spacing: 1px;
   font-weight: 700;
   margin: 0;
@@ -682,6 +678,37 @@ section {
   background: #fafbff;
   padding: 30px;
 }
+--------------------------------------------------------------*/
+.partner .clients-slider .swiper-slide img {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.partner .clients-slider .swiper-slide img:hover {
+  transform: scale(1.5); 
+  transition-duration: 1s;
+
+  
+  opacity: 1;
+}
+
+.partner .clients-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.partner .clients-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #4154f1;
+}
+
+.partner.clients-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #4154f1;
+}
+
 
 .contact .info-box i {
   font-size: 38px;

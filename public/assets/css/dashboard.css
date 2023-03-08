@@ -56,10 +56,7 @@ body {
 	left: 30px;
 	transition: .3s ease;
 }
-#sidebar.hide ~ #content {
-	width: calc(100% - 60px);
-	left: 60px;
-}
+
 
 
 

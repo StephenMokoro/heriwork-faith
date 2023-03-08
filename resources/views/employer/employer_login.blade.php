@@ -63,14 +63,10 @@
 
         </div>
       </header><!-- End Header -->
-      <br>  <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+     
+     
+     
+      <section id="hero" class="hero d-flex align-items-center">
 
       <div class="container mt-4">
 
@@ -78,7 +74,7 @@
         <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-header">
-                <h4>Provide your accurate details</h4>
+              <h5> <b> Employer Login </b></h5>
             </div>
             <div class="card-body">
             @if(Session::has('error'))
@@ -98,14 +94,12 @@
             @csrf
 
                             <div class="col-md-12">
-                                <label for="email">Personal E-mail Address </label>
                                 <input type="text" name="personal_email" id="email" class="form-control" placeholder="Enter Personal E-mail Address" value="{{ old('org_email') }}"/>
                                 {!! $errors->first('personal_email', '<small class="text-danger">:message</small>') !!}
                             </div>
                             <br> <br>
 
                             <div class="col-md-12">
-                                <label for="password"> Password </label>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" value="{{ old('password') }}"/>
                                 {!! $errors->first('password', '<small class="text-danger">:message</small>') !!}
                             </div>
@@ -121,8 +115,11 @@
                 </form>
             </div>
         </div>
+        </div>
+        </div>
     </div>
-      </div>
+    </section>
+
       <br><br>
     <footer id="footer" class="footer">
 

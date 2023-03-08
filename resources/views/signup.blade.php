@@ -26,6 +26,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -44,56 +45,40 @@
 
         </div>
     </header><!-- End Header -->
+    <section id="hero" class="hero d-flex align-items-center">
     <div class="container col-lg-7  ">
         <br><br> <br><br><br>
         <div class="  border  pb-5 pt-5  rounded-5">
-            <h3 style="text-align:center; color:black; font-weight:bolder;"> Login as a Student or an Impact Employer</h3>
+            <h3 style="text-align:center; color:black; font-weight:bolder;"> Join as a Student or an Impact Employer</h3>
             <br>
             <div class="row justify-content-center pl-5 pr-5 ">
                 <div class="  col-lg-6  pb-3 pt-3 " >
                     <div class="  card rounded-3  " id="card_1">
                         <div class=" card-body">
                             <h5 class="card-title "> <b>Student</b> </h5>
-                            <form action="" method="post">
-                            <div class="row gy-4">
-                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Enter email"  class="form-control">
-                                 </div>
-                                 <div class="col-md-12">
-                                    <input type="text" placeholder="password" class="form-control">
-                                 </div>
+                            <p class="card-text">I am a student looking for paid work-study jobs or internship  opportunities</p>
+                            <a href="{{url('student_registration')}}" class="btn btn-success">Sign Up</a>
 
-                                 <input type="submit" class="btn btn-success">
-                                 </div>
-                            </form>
-                                </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6   pb-3 pt-3">
                     <div class="card rounded-3 " id="card_2">
                         <div class="card-body">
-                            <h5 class="card-title"><b>  Employer</b></h5>
-                            <form action="" method="post">
-                            <div class="row gy-4">
-                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Enter email"  class="form-control">
-                                 </div>
-                                 <div class="col-md-12">
-                                    <input type="text" placeholder="password" class="form-control">
-                                 </div>
-
-                                 <input type="submit" class="btn btn-success">
-                                 </div>
-                            </form>
-                             </div>
+                            <h5 class="card-title"><b> Impact Employer</b></h5>
+                            <p class="card-text">I am an employer interested in providing paid work-study jobs or internship opportunities </p>
+                            <a href="{{url('employer_registration')}}" class="btn btn-success">Sign up</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            
             <div class="text-center mt-4"> 
-                <p class="text-black">Don't have an Account yet ? <a href="{{url('signup')}}">Sign Up</a> </p>
+                <p class="text-black">Already have an account ? <a href="{{url('login')}}">Sign In</a> </p>
               </div>
         </div>
     </div>
+    </section>
     </div>
     <script>
         const c1 = document.getElementById("card_1");
@@ -102,14 +87,9 @@
         const f = document.getElementsByTagName("form")[0];
 
 
-        c1.addEventListener(
-            "mouseenter", (event) => {
-                event.target.style.border = " 1px blue solid";
+      
 
-            }
-
-
-        );
+       
         c1.addEventListener(
             "mouseleave", (event) => {
                 event.target.style.border = " 1px gray solid";
@@ -118,13 +98,8 @@
 
         );
 
-        c2.addEventListener(
-            "mouseenter", (event) => {
-                event.target.style.border = " 1px blue solid";
-
-            }
-
-        );
+     
+       
         c2.addEventListener(
             "mouseleave", (event) => {
                 event.target.style.border = " 1px gray solid";

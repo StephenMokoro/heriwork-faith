@@ -62,13 +62,16 @@
 
         </div>
       </header><!-- End Header -->
-        <br><br><br>
+        
+        <section id="hero" class="hero d-flex align-items-center">
+
         <div class="container mt-4">
 
         <div class="row">
         <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-header">
+              <h6>Employer registration</h6>
                 <h4>Provide your accurate details</h4>
             </div>
             <div class="card-body">
@@ -88,14 +91,12 @@
               <div class="row gy-4">
 
               <div class="col-md-6">
-                      <label for="first_name"> First Name </label>
                       <input type="text" name="employer_first_name" id="employer_first_name" class="form-control" placeholder="Enter First Name" value="{{ old('employer_first_name') }}"/>
                       {!! $errors->first('employer_first_name', '<small class="text-danger">:message</small>') !!}
                   </div>
                   <br>
 
                   <div class="col-md-6">
-                      <label for="last_name"> Last Name </label>
                       <input type="text" name="employer_last_name" id="employer_last_name" class="form-control" placeholder="Enter Last Name" value="{{ old('employer_last_name') }}"/>
                       {!! $errors->first('employer_last_name', '<small class="text-danger">:message </small>') !!}
                   </div>
@@ -105,19 +106,16 @@
                   
 
                   <div class="col-md-12">
-                      <label for="email">Personal  E-mail Address </label>
                       <input type="text" name="personal_email" id="personal_email" class="form-control" placeholder="Enter Personal E-mail" value="{{ old('personal_email') }}"/>
                       {!! $errors->first('personal_email', '<small class="text-danger">:message</small>') !!}
                   </div>
                   <br>
                   <div class="form-group">
-                      <label for="phone"> Employer Phone </label>
                       <input type="phone" name="employer_phone" id="employer_phone" class="form-control" placeholder="Enter Phone Number" value="{{ old('phone') }}">
                       {!! $errors->first('employer_phone', '<small class="text-danger">:message</small>') !!}
                   </div>
 
                   <div class="form-group">
-                      <label for="password"> Password </label>
                       <input type="password" name="password" id="employer_password" class="form-control" placeholder="Enter Password" value="{{ old('password') }}"/>
                       {!! $errors->first('password', '<small class="text-danger">:message</small>') !!}
                   </div>
@@ -125,7 +123,6 @@
 
 
                   <div class="form-group">
-                      <label for="confirm_password"> Confirm Password </label>
                       <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm Password" value="{{ old('confirm_password') }}">
                       {!! $errors->first('confirm_password', '<small class="text-danger">:message</small>') !!}
                   </div>
@@ -149,7 +146,8 @@
           </div>
 
 
-            </div>
+  </section>
+
         </div>
     </div>
     <footer id="footer" class="footer">

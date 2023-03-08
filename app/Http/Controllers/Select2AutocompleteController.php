@@ -28,8 +28,8 @@ class Select2AutocompleteController extends Controller
 
         if($request->has('q')){
             $search = $request->q;
-            $data =School::select("id","schoolname")
-            		->where('schoolname','LIKE',"%$search%")
+            $data =School::select("id","school_name")
+            		->where('school_name','LIKE',"%$search%")
             		->get();
         }
         return response()->json($data);

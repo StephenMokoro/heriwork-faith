@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id('employer_auto_id');
             $table->string('employer_first_name');
             $table->string('employer_last_name');
+            $table->string('employer_full_name');
+
             $table->string('password');
             $table->string('employer_phone');
-            $table->string('org_email');
             $table->string('personal_email');
             $table->boolean('status')->default(0);
             $table->timestamps();

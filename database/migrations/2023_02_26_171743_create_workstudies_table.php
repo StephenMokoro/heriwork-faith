@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('workstudies', function (Blueprint $table) {
             $table->id('workstudy_auto_id');
-            $table->foreignId('employer_id')->references('employer_id')->on('employers')->constrained()
-            ->onUpdate('cascade') ->onDelete('cascade');
+           
             $table->string('ws_title');
             $table->string('category');
             $table->string('ws_job_desc');

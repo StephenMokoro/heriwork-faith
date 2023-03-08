@@ -44,12 +44,14 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about"> Job</a></li>
-          <li><a class="nav-link scrollto" href="#services">Add Student</a></li>
-          <li><a class="nav-link scrollto" href="{{url('viewemployer')}}">Employer</a></li>
-          <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{ route('logout') }}">Logout</a></li>
-                
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{url('internship')}}">Post Job</a></li>
+          <li><a class="nav-link scrollto" href="#services">Student Applications</a></li>
+
+          <li><a class="nav-link scrollto" href="#contact">{{ ucfirst(Auth()->user()->employer_first_name) }}</a></li>
+
+          <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{ url('logout') }}">Logout</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -61,18 +63,18 @@
   <div id="wrapper" class="toggle">
     <div class="container-fluid">
       <div>
-       
-        
-
             
               <div>
-                <a href="@yield('link')" class="btn btn-primary rounded-pill">@yield('link_text')</a>
+                <a href="@yield('link')" class="btn btn-primary rounded-pill" style="text-align:center;">@yield('link_text')</a>
                     </div>
               @yield('content')
 
               </div>
   </div>
   </div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
+
               <script src=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js></script>
               <script src="https://cdn.tiny.cloud/1/jjqcoi1aa4yi5mopawkjpci4avx4z1dh8yyqa8t47lp4mk6u/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
               <script>

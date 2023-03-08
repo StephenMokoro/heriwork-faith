@@ -38,20 +38,19 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-              <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('student_login')}}">Sign In</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
 
         </div>
       </header><!-- End Header -->
-      <br><br><br>
+      <section id="hero" class="hero d-flex align-items-center">
       <div class="container mt-4">
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <div class="card">
               <div class="card-header">
-                <h4>Provide your accurate details</h4>
+                <h4>Student Login</h4>
               </div>
               <div class="card-body">
 
@@ -81,21 +80,18 @@
 
                         <button class="btn btn-primary" type="submit">Login</button>
                       </div>
-                      <div class="col-md-12 text-center">
-                          <p> <a href="{{url('student_registration')}}">Don't have an Account? Sign In</a>
-    </div></p>
+                     
                     </div>
                   </form>
 
                 </div>
-
-
 
               </div>
             </div>
           </div>
         </div>
       </div>
+      </section>
 
       <!-- ======= Footer ======= -->
       <br><br>
