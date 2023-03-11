@@ -3,116 +3,238 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Internship;
 use App\Models\internship_job;
-use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class internshipController extends Controller
+
+class InternshipController extends Controller
 {
+    //
+    /**
+     * Display a listing of the prducts.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $products = internship_job::all();
 
-  /* Display a listing of the resource.
-   *
-   * @return IlluminateHttpResponse
-   */
-  public function index()
-  {
-    $posts = internship_job::orderBy('id', 'desc')->paginate(4);
-    return view('employer.post.index', ['posts' => $posts]);
-  }
+        return view('employer.internship.index', compact('products'));
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return IlluminateHttpResponse
-   */
-  public function create()
-  {
-    return view('employer.post.create');
-  }
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  IlluminateHttpRequest  $request
-   * @return IlluminateHttpResponse
-   */
-  public function store(Request $request)
-  {
-    $request->validate([
-      'ijob_title' => 'required',
-      'ijob_job_desc' => 'required',
-      'ijob_categories' => 'required',
-      'ijob_type' => 'required',
+    //step 1
+    public function createStepOne(Request $request)
+    {
+        $product = $request->session()->get('product');
 
-      'ijob_stipend' => 'required',
-      'ijob_expected_start_date' => 'required',
-      'ijob_expected_end_date' => 'required',
-      'ijob_expected_daily_hours' => 'required',
-    ]);
+        return view('employer.internship.create-step-one', compact('product'));
+    }
 
-    $postData = [
-      'employer_id' => $request->user()->employer_id,
-      'ijob_title' => $request->ijob_title,
-      'ijob_job_desc' => $request->ijob_job_desc,
-      'ijob_stipend' => $request->ijob_stipend,
-      'ijob_categories' => $request->ijob_categories,
-      'ijob_type' => $request->ijob_type,
-      'ijob_expected_start_date' => $request->ijob_expected_start_date,
-      'ijob_expected_end_date' => $request->ijob_expected_end_date,
-      'ijob_expected_daily_hours' => $request->ijob_expected_daily_hours,
-    ];
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepOne(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ijob_title' => 'required',
+
+        ]);
+
+        if (empty($request->session()->get('product'))) {
+            $product = new internship_job();
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        } else {
+            $product = $request->session()->get('product');
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        }
+
+        return redirect()->route('internship.create.step.two');
+    }
 
 
-    internship_job::create($postData);
-    return redirect('/post')->with(['message' => 'Post added successfully!', 'status' => 'success']);
-  }
+    //step 2
+    public function createStepTwo(Request $request)
+    {
+        $product = $request->session()->get('product');
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  AppModelsPost  $post
-   * @return IlluminateHttpResponse
-   */
-  public function show(internship_job $post)
-  {
-    return view('employer.post.show', ['post' => $post]);
-  }
+        return view('employer.internship.create-step-two', compact('product'));
+    }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  AppModelsPost  $post
-   * @return IlluminateHttpResponse
-   */
-  public function edit(internship_job $post)
-  {
-    return view('employer.post.edit', ['post' => $post]);
-  }
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepTwo(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ijob_skills' => 'required',
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  IlluminateHttpRequest  $request
-   * @param  AppModelsPost  $post
-   * @return IlluminateHttpResponse
-   */
-  public function update(Request $request, internship_job $post)
-  {
-    $postData = ['ijob_title' => $request->ijob_title, 'ijob_job_desc' => $request->ijob_job_desc, 'ijob_stipend' => $request->ijob_stipend, 'ijob_categories' => $request->ijob_categories, 'ijob_type' => $request->ijob_type, 'ijob_expected_start_date' => $request->ijob_expected_start_date, 'ijob_expected_end' => $request->ijob_expected_end_date, 'ijob_expected_daily_hours' => $request->ijob_expected_daily_hours];
+        ]);
 
-    $post->update($postData);
-    return redirect('/post')->with(['message' => 'Post updated successfully!', 'status' => 'success']);
-  }
+        if (empty($request->session()->get('product'))) {
+            $product = new internship_job();
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        } else {
+            $product = $request->session()->get('product');
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  AppModelsPost  $post
-   * @return IlluminateHttpResponse
-   */
-  public function destroy(internship_job $post)
-  {
-    Storage::delete('public/images/' . $post->image);
-    $post->delete();
-    return redirect('/post')->with(['message' => 'Post deleted successfully!', 'status' => 'info']);
-  }
+        return redirect()->route('internship.create.step.three');
+    }
+
+
+    //step 3
+
+
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createStepThree(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        return view('employer.internship.create-step-three', compact('product'));
+    }
+
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepThree(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ijob_size' => 'required',
+            'ijob_task' => 'required',
+            'ijob_task_run' => 'required',
+
+        ]);
+
+        $product = $request->session()->get('product');
+        $product->fill($validatedData);
+        $request->session()->put('product', $product);
+
+        return redirect()->route('internship.create.step.four');
+    }
+
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function createStepFour(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        return view('employer.internship.create-step-four', compact('product'));
+    }
+
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepFour(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ijob_budget_currency' => 'required',
+            'ijob_budget_amount' => 'required',
+
+
+        ]);
+
+        if (empty($request->session()->get('product'))) {
+            $product = new internship_job();
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        } else {
+            $product = $request->session()->get('product');
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        }
+
+        return redirect()->route('internship.create.step.five');
+    }
+
+    public function createStepFive(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        return view('employer.internship.create-step-five', compact('product'));
+    }
+
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepFive(Request $request)
+    {
+        $validatedData = $request->validate([
+            'ijob_desc' => 'required',
+
+        ]);
+
+        if (empty($request->session()->get('product'))) {
+            $product = new internship_job();
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        } else {
+            $product = $request->session()->get('product');
+            $product->fill($validatedData);
+            $request->session()->put('product', $product);
+        }
+
+        return redirect()->route('internship.create.step.six');
+    }
+
+
+
+    public function createStepSix(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        return view('employer.internship.create-step-six', compact('product'));
+    }
+
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepSix(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        $request->session()->forget('product');
+        if ($product) {
+            $product->save();
+            Alert::success('Success', 'You\'ve Successfully posted');
+            return redirect()->route('employer/internship.index');
+        } else {
+            Alert::error('Failed', 'Registration failed');
+            return back();
+        }
+    }
 }

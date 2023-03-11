@@ -88,7 +88,7 @@ class EmployerController extends Controller
         // check user using auth function
         if (Auth::attempt($userCredentials)) {
             if ($user->status == 1) {
-                return redirect()->intended('/post');
+                return redirect()->intended('/internship');
             }
 
             return redirect()->intended('pending');
@@ -103,15 +103,12 @@ class EmployerController extends Controller
     public function dashboard(Request $r)
     {
 
-        if ($r->session()->get('employer_auto_id') == "") {
-            return redirect('/login');
-        } else {
-            $name = $r->session()->get('employer_first_name');
-            $capsule = array('employer_first_name' => $name);
-
-            return view('/post')->with($capsule);
+        if(Auth::check()) {
+            return view('employer.internship.index');
         }
-        // check if user logged in
+
+        return redirect::to("user-login")->withSuccess('Oopps! You do not have access');
+  
 
     }
 

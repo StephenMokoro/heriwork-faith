@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Skills;
 
-class Select2AutocompleteController  extends Controller
+class SelectController extends Controller
 {
     /**
     * Show the application layout.

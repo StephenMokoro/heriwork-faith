@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class internship_job extends Model
 {
     use HasFactory;
-    protected $primarykey = 'id';
-    protected $fillable = ['employer_id', 'ijob_title', 'ijob_job_desc', 'ijob_categories', 'ijob_type', 'ijob_stipend', 'ijob_expected_start_date', 'ijob_expected_end_date', 'ijob_expected_daily_hours', 'ijob_pay_status', 'ijob_status'];
+    protected $primarykey = 'ijob_auto_id';
+    protected $fillable =['ijob_title','ijob_skills','ijob_size','ijob_task','ijob_task_run','ijob_budget_currency','ijob_budget_amount','ijob_desc'];
+
+
 }

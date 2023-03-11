@@ -18,6 +18,7 @@
 
     <h3>Posted Jobs</h3>
     @forelse($posts as $key => $row)
+
     <div class="col-lg-6 mb-5">
       <div class="card mb-4">
         <div class="card-body pt-4  pb-5 ml-0 mr-0 mt-4 mb-0 ">
@@ -33,15 +34,15 @@
               <a href="#">
                 <h4 class="card-title text-black line-height"><b>{{$row->ijob_title}}</b></h4>
               </a>
-              
+
               <p class="card-text line-height">{!! Str::limit( $row->ijob_job_desc , 200) !!} </p>
               <div class="bg- pb-2 pr-4">
                 <div class="row">
                   <div class="col-lg-3 col-sm-4 p-0">
-                    <h5 class="mt-2">   <a class="btn btn-info text-white rounded-pill" href="post/{{ $row->id }}"><b>View More</b></a></h5>
+                    <h5 class="mt-2"> <a class="btn btn-info text-white rounded-pill" href="post/{{ $row->id }}"><b>View More</b></a></h5>
                   </div>
 
-                  
+
                 </div>
               </div>
             </div>

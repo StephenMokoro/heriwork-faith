@@ -12,19 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('internship_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('employer_id')->constrained('users','employer_id')->cascadeOnDelete()->cascadeOnUpdate();
-            
+            $table->id('ijob_auto_id');
             $table->string('ijob_title');
-            $table->string('ijob_job_desc');
-            $table->integer('ijob_stipend');
-            $table->string('ijob_categories');
-            $table->string('ijob_type');
-            $table->dateTime('ijob_expected_start_date');
-            $table->dateTime('ijob_expected_end_date');
-            $table->integer('ijob_expected_daily_hours');
-            $table->string('ijob_pay_status')->default('inactive');
-            $table->boolean('ijob_status')->default(0);
+            $table->string('ijob_skills');
+            $table->integer('ijob_size')->default(0);
+            $table->integer('ijob_task')->default(0);
+            $table->integer('ijob_task_run')->default(0);
+            $table->boolean('ijob_budget_currency')->default(0);
+            $table->string('ijob_budget_amount');
+            $table->string('ijob_desc');
             $table->timestamps();
         });
     }
