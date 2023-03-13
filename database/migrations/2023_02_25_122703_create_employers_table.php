@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('employer_auto_id');
             $table->string('employer_first_name');
             $table->string('employer_last_name');
-            $table->string('employer_full_name');
 
             $table->string('password');
             $table->string('employer_phone');

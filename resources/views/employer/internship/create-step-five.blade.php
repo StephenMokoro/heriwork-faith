@@ -10,9 +10,9 @@
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
                                 <p class="text-secondary">1/5 &nbsp; &nbsp;Headline</p>
                                 <a href="#">
-                                    <h3 class="card-title text-black line-height"><b>Let's start with a strong headline.</b></h3>
+                                    <h3 class="card-title  line-height"style="color:#05115d;"><b>Let's start with a strong headline.</b></h3>
                                 </a>
-
+<br>
                                 <p class="card-text line-">This helps your job post stand out to the right candidates. It’s the first thing they’ll see, so make it count! </p>
                             </div>
                         </div>

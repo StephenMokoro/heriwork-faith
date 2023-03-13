@@ -13,18 +13,6 @@ use App\Http\Controllers\workstudyController;
 use App\Http\Controllers\Select2AutocompleteController;
 use App\Models\Expressiontable;
 
-Route::get('user-registration', [EmployerController::class, 'index']);
-
-Route::post('user-store', [EmployerController::class, 'userPostRegistration']);
-
-Route::get('user-login', [EmployerController::class, 'userLoginIndex']);
-
-Route::post('login', [EmployerController::class, 'userPostLogin']);
-
-Route::get('dashboard', [EmployerController::class, 'dashboard']);
-
-Route::get('/logout', [EmployerController::class, 'logout']);
-
 
 Route::view('pending', 'employer.pending');
 
@@ -143,7 +131,22 @@ Route::get('employer/employer/internship/create-step-six', [InternshipController
 Route::post('employer/employer/internship/create-step-six', [InternshipController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
 
 
+Route::get('employer_details', [EmployerregistrationController::class, 'index'])->name('internship.index');
 
-Route::get('employerregistration', [EmployerregistrationController::class, 'index']);
+Route::get('employer/employer_details/create-step-one', [EmployerregistrationController::class, 'createStepOne'])->name('employer.create.step.one');
+Route::post('employer/employer_details/create-step-one', [EmployerregistrationController::class, 'postCreateStepOne'])->name('employer.create.step.one.post');
 
-Route::post('store', [EmployerregistrationController::class, 'store']);
+Route::get('employer/employer_details/create-step-two', [EmployerregistrationController::class, 'createStepTwo'])->name('employer.create.step.two');
+Route::post('employer/employer_details/create-step-two',  [EmployerregistrationController::class, 'postCreateStepTwo'])->name('employer.create.step.two.post');
+
+Route::get('employer/employer_details/create-step-three', [EmployerregistrationController::class, 'createStepThree'])->name('employer.create.step.three');
+Route::post('employer/employer_details/create-step-three', [EmployerregistrationController::class, 'postCreateStepThree'])->name('employer.create.step.three.post');
+
+
+Route::get('/login',[EmployerregistrationController::class,'login'])->middleware('alreadyloggedin');
+Route::post('/login-user',[EmployerregistrationController::class,'loginUser'])->name('login-user');
+Route::get('/dashboard',[EmployerregistrationController::class,'dashboard'])->middleware('isLoggedIn');
+Route::get('/logout',[EmployerregistrationController::class,'logout']);
+
+Route::get('edit-student/{id}', [EmployerController::class, 'edit']);
+Route::put('update-student/{id}', [EmployerController::class, 'update']);

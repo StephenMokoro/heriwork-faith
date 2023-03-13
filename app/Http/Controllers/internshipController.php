@@ -20,7 +20,7 @@ class InternshipController extends Controller
     {
         $products = internship_job::all();
 
-        return view('employer.internship.index', compact('products'));
+        return view('employer.internship.create-step-one', compact('products'));
     }
 
     /**
@@ -231,7 +231,7 @@ class InternshipController extends Controller
         if ($product) {
             $product->save();
             Alert::success('Success', 'You\'ve Successfully posted');
-            return redirect()->route('employer/internship.index');
+            return view ('employer/internship/index');
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();

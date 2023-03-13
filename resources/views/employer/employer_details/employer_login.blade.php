@@ -24,18 +24,8 @@
         }
       </style>
       <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-      <!-- Vendor CSS Files -->
-      <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-      <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-      <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-      <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-      <!-- Template Main CSS File -->
-      <link href="assets/css/style.css" rel="stylesheet">
+      @include('header-links')
 
 
     </head>
@@ -53,8 +43,9 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+              
+              <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{url('employer_registration')}}">Sign Up</a></li>
 
-              <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{url('registration')}}">Sign In</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
@@ -62,19 +53,19 @@
         </div>
       </header><!-- End Header -->
 
+
+
       <section id="hero" class="hero d-flex align-items-center">
 
         <div class="container mt-4">
 
-          <div class="row">
+          <div class="row ">
             <div class="col-md-8 offset-md-2">
-              <div class="card">
+              <div class="card border">
                 <div class="card-header">
-                  <h6>Employer registration</h6>
-                  <h4>Provide your accurate details</h4>
+                  <h5> <b> Employer Login </b></h5>
                 </div>
                 <div class="card-body">
-
                   @if(Session::has('success'))
                   <div class="alert alert-success">
                     {{Session::get('success')}}
@@ -82,85 +73,49 @@
                   @endif
                   @if(Session::has('fail'))
                   <div class="alert alert-danger">
-                    {{Session::get('sfail')}}
+                    {{Session::get('fail')}}
                   </div>
                   @endif
 
+
+
                   <div class="col-lg-12">
-
-                    <form method="post" action=" {{route('register-user')}} ">
-
-
-                      @csrf
-
+                    <form method="post" action="{{route('login-user')}}">
                       <div class="row gy-4">
 
-                        <div class="col-md-6">
-                          <input type="text" name="employer_first_name" id="employer_first_name" class="form-control" placeholder="Enter First Name" value="{{ old('employer_first_name') }}" />
-                          <span class="text-danger"> @error('employer_first_name'){{$message}} @enderror</span>
-
-                        </div>
-                        <br>
-
-                        <div class="col-md-6">
-                          <input type="text" name="employer_last_name" id="employer_last_name" class="form-control" placeholder="Enter Last Name" value="{{ old('employer_last_name') }}" />
-                          <span class="text-danger"> @error('employer_last_name'){{$message}} @enderror</span>
-                        
-                        </div>
-                        <br>
+                        @csrf
 
                         <div class="col-md-12">
-                          <input type="text" name="personal_email" id="personal_email" class="form-control" placeholder="Enter Personal E-mail" value="{{ old('personal_email') }}" />
+                          <input type="text" name="personal_email" id="email" class="form-control" placeholder="Enter email address" value="{{ old('org_email') }}" />
                           <span class="text-danger"> @error('personal_email'){{$message}} @enderror</span>
 
                         </div>
-                        <br>
-                        <div class="form-group">
-                          <input type="phone" name="employer_phone" id="employer_phone" class="form-control" placeholder="Enter Phone Number" value="{{ old('phone') }}">
-                          <span class="text-danger"> @error('employer_phone'){{$message}} @enderror</span>
+                        <br> <br>
 
-                        </div>
-
-                        <div class="form-group">
-                          <input type="password" name="password" id="employer_password" class="form-control" placeholder="Enter Password" value="{{ old('password') }}" />
+                        <div class="col-md-12">
+                          <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" value="{{ old('password') }}" />
                           <span class="text-danger"> @error('password'){{$message}} @enderror</span>
 
                         </div>
-                        <br>
+                        <br><br>
 
 
-                        <div class="form-group">
-                          <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm Password" value="{{ old('confirm_password') }}">
-                          <span class="text-danger"> @error('confirm_password'){{$message}} @enderror</span>
-
+                        <div class="col-md-12 text-center">
+                          <button type="submit" class="btn btn-primary"> Login </button>
+                          <p class="float-right mt-2"> Don't have an account? <a href="{{ url('employer_registration')}}" class="text-success"> Register </a> </p>
                         </div>
-                        <br>
-
-
                       </div>
-                      <br>
-
-                      <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary"> Register </button>
-                        <p class="float-right mt-2"> Already have an account? <a href="{{url('employer_login')}}" class="text-success"> Login </a> </p>
-                      </div>
-                      @csrf
                   </div>
+                  </form>
                 </div>
-                </form>
-
               </div>
             </div>
           </div>
-
-
+        </div>
       </section>
 
-      </div>
-      </div>
+      <br><br>
       <footer id="footer" class="footer">
-
-
 
         <div class="footer-top">
           <div class="container">
@@ -206,12 +161,13 @@
           </div>
         </div>
 
+      </footer>
 
-        <script>
-          $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-          })
-        </script>
+      <script>
+        $(function() {
+          $('[data-toggle="tooltip"]').tooltip()
+        });
+      </script>
     </body>
 
     </html>

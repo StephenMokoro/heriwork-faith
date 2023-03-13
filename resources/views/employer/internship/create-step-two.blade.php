@@ -10,8 +10,9 @@
               <div class="col-lg-12 pl-5 pr-5 mb-3">
                 <p class="text-secondary">2/5 &nbsp; &nbsp;Skills</p>
                 <a href="#" style="text-decoration:none;">
-                  <h3 class="card-title text-black line-height"><b>What are the main skills required for your work?</b></h3>
+                  <h3 class="card-title  line-height"style="color:#05115d;"><b>What are the main skills required for your work?</b></h3>
                 </a>
+                <br>
                 <p class="card-text line-">This helps your job post to attract candidates with the right skillset and ultimately results in the best output for your work. </p>
 
               </div>
@@ -41,9 +42,9 @@
                   @endif
 
                   <p class="text-black" style="font-weight: 600;">Search skills or type your own</p>
-                  <select name="ijob_skills" class="itemName form-control" value="{{{ $product->ijob_skills ?? '' }}}" id="" multiple="multiple"></select>
+                  <!-- <select name="ijob_skills" class="itemName form-control" value="{{{ $product->ijob_skills ?? '' }}}" id="" multiple="multiple"></select> -->
 
-                  <!-- <input class="form-control form-control-lg" type="text" placeholder="" value="{{{ $product->ijob_skills ?? '' }}}" name="ijob_skills"> -->
+                  <input class="form-control form-control-lg" type="text" placeholder="" value="{{{ $product->ijob_skills ?? '' }}}" name="ijob_skills">
 
                   <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-star"></span> For the best results, add 3-5 skills</p>
 
