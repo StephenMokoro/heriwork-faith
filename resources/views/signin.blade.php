@@ -49,15 +49,15 @@
         <div class="container col-lg-7  ">
             <br><br> <br><br><br>
             <div class="  border  pb-5 pt-5  rounded-5">
-                <h3 style="text-align:center; color:black; font-weight:bolder;"> We're excited you are interested</h3>
+                <h3 style="text-align:center; color:black; font-weight:bolder;">Thanks for staying with us</h3>
                 <br>
                 <div class="row justify-content-center pl-5 pr-5 ">
                     <div class="  col-lg-6  pb-3 pt-3 ">
                         <div class="  card rounded-3  " id="card_1">
                             <div class=" card-body">
-                                <h5 class="card-title "> <b>Join as Student</b> </h5>
+                                <h5 class="card-title "> <b>Login as Student</b> </h5>
                                 <p class="card-text">I am a student looking for paid work-study jobs or internship opportunities</p>
-                                <a href="{{url('student_registration')}}" class="btn btn-success">Proceed</a>
+                                <a href="{{url('studentlogin')}}" class="btn btn-success">Proceed</a>
 
                             </div>
                         </div>
@@ -65,16 +65,16 @@
                     <div class="col-lg-6   pb-3 pt-3">
                         <div class="card rounded-3 " id="card_2">
                             <div class="card-body">
-                                <h5 class="card-title"><b>Join as Impact Employer</b></h5>
+                                <h5 class="card-title"><b> Login as Impact Employer</b></h5>
                                 <p class="card-text">I am an employer interested in providing paid opportunities for students </p>
-                                <a href="{{url('/employer_details')}}" class="btn btn-success">Proceed</a>
+                                <a href="{{url ('login')}}" class="btn btn-success">Proceed</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mt-4">
-                    <p class="text-black">Already have an account ? <a href="{{url('signin')}}">Sign In</a> </p>
+                    <p class="text-black">Don't have an account ? <a href="{{url('signup')}}">Sign Up</a> </p>
                 </div>
             </div>
         </div>
@@ -85,40 +85,25 @@
         const c2 = document.getElementById("card_2");
         const btn = document.getElementById("button1");
         const f = document.getElementsByTagName("form")[0];
-
-
-
-
-
         c1.addEventListener(
             "mouseleave", (event) => {
                 event.target.style.border = " 1px gray solid";
 
             }
-
         );
-
-
-
         c2.addEventListener(
             "mouseleave", (event) => {
                 event.target.style.border = " 1px gray solid";
-
             }
-
         );
-
         c1.addEventListener(
             "click",
             function() {
                 f.action = "student_registration";
                 btn.childNodes[0]["data"] = "Join as Student";
                 btn.disabled = false;
-
             }
-
         );
-
         c2.addEventListener(
             "click",
             function() {

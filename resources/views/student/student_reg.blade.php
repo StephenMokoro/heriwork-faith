@@ -117,21 +117,111 @@
                             @endif
 
                             <div class="col-lg-12">
-                                <form id="validateForm" method="post" enctype="multipart/form-data" action="{{route('student-login')}}">
+                                <form id="validateForm" method="post" enctype="multipart/form-data" action="{{route('student-registration')}}">
                                     @csrf
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="firstname">First name</label>
+                                            <input type="text" class="form-control" id="inputEmail4" name="student_first_name">
+                                            <span class="text-danger"> @error('student_first_name'){{$message}} @enderror</span>
+
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="lastname">Last name</label>
+                                            <input type="text" class="form-control" id="lastname" name="student_last_name">
+                                            <span class="text-danger"> @error('student_last_name'){{$message}} @enderror</span>
+
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="inputAddress">School email address</label>
                                         <input type="email" class="form-control" id="student_email" name="student_email">
                                         <span class="text-danger"> @error('student_email'){{$message}} @enderror</span>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" name="password">
-                                        <span class="text-danger"> @error('password'){{$message}} @enderror</span>
 
                                     </div>
-                                    <a href="{{url('')}}" class="" style="color:;">Sign Up</a>
-                                    <button type="submit" class="btn btn-success">Sign In</button>
+                                    <div class="form-group">
+                                        <label for="inputAddress">Student phone number</label>
+                                        <input type="tel" class="form-control" id="student_phone" name="student_phone">
+                                        <span class="text-danger"> @error('student_phone'){{$message}} @enderror</span>
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="file">Upload cv</label>
+                                            <input type="file" class="form-control" id="file" name="upload_cv">
+                                            <span class="text-danger"> @error('upload_cv'){{$message}} @enderror</span>
+
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="file">Upload progress report</label>
+                                            <input type="file" class="form-control" id="progress_report" name="progress_report">
+                                            <span class="text-danger"> @error('progress_report'){{$message}} @enderror</span>
+
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="number">Institution id</label>
+                                            <input type="number" class="form-control" id="institution_id" name="institution_id">
+                                            <span class="text-danger"> @error('institution_id'){{$message}} @enderror</span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="passwordinput">
+                                            Password
+                                        </label>
+                                        <div class="col-md-12">
+                                            <input id="password" class="form-control input-md" name="password" type="password" value="{{ $product->password ?? '' }}" placeholder="Enter your password">
+                                            <span class="text-danger"> @error('password'){{$message}} @enderror</span>
+
+                                            <span class="show-pass" onclick="toggle()">
+                                                <i class="far fa-eye" onclick="myFunction(this)"></i>
+                                            </span>
+                                            <div id="popover-password">
+                                                <p><span id="result"></span></p>
+                                                <div class="progress">
+                                                    <div id="password-strength" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                                    </div>
+                                                </div>
+                                                <ul class="list-unstyled">
+                                                    <li class="">
+                                                        <span class="low-upper-case">
+                                                            <i class="fas fa-circle" aria-hidden="true"></i>
+                                                            &nbsp;Lowercase &amp; Uppercase
+                                                        </span>
+                                                    </li>
+                                                    <li class="">
+                                                        <span class="one-number">
+                                                            <i class="fas fa-circle" aria-hidden="true"></i>
+                                                            &nbsp;Number (0-9)
+                                                        </span>
+                                                    </li>
+                                                    <li class="">
+                                                        <span class="one-special-char">
+                                                            <i class="fas fa-circle" aria-hidden="true"></i>
+                                                            &nbsp;Special Character (!@#$%^&*)
+                                                        </span>
+                                                    </li>
+                                                    <li class="">
+                                                        <span class="eight-character">
+                                                            <i class="fas fa-circle" aria-hidden="true"></i>
+                                                            &nbsp;Atleast 8 Character
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="password">Confirm password</label>
+                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                                        <span class="text-danger"> @error('confirm_password'){{$message}} @enderror</span>
+
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-primary">Sign Up</button>
                                 </form>
                                 <!-- <form action="" method="POST" class="">
                                     @csrf

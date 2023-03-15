@@ -44,6 +44,10 @@
                                 <td>Product Stock:</td>
                                 <td><strong>{{$product->ijob_task_run}}</strong></td>
                             </tr>
+                            <tr>
+                                <td>Internship:</td>
+                                <td><strong>{{$product->inter_skills}}</strong></td>
+                            </tr>
                         </table>
                     </div>
                     <div class="card-footer">

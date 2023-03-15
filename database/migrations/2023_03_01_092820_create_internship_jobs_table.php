@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('ijob_auto_id');
             $table->string('ijob_title');
             $table->string('ijob_skills');
+            $table->string('intern_skills');
             $table->integer('ijob_size')->default(0);
             $table->integer('ijob_task')->default(0);
             $table->integer('ijob_task_run')->default(0);

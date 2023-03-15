@@ -9,6 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
 
 
+
 class EmployerregistrationController extends Controller
 {
     //
@@ -102,10 +103,38 @@ class EmployerregistrationController extends Controller
             $product->fill($validatedData);
             $request->session()->put('product', $product);
         }
-
-        return view('employer/employer_details/employer_login');
+        return view('employer.employer_details.employer_login');
     }
 
+    public function createStepThree(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        return view('employer.employer_details.create-step-three', compact('product'));
+    }
+
+    /**
+     * Show the step One Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStepThree(Request $request)
+    {
+        $product = $request->session()->get('product');
+
+        $product->save();
+        $request->session()->forget('product');
+
+
+        if ($product) {
+
+            Alert::success('Success', 'You\'ve Successfully posted');
+            return view('employer/employer_details/employer_login');
+        } else {
+            Alert::error('Failed', 'Registration failed');
+            return back();
+        }
+    }
 
     //step 3
 
@@ -144,7 +173,8 @@ class EmployerregistrationController extends Controller
     //         return back();
     //     }
     // }
-    public function login(){
+    public function login()
+    {
         return view('employer.employer_details.employer_login');
     }
     public function loginUser(Request $request)

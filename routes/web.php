@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\EmployerregistrationController;
 use App\Http\Controllers\internshipController;
+use App\Http\Controllers\InternshipController as ControllersInternshipController;
 use App\Http\Controllers\ViewEmployerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ViewStudentController;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 use App\Http\Controllers\InternshipjobController;
 use App\Http\Controllers\SelectController;
+use App\Http\Controllers\StudentregistrationController;
 
 // Route::get('internship', [InternshipjobController::class,'index'])->name('employer.internship.index');
 
@@ -129,6 +131,7 @@ Route::post('employer/internship/create-step-five', [InternshipController::class
 
 Route::get('employer/employer/internship/create-step-six', [InternshipController::class, 'createStepSix'])->name('internship.create.step.six');
 Route::post('employer/employer/internship/create-step-six', [InternshipController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
+Route::get('employer/internship/create-step-two', [internshipController::class, 'show'])->name('internship.create.step.two');
 
 
 Route::get('employer_details', [EmployerregistrationController::class, 'index'])->name('internship.index');
@@ -138,15 +141,26 @@ Route::post('employer/employer_details/create-step-one', [EmployerregistrationCo
 
 Route::get('employer/employer_details/create-step-two', [EmployerregistrationController::class, 'createStepTwo'])->name('employer.create.step.two');
 Route::post('employer/employer_details/create-step-two',  [EmployerregistrationController::class, 'postCreateStepTwo'])->name('employer.create.step.two.post');
-
 Route::get('employer/employer_details/create-step-three', [EmployerregistrationController::class, 'createStepThree'])->name('employer.create.step.three');
 Route::post('employer/employer_details/create-step-three', [EmployerregistrationController::class, 'postCreateStepThree'])->name('employer.create.step.three.post');
 
 
-Route::get('/login',[EmployerregistrationController::class,'login'])->middleware('alreadyloggedin');
-Route::post('/login-user',[EmployerregistrationController::class,'loginUser'])->name('login-user');
-Route::get('/dashboard',[EmployerregistrationController::class,'dashboard'])->middleware('isLoggedIn');
-Route::get('/logout',[EmployerregistrationController::class,'logout']);
+Route::get('/login', [EmployerregistrationController::class, 'login'])->middleware('alreadyloggedin');
+Route::post('/login-user', [EmployerregistrationController::class, 'loginUser'])->name('login-user');
+Route::get('/dashboard', [EmployerregistrationController::class, 'dashboard'])->middleware('isLoggedIn');
+Route::get('/logout', [EmployerregistrationController::class, 'logout']);
 
 Route::get('edit-student/{id}', [EmployerController::class, 'edit']);
 Route::put('update-student/{id}', [EmployerController::class, 'update']);
+
+Route::view('signin','signin');
+
+Route::view('registration','student.student_reg');
+
+Route::get('/studentlogin', [StudentregistrationController::class, 'login']);
+Route::get('/studentregistration', [StudentregistrationController::class, 'registration']);
+Route::post('/student-registration', [StudentregistrationController::class, 'registerUser'])->name('student-registration');
+ Route::post('/student-login', [StudentregistrationController::class, 'loginUser'])->name('student-login');
+
+Route::get('/studentdashboard', [StudentregistrationController::class, 'dashboard'])->middleware('isLoggedIn');
+Route::get('/logout', [StudentregistrationController::class, 'logout']);

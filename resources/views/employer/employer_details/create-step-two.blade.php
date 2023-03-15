@@ -1,6 +1,7 @@
 @extends('employer.layout.default')
 @section('content')
 
+@include('sweetalert::alert')
 <div id="wrapper" class="toggle">
   <div class="container">
     <div class="row mt-5">
@@ -9,10 +10,10 @@
           <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
             <div class="row">
               <div class="col-lg-12 pl-5 pr-5 mb-3">
-                <p class="text-secondary">2/5 &nbsp; &nbsp;Skills</p>
+                <p class="text-secondary">2/2 &nbsp; &nbsp;Secure your account</p>
                 <a href="#" style="text-decoration:none;">
                   <h3 class="card-title  line-height" style="color:#05115d;"><b>
-                      Let's make sure that your account is secure.</b></h3>
+                      Let's make sure that your account is secure</b></h3>
                 </a>
                 <br>
                 <p class="card-text line-">The security of your account and your data is important to us. To start with, create a strong password that you will use to access your account. </b></h3>
@@ -240,12 +241,30 @@
           email: "It does not seem to be a valid email.",
           maxlength: "The email should be or equal to 60 chars.",
         },
-        confirm_password:{
+        confirm_password: {
           equalTo: "Please enter the same password!"
         },
       },
     })
   }
+  let main_div = document.getElementById("root");
+  let chosen_skills = document.getElementById("chosen-skills");
+  let skills_list = document.getElementById("skills-list");
+
+
+  main_div.childNodes.forEach(
+    skill => {
+      skill.addEventListener("click", function(e) {
+        if (e.target.parentNode.id == "skills-list") {
+          console.log(e.target);
+          chosen_skills.appendChild(e.target);
+        } else if (e.target.parentNode.id == "chosen-skills") {
+          console.log(e.target);
+          skills_list.appendChild(e.target);
+          chosen_skills.removeChild(e.target);
+        }
+      })
+    });
 </script>
 
 <!-- <script type="text/javascript">

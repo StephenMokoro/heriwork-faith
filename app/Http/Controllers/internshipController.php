@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Internship;
 use App\Models\internship_job;
+use App\Models\Skills;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use App\Models\Skill;
 
 class InternshipController extends Controller
 {
@@ -16,6 +17,13 @@ class InternshipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function show()
+    {
+        $student = Skill::all();
+        return view('employer.internship.create-step-two', compact('student'));
+
+      
+    }
     public function index()
     {
         $products = internship_job::all();
@@ -82,7 +90,7 @@ class InternshipController extends Controller
     {
         $validatedData = $request->validate([
             'ijob_skills' => 'required',
-
+            'intern_skills'=>'required',
         ]);
 
         if (empty($request->session()->get('product'))) {
@@ -231,7 +239,7 @@ class InternshipController extends Controller
         if ($product) {
             $product->save();
             Alert::success('Success', 'You\'ve Successfully posted');
-            return view ('employer/internship/index');
+            return view('employer/employer_details/index');
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();

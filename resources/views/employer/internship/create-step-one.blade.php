@@ -44,11 +44,13 @@
                   @endif
 
 
-
-                  <p class="text-black" style="font-weight: 600;">Write a headline for your job post</p>
+                  <div class="form-group">
+                  <label class="text-black" style="font-weight: 600;">Write a headline for your job post</p>
                   <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->ijob_title ?? '' }}" name="ijob_title">
-
-                  <p class="card-text mt-3" style="font-weight: 600;">Example titles: </p>
+                  </label>
+                  </div>
+                  <div class="form-group">
+                  <label class="card-text mt-3" style="font-weight: 600;">Example titles: </label>
                   <ul>
                     <li>Build responsive WordPress site with booking/payment functionality</li>
                     <li>Graphic designer needed to design ad creative for multiple campaigns</li>

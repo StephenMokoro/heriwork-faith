@@ -114,16 +114,16 @@
           <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
           <li><a class="nav-link scrollto active" href="{{url('/')}}"><i class="bi bi-person-circle" style="font-size: larger;font-weight:400;"></i></a></li>
 
-         
-          <li class="dropdown"  ><a href="#" ><span></span> <i class="bi bi-chevron-down"></i></a>
+
+          <li class="dropdown"  ><a href="#" ><span></span>Jobs <i class="bi bi-chevron-down"></i></a>
 
             <ul>
-              <li><a href="#">Post a job</a></li>
+              <li><a href="{{url('internship')}}">Post a job</a></li>
               <li><a href="#">My jobs</a></li>
             
             </ul>
           </li>
-          <a href="logout" class="btn pl-4 pr-4 ml-3 mr-3 border hover" style="font-size:14px; background-color:#05115d; color:white;">logout</a>
+          <a href="logout" class="btn pl-4 pr-4 ml-3 mr-3 border hover" style="font-size:14px; background-color:#ef6603; color:white;">logout</a>
           <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
           <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
 

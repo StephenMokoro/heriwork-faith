@@ -9,19 +9,19 @@
           <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
             <div class="row">
               <div class="col-lg-12 pl-5 pr-5 mb-3">
-                <p class="text-secondary">1/5 &nbsp; &nbsp;Headline</p>
+                <p class="text-secondary">1/2 &nbsp; &nbsp;Welcome</p>
                 <a href="#">
-                  <h3 class="card-title  line-height" style="color:#05115d;"><b>Let's start with a strong headline.</b></h3>
+                  <h3 class="card-title  line-height" style="color:#05115d;"><b>We are excited to have you be part of us</b></h3>
                 </a>
                 <br>
 
                 <p class="card-text line-">
-                It is because of the kindness and support of people like yourself that Heriwork is able to help more underprivileged students to raise some income for their upkeep and fees. 
+                  It is because of the kindness and support of people like yourself that Heriwork is able to help more underprivileged students to raise some income for their upkeep and fees.
 
-                 We work with University Financial Aid offices to ensure that our Impact Employers only engage the most deserving students in paid work-study or internship opportunities.  So you can be sure that your support will make a real impact. 
+                  We work with University Financial Aid offices to ensure that our Impact Employers only engage the most deserving students in paid work-study or internship opportunities. So you can be sure that your support will make a real impact.
 
-                 In return, we will try to ensure that we connect you to students who commit to put their heart in your work. Thank you for wanting to become part of this cause and welcome aboard!
-                  </p>
+                  In return, we will try to ensure that we connect you to students who commit to put their heart in your work. Thank you for wanting to become part of this cause and welcome aboard!
+                </p>
               </div>
             </div>
           </div>
@@ -49,25 +49,24 @@
                   </div>
                   @endif
 
+                  <div class="form-group">
+                    <label class="text-black" style="font-weight: 600;">Enter your first name</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_first_name ?? '' }}" name="employer_first_name">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-black" style="font-weight: 600;">Enter your Last name</label>
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_last_name ?? '' }}" name="employer_last_name">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-black" style="font-weight: 600;">Enter your email</label>
+                    <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $product->personal_email ?? '' }}" name="personal_email">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-black" style="font-weight: 600;">Enter your phone number</label>
+                    <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $product->employer_phone ?? '' }}" name="employer_phone">
+                  </div>
 
 
-                  <p class="text-black" style="font-weight: 600;">Enter your first name</p>
-                  <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_first_name ?? '' }}" name="employer_first_name">
-
-                  
-                  <p class="text-black" style="font-weight: 600;">Enter your Last name</p>
-                  <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_last_name ?? '' }}" name="employer_last_name">
-
-                  
-                  <p class="text-black" style="font-weight: 600;">Enter your personal email</p>
-                  <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $product->personal_email ?? '' }}" name="personal_email">
-
-                  
-                  <p class="text-black" style="font-weight: 600;">Enter your phone number</p>
-                  <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $product->employer_phone ?? '' }}" name="employer_phone">
-
-                  
-                 
                 </div>
                 <div class="col-lg-12 text-right">
                   <button type="submit" class="btn rounded-pill btn-success">Next: Password</button>

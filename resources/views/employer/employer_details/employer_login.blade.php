@@ -102,7 +102,7 @@
 
                         <div class="col-md-12 text-center">
                           <button type="submit" class="btn btn-primary"> Login </button>
-                          <p class="float-right mt-2"> Don't have an account? <a href="{{ url('employer_registration')}}" class="text-success"> Register </a> </p>
+                          <p class="float-right mt-2"> Don't have an account? <a href="{{ url('signup')}}" class="" style="color:#ef6603;"> Register </a> </p>
                         </div>
                       </div>
                   </div>

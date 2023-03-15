@@ -46,14 +46,14 @@
 
                                     <p class="text-black" style="font-weight: 600;">Specify your budget currency</p>
 
-                                    <div class="form-check">
+                                    <div class="form-check form-group">
                                         <input class="form-check-input" type="radio" name="ijob_budget_currency" id="flexRadioDefault1" value="1" {{{ (isset($product->ijob_budget_currency) && $product->ijob_budget_currency == '1') ? "checked" : "" }}}>
                                         <label class="form-check-label" for="ijob_budget_currency" style="font-weight: 500;">
                                             USD
                                         </label>
                                     </div>
 
-                                    <div class="form-check mt-3">
+                                    <div class="form-check mt-3 form-group">
                                         <input class="form-check-input" type="radio" name="ijob_budget_currency" id="flexRadioDefault1" value="0" {{{ (isset($product->ijob_budget_currency) && $product->ijob_budget_currency == '0') ? "checked" : "" }}}>
                                         <label class="form-check-label" for="flexRadioDefault1" style="font-weight: 500;">
                                             Kshs
@@ -67,8 +67,6 @@
                                     <input class="form-control form-control-lg" type="text" placeholder="" name="ijob_budget_amount" {{{ $product->ijob_budget_amount ?? '' }}}>
 
                                     <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-heart text-danger"></span> Thank you for being considerate in your budget proposal.</p>
-
-
                                 </div>
                             </div>
                         </div>

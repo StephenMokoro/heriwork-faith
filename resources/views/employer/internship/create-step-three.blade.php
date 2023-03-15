@@ -45,14 +45,14 @@
                                     <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-heart text-danger"></span> Thank you in advance for being considerate in your scope and timeline.</p>
                                     <p class="text-black" style="font-weight: 600;">What is the size of your work?
                                     </p>
-                                    <div class="form-check">
+                                    <div class="form-check form-group">
                                         <label class="radio-inline"><input type="radio" name="ijob_size" value="1" {{{ (isset($product->ijob_size) && $product->ijob_size == '1') ? "checked" : "" }}}> Medium
                                             <br><small class="text-secondary">Well-defined tasks (e.g. data labeling or writing an ebook)</small>
                                         </label>
 
                                     </div>
 
-                                    <div class="form-check mt-3">
+                                    <div class="form-check mt-3 form-group">
 
                                         <label class="radio-inline"><input type="radio" name="ijob_size" value="0" {{{ (isset($product->ijob_size) && $product->ijob_size == '0') ? "checked" : "" }}}> Small
                                             <br><small class="text-secondary">Quick and straight-forward tasks (e.g. write a blog post)</small>
@@ -61,12 +61,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-12 pl-5 pr-5 mb-3 mt-4">
+                                <div class="col-lg-12 pl-5 pr-5 mb-3 mt-4 form-group">
                                     <p class="text-black" style="font-weight: 600;">How long will this task take to complete?
                                         <br><small class="text-secondary">The period of time this task should take a student to complete and submit</small>
                                     </p>
 
-                                    <div class="form-check">
+                                    <div class="form-check form-group">
                                         <label style="font-weight: 500;" class="radio-inline"><input type="radio" name="ijob_task" value="0" {{{ (isset($product->ijob_task) && $product->ijob_task == '0') ? "checked" : "" }}}>
                                             More than 1 month.
                                         </label>
@@ -74,7 +74,7 @@
 
                                     </div>
 
-                                    <div class="form-check mt-3">
+                                    <div class="form-check mt-3 form-group">
                                         <label style="font-weight: 500;" class="radio-inline"><input type="radio" name="ijob_task" value="4" {{{ (isset($product->ijob_task) && $product->ijob_task == '4') ? "checked" : "" }}}>
                                             Less than a week
                                         </label>
@@ -96,7 +96,7 @@
 
                                     </div>
 
-                                    <div class="form-check mt-3">
+                                    <div class="form-check mt-3 form-group"  >
                                         <label class="radio-inline" style="font-weight: 500;"><input type="radio" name="ijob_task_run" value="1" {{{ (isset($product->ijob_task_run) && $product->ijob_task_run == '1') ? "checked" : "" }}}> 1-3 months.
 
                                         </label>

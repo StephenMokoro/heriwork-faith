@@ -3,13 +3,6 @@
 
 <head>
   <title></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
 
   @extends('header-links')
   <style>
@@ -83,12 +76,13 @@
     .fa-check {
       color: #02b502;
     }
+
     .error {
-          display: block;
-          padding-top: 5px;
-          font-size: 14px;
-          color: red;
-        }
+      display: block;
+      padding-top: 5px;
+      font-size: 14px;
+      color: red;
+    }
   </style>
 
 
@@ -97,7 +91,7 @@
 </head>
 
 <body style="background-color: #fff">
-  <header id="header" class="header fixed-top">
+  <header id="header" class="header ">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
@@ -106,13 +100,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+          <li><a class="nav-link scrollto active" href="{{url('dashboard')}}">Home</a></li>
 
           <li class="dropdown"><a href="#"><span>Jobs</span> <i class="bi bi-chevron-down"></i></a>
 
             <ul>
-              <li><a href="#">Post a job</a></li>
-              <li><a href="#">My jobs</a></li>
+              <li><a href="{{url('internship')}}">Post a job</a></li>
+              <li><a href="#">Mys jobs</a></li>
 
             </ul>
           </li>
@@ -127,7 +121,7 @@
 
     </div>
   </header>
-  <br><br>
+  <br>
 
 
   <div class="container">
