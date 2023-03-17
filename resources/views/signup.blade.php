@@ -25,6 +25,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{url('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/select2/css/select2-4.0.3.min.css')}}" rel="stylesheet" />
+    <link href="{{url('assets/vendor/animate/css/animate-3.7.0.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/css/style.css')}}" rel="stylesheet">
 
 
 </head>
@@ -57,7 +65,7 @@
                             <div class=" card-body">
                                 <h5 class="card-title "> <b>Join as Student</b> </h5>
                                 <p class="card-text">I am a student looking for paid work-study jobs or internship opportunities</p>
-                                <a href="{{url('student_registration')}}" class="btn btn-success">Proceed</a>
+                                <a href="{{url('student_details')}}" class="btn btn-success">Proceed</a>
 
                             </div>
                         </div>

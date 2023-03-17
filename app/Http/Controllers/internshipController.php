@@ -239,7 +239,7 @@ class InternshipController extends Controller
         if ($product) {
             $product->save();
             Alert::success('Success', 'You\'ve Successfully posted');
-            return view('employer/employer_details/index');
+            return view('employer/employer_details/employer_home');
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();

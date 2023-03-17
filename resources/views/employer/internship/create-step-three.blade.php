@@ -9,12 +9,13 @@
                     <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
                         <div class="row">
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
-                                <p class="text-secondary">1/5 &nbsp; &nbsp;Headline</p>
+                                <p class="text-secondary">3/5 &nbsp; &nbsp;Scope</p>
                                 <a href="#">
-                                    <h3 class="card-title line-height" style="color:#05115d;"><b>Let's start with a strong headline.</b></h3>
+                                    <h3 class="card-title text-black line-height" style="color:blue;"><b>Estimate the scope of your work</b></h3>
                                 </a>
 
-                                <p class="card-text line-">This helps your job post stand out to the right candidates. It’s the first thing they’ll see, so make it count! </p>
+
+                                <p class="card-text line-">Define the size of your project and the time it will take. Because our students are mostly on session and work between school work, we request our impact employers to be considerate and allow for sufficient time for task completion.</p>
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
 
                                     </div>
 
-                                    <div class="form-check mt-3 form-group"  >
+                                    <div class="form-check mt-3 form-group">
                                         <label class="radio-inline" style="font-weight: 500;"><input type="radio" name="ijob_task_run" value="1" {{{ (isset($product->ijob_task_run) && $product->ijob_task_run == '1') ? "checked" : "" }}}> 1-3 months.
 
                                         </label>

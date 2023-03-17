@@ -43,7 +43,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-              
+
               <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{url('employer_registration')}}">Sign Up</a></li>
 
             </ul>
@@ -76,30 +76,20 @@
                     {{Session::get('fail')}}
                   </div>
                   @endif
-
-
-
                   <div class="col-lg-12">
                     <form method="post" action="{{route('login-user')}}">
                       <div class="row gy-4">
-
                         @csrf
-
                         <div class="col-md-12">
                           <input type="text" name="personal_email" id="email" class="form-control" placeholder="Enter email address" value="{{ old('org_email') }}" />
                           <span class="text-danger"> @error('personal_email'){{$message}} @enderror</span>
-
                         </div>
                         <br> <br>
-
                         <div class="col-md-12">
                           <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" value="{{ old('password') }}" />
                           <span class="text-danger"> @error('password'){{$message}} @enderror</span>
-
                         </div>
                         <br><br>
-
-
                         <div class="col-md-12 text-center">
                           <button type="submit" class="btn btn-primary"> Login </button>
                           <p class="float-right mt-2"> Don't have an account? <a href="{{ url('signup')}}" class="" style="color:#ef6603;"> Register </a> </p>

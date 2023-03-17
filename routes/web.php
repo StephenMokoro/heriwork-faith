@@ -67,17 +67,6 @@ Route::get('logouts', [AuthController::class, 'logouts'])->name('logouts');
 
 
 
-Route::controller(StudentController::class)->group(function () {
-
-    Route::get('login', 'index')->name('login');
-
-    Route::get('registration', 'registration')->name('registration');
-    Route::post('validate_registration', 'validate_registration')->name('sample.validate_registration');
-
-    Route::post('validate_login', 'validate_login')->name('sample.validate_login');
-
-    Route::get('dashboard', 'dashboard')->name('dashboard');
-});
 
 Route::view('viewemployer', 'auth.viewemployer');
 
@@ -134,8 +123,8 @@ Route::post('employer/employer/internship/create-step-six', [InternshipControlle
 Route::get('employer/internship/create-step-two', [internshipController::class, 'show'])->name('internship.create.step.two');
 
 
-Route::get('employer_details', [EmployerregistrationController::class, 'index'])->name('internship.index');
 
+Route::get('employer_details', [EmployerregistrationController::class, 'index'])->name('internship.index');
 Route::get('employer/employer_details/create-step-one', [EmployerregistrationController::class, 'createStepOne'])->name('employer.create.step.one');
 Route::post('employer/employer_details/create-step-one', [EmployerregistrationController::class, 'postCreateStepOne'])->name('employer.create.step.one.post');
 
@@ -145,22 +134,39 @@ Route::get('employer/employer_details/create-step-three', [EmployerregistrationC
 Route::post('employer/employer_details/create-step-three', [EmployerregistrationController::class, 'postCreateStepThree'])->name('employer.create.step.three.post');
 
 
-Route::get('/login', [EmployerregistrationController::class, 'login'])->middleware('alreadyloggedin');
-Route::post('/login-user', [EmployerregistrationController::class, 'loginUser'])->name('login-user');
+Route::get('employerlogin', [EmployerregistrationController::class, 'login'])->middleware('alreadyloggedin');
+Route::post('login-user', [EmployerregistrationController::class, 'loginUser'])->name('login-user');
 Route::get('/dashboard', [EmployerregistrationController::class, 'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [EmployerregistrationController::class, 'logout']);
 
-Route::get('edit-student/{id}', [EmployerController::class, 'edit']);
-Route::put('update-student/{id}', [EmployerController::class, 'update']);
 
-Route::view('signin','signin');
+// Route::view('signin', 'signin');
+// Route::view('registration', 'student.student_reg');
+// Route::get('addstudent', [EmployerController::class, 'login']);
 
-Route::view('registration','student.student_reg');
 
-Route::get('/studentlogin', [StudentregistrationController::class, 'login']);
-Route::get('/studentregistration', [StudentregistrationController::class, 'registration']);
-Route::post('/student-registration', [StudentregistrationController::class, 'registerUser'])->name('student-registration');
- Route::post('/student-login', [StudentregistrationController::class, 'loginUser'])->name('student-login');
 
 Route::get('/studentdashboard', [StudentregistrationController::class, 'dashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [StudentregistrationController::class, 'logout']);
+Route::view('college_choice', 'student.student_details.college_choice');
+Route::view('student_country', 'student.student_details.student_country');
+Route::view('personal_details', 'student.student_details.studentpersonal_details');
+
+
+// student details route
+Route::get('student_details', [StudentController::class, 'index'])->name('details.index');
+Route::get('/student-details', [StudentController::class, 'dataAjax']);
+Route::get('/student/student_details/college_choice', [StudentController::class, 'college_choice'])->name('student.college_choice');
+Route::post('/student/student_details/college_choice', [StudentController::class, 'Postcollegechoice'])->name('student.college_choice.post');
+Route::get('student_country', [StudentController::class, 'student_country'])->name('student.student_country');
+Route::get('country_list', [StudentController::class, 'country_list'])->name('student.student_country');
+Route::post('student_country',  [StudentController::class, 'poststudentcountry'])->name('student.student_country.post');
+Route::get('personal_details', [StudentController::class, 'Personal_details'])->name('student.personal_details');
+Route::post('personal_details', [StudentController::class, 'postpersonaldetail'])->name('student.personal_details.post');
+Route::get('password_details', [StudentController::class, 'Password_details'])->name('student.password_details');
+Route::post('password_details', [StudentController::class, 'Postpassworddetail'])->name('student.password_details.post');
+// login section
+Route::get('/studentlogin', [StudentController::class, 'login']);
+Route::post('/student-login', [StudentController::class, 'loginUser'])->name('student-login');
+Route::get('/studentdashboard', [StudentController::class, 'dashboard'])->middleware('isLoggedIn');
+Route::get('/studentlogout', [StudentController::class, 'logout']);

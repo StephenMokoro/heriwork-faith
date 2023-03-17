@@ -165,6 +165,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  background:white ;
 }
 
 .header.header-scrolled {
@@ -185,7 +186,7 @@ section {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: rgba(5, 17, 93, 0.9);
+  color: rgba(67, 77, 138, 0.9);
   font-family: "Nunito", sans-serif;
   margin-top: 3px;
 }

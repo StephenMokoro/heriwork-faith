@@ -17,10 +17,15 @@ return new class extends Migration
             $table->string('student_last_name');
             $table->string('student_email')->unique();
             $table->integer('student_phone');
-            $table->string('upload_cv');
-            $table->string('progress_report');
+            $table->string('student_gender');
+            $table->String('school_name');
+            $table->String('country');
+
+
+            $table->string('upload_cv')->nullable();
+            $table->string('progress_report')->nullable();
             // $table->string('others')->nullable();
-            $table->integer('institution_id');
+            $table->integer('institution_id')->nullable();
             // $table->string('school_name');
 
             $table->string('password');

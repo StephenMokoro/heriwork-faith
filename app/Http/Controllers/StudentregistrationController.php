@@ -16,60 +16,7 @@ class StudentregistrationController extends Controller
     public function login()
     {
         return view("student.student_login");
-    }
-    public function registration()
-    {
-        return view("student.student_reg");
-    }
-
-    public function registerUser(Request $request)
-    {
-        $request->validate([
-
-            'student_first_name'        =>      'required',
-            'student_last_name'         =>      'required',
-            'student_email'             =>      'required|email',
-            'student_phone'             =>      'required|min:5',
-            'upload_cv'             =>      'required',
-            'progress_report'             =>      'required',
-            'password'          =>      'required|min:6',
-            'confirm_password'  =>      'required|same:password',
-            'institution_id'             =>      'required',
-            'upload_cv' => 'required',
-            'progress_report' => 'required',
-
-
-        ]);
-        $student = new Student();
-
-        $student->student_first_name = $request->student_first_name;
-        $student->student_last_name = $request->student_last_name;
-        $student->student_email = $request->student_email;
-        $file = $request->upload_cv;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        $request->upload_cv->move('cvs', $filename);
-
-        $student->upload_cv = $filename;
-        //         'employer_full_name'         =>      $request->employer_first_name . " ". $request->employer_last_name,
-        $reports = $request->progress_report;
-        $reportname = time() . '.' . $reports->getClientOriginalExtension();
-        $request->progress_report->move('progress', $reportname);
-        $student->progress_report = $reportname;
-        $student->password = Hash::make($request->password);
-        $student->student_phone = $request->student_phone;
-        $student->upload_cv = $request->upload_cv;
-        $student->progress_report = $request->progress_report;
-        $student->institution_id = $request->institution_id;
-
-
-        $res = $student->save();
-        if ($res) {
-            return back()->with('success', 'Registration successful');
-        } else {
-            return back()->with('fail', 'something wrong');
-        }
-    }
-        
+    }    
         public function loginUser(Request $request)
         {
             $request->validate([
@@ -79,17 +26,15 @@ class StudentregistrationController extends Controller
                 'password' => 'required|min:5',
     
             ]);
-            $student = Student::where('school_email', '=', $request->school_email)->first();
+            $student = Student::where('student_email', '=', $request->student_email)->first();
             if ($student) {
-                if(Hash::check($request->password,$student->password)){
+               
                 $request->session()->put('loginId', $student->student_auto_id);
                 return redirect('dashboard');
-            } else {
+            
                 return back()->with('fail', 'This password not correct');
             }
         }
-        }
-    
         public function dashboard()
         {
             $data = array();

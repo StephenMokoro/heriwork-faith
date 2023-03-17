@@ -130,7 +130,6 @@
                                         <span class="text-danger"> @error('password'){{$message}} @enderror</span>
 
                                     </div>
-                                    <a href="{{url('')}}" class="" style="color:;">Sign Up</a>
                                     <button type="submit" class="btn btn-success">Sign In</button>
                                 </form>
                                 <!-- <form action="" method="POST" class="">

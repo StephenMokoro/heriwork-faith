@@ -70,7 +70,6 @@ class EmployerregistrationController extends Controller
         return redirect()->route('employer.create.step.two');
     }
 
-
     //step 2
     public function createStepTwo(Request $request)
     {
@@ -103,38 +102,21 @@ class EmployerregistrationController extends Controller
             $product->fill($validatedData);
             $request->session()->put('product', $product);
         }
-        return view('employer.employer_details.employer_login');
-    }
-
-    public function createStepThree(Request $request)
-    {
         $product = $request->session()->get('product');
-
-        return view('employer.employer_details.create-step-three', compact('product'));
-    }
-
-    /**
-     * Show the step One Form for creating a new product.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function postCreateStepThree(Request $request)
-    {
-        $product = $request->session()->get('product');
-
-        $product->save();
         $request->session()->forget('product');
 
-
+        $product->save();
         if ($product) {
 
-            Alert::success('Success', 'You\'ve Successfully posted');
-            return view('employer/employer_details/employer_login');
+            Alert::success('Success', 'You\'ve successfully registered');
+            return back();
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();
         }
     }
+
+
 
     //step 3
 
@@ -180,14 +162,8 @@ class EmployerregistrationController extends Controller
     public function loginUser(Request $request)
     {
         $request->validate([
-
-
             'personal_email' => 'required|email|',
-
             'password' => 'required|min:5',
-
-
-
         ]);
         $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
         if ($employer) {

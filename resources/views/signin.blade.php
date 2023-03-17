@@ -11,20 +11,7 @@
     <meta content="" name="keywords">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    @include('header-links')
 
 
 </head>
@@ -52,8 +39,8 @@
                 <h3 style="text-align:center; color:black; font-weight:bolder;">Thanks for staying with us</h3>
                 <br>
                 <div class="row justify-content-center pl-5 pr-5 ">
-                    <div class="  col-lg-6  pb-3 pt-3 ">
-                        <div class="  card rounded-3  " id="card_1">
+                    <div class="  col-lg-5  pb-3 pt-3 rounded ">
+                        <div class="  card rounded-3 border  " id="card_1">
                             <div class=" card-body">
                                 <h5 class="card-title "> <b>Login as Student</b> </h5>
                                 <p class="card-text">I am a student looking for paid work-study jobs or internship opportunities</p>
@@ -62,12 +49,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6   pb-3 pt-3">
-                        <div class="card rounded-3 " id="card_2">
+                    <div class="col-lg-5   pb-3 pt-3 rounded">
+                        <div class="card rounded-3  border" id="card_2">
                             <div class="card-body">
                                 <h5 class="card-title"><b> Login as Impact Employer</b></h5>
                                 <p class="card-text">I am an employer interested in providing paid opportunities for students </p>
-                                <a href="{{url ('login')}}" class="btn btn-success">Proceed</a>
+                                <a href="{{url ('employerlogin')}}" class="btn btn-success">Proceed</a>
                             </div>
                         </div>
                     </div>

@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class School extends Model
+class Country extends Model
 {
     use HasFactory;
-   protected $fillable =['school_name'];
+    protected $primaryKey = 'code';
+
+    protected $fillable =['name'];
 }

@@ -103,15 +103,16 @@
                   <div class="col-lg-12 text-right">
                     <a href="{{ route('employer.create.step.one') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
 
-                    <button type="submit" class="btn rounded-pill btn-success">Next</button>
+                    <button type="submit" class="btn rounded-pill btn-success">Submit</button>
                   </div>
+                  <br><br>
+                  <a href="{{url('employerlogin')}}" class="btn btn-success">Login</a>
                 </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-
 <script>
   let state = false;
   let password = document.getElementById("password");

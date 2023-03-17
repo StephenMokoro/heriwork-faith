@@ -15,39 +15,40 @@
 
                         <table class="table">
                             <tr>
-                                <td>Product Name:</td>
+                                <td>Intenship job Name:</td>
                                 <td><strong>{{$product->ijob_title}}</strong></td>
                             </tr>
                             <tr>
-                                <td>Product skills:</td>
+                                <td>Intenship skills:</td>
                                 <td><strong>{{$product->ijob_skills}}</strong></td>
                             </tr>
                             <tr>
-                                <td>Product size:</td>
+                                <td>Other skills:</td>
+                                <td><strong>{{$product->inter_skills}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Job size:</td>
                                 <td><strong>{{$product->ijob_size ? 'Medium' : 'Small'}}</strong></td>
                             </tr>
                             <tr>
-                                <td>Product task:</td>
+                                <td>Internship task:</td>
 
                                 <td><strong>{{$product->ijob_task ? 'more than a week' : 'less than a week'   }}</strong></td>
                             </tr>
                             <tr>
-                                <td>Product Stock:</td>
+                                <td>Tak duration:</td>
                                 <td><strong>{{$product->ijob_task ? '1-3 months' : 'More than 3 months'   }}</strong></td>
 
                             </tr>
                             <tr>
-                                <td>Product size:</td>
+                                <td>Currency:</td>
                                 <td><strong>{{$product->ijob_budget_currency ? 'USD' : 'KSH'}}</strong></td>
                             </tr>
                             <tr>
-                                <td>Product Stock:</td>
+                                <td>Job task run:</td>
                                 <td><strong>{{$product->ijob_task_run}}</strong></td>
                             </tr>
-                            <tr>
-                                <td>Internship:</td>
-                                <td><strong>{{$product->inter_skills}}</strong></td>
-                            </tr>
+
                         </table>
                     </div>
                     <div class="card-footer">

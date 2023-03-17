@@ -54,7 +54,7 @@
                     <p class="card-text mt-3 text-black" style="font-weight: 600;">Popular skills for Workstudy jobs</p>
 
                     <div class="form-group">
-                      <input id="selected" class="form-control form-control-lg" type="text" name="" hidden>
+                      <input id="selected" class="form-control form-control-lg" type="text" name="intern_skills" hidden>
                     </div>
                     <div id="popular-skills" style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
                       @foreach ($student as $item)
