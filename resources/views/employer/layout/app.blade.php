@@ -1,185 +1,125 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html>
 
-    <head>
-      <meta charset="utf-8">
-      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<head>
+    <title></title>
 
-      <title>Heriwork</title>
-      <meta content="" name="description">
+    @extends('header-links')
+    <style>
+        .form-horizontal {
+            width: 320px;
+            background-color: #ffffff;
+            padding: 25px 38px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
 
-      <meta content="" name="keywords">
+        .control-label {
+            text-align: left !important;
+            padding-bottom: 4px;
+        }
 
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        .progress {
+            height: 3px !important;
+        }
 
-      <!-- Vendor CSS Files -->
-      <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-      <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-      <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-      <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-      <title>@yield('title')</title>
-     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
-     <link rel="stylesheet" href="{{url('assets/css/leaplug.css')}}">
+        .form-group {
+            margin-bottom: 10px;
+        }
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css' />
+        .show-pass {
+            position: absolute;
+            top: 5%;
+            right: 8%;
+        }
 
-      <!-- Template Main CSS File -->
-      <link href="assets/css/style.css" rel="stylesheet">
-      <style>
-  
-  .highlight{
-	  position:absolute;top:0;left:30px; 
-	}
-  
-  .highlight span{width:100%; }
-  .details {
-	  display: inline-block;
-	  border-radius: 0 3px 3px 0;
-	  padding: 5px 13px;
-	  color: #000;
-	  font-size: 16px;
-	  font-weight: 700;
-	  background: rgba(212, 172, 13,0.8);
-  }
-  a{
-   text-decoration: none!important;
-  }
-  </style>
+        .progress-bar-danger {
+            background-color: #e90f10;
+        }
 
-    </head>
+        .progress-bar-warning {
+            background-color: #ffad00;
+        }
 
-    <body>
+        .progress-bar-success {
+            background-color: #02b502;
+        }
 
-    <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        .login-btn {
+            width: 180px !important;
+            background-image: linear-gradient(to right, #f6086e, #ff133a) !important;
+            font-size: 18px;
+            color: #fff;
+            margin: 0 auto 5px;
+            padding: 8px 0;
+        }
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <span style="color:#ef6603;" >Heriwork</span>
-      </a>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="{{url('internship')}}">Post Job</a></li>
-          <li><a class="nav-link scrollto" href="#services">Student Applications</a></li>
-          <li><a class="nav-link scrollto" href="#services">Student Applications</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio"></a></li>
-          <li><a class="nav-link scrollto" href="#contact"></a></li>
-          <li><a class="getstarted scrollto" style="background-color:#ef6603;" href="{{url('logout')}}">Logout</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        .login-btn:hover {
+            background-image: linear-gradient(to right, rgba(255, 0, 111, 0.8), rgba(247, 2, 43, 0.8)) !important;
+            color: #fff !important;
+        }
 
-    </div>
-  </header><!-- End Header -->
- </head>
+        .fa-eye {
+            color: #022255;
+            cursor: pointer;
+        }
 
-<body>
- 
-<br><br><br>
-  <div class="container">
-    <div class="row my-2">
-      <div class="col-lg-12 d-flex justify-content-between align-items-center mx-auto">
-        <div>
-          <h2 class="text-primary">@yield('heading')</h2>
-        </div>
-        <div>
-          <a href="@yield('link')" class="btn btn-primary rounded-pill">@yield('link_text')</a>
-        </div>
+        .ex-account p a {
+            color: #f6086e;
+            text-decoration: underline;
+        }
 
-      </div>
-    </div>
+        .fa-circle {
+            font-size: 6px;
+        }
 
-    @yield('content')
+        .fa-check {
+            color: #02b502;
+        }
 
-  </div>
-  
-      <!-- ======= Footer ======= -->
-      <footer id="footer" class="footer">
+        .error {
+            display: block;
+            padding-top: 5px;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
 
-        <div class="footer-newsletter">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 text-center">
-                <h4>Our Newsletter</h4>
-              </div>
-              <div class="col-lg-6">
-                <form action="" method="post">
-                  <input type="email" name="email" placeholder="Enter email address"><input type="submit" value="Subscribe">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="footer-top">
-          <div class="container">
-            <div class="row gy-4">
-              <div class="col-lg-5 col-md-12 footer-info">
-                <a href="index.html" class="logo d-flex align-items-center">
-                  <span>Heriwork</span>
-                </a>
-                <p>Expanding workstudy job opportunities for underprivileged college students to generate some income for upkeep and fees .</p>
-                <div class="social-links mt-3">
-                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
 
-              <div class="col-lg-2 col-6 footer-links">
-                <h4>Useful Links</h4>
+
+</head>
+
+<body style="background-color: #fff">
+    <header id="header" class="header ">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="{{url('/')}}" class="logo d-flex align-items-center">
+                <span style="color:#ef6603;">Heriwork</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    <li><a class="nav-link scrollto active" href="{{url('dashboard')}}">Home</a></li>
+
+
+                    <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
+          <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
+
                 </ul>
-              </div>
+            </nav>
 
-
-
-              <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                <h4>Contact Us</h4>
-                <p>
-                  Nairobi <br>
-
-                  <strong>Phone:</strong> +25412345678<br>
-                  <strong>Email:</strong> engageus@heriwork.com<br>
-                </p>
-
-              </div>
-
-            </div>
-          </div>
         </div>
+    </header>
 
 
-      </footer><!-- End Footer -->
-
-      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-      <!-- Vendor JS Files -->
-      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-      <script src="assets/vendor/aos/aos.js"></script>
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-      <script src="assets/vendor/php-email-form/validate.js"></script>
-
-      <!-- Template Main JS File -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
-<script src="https://cdn.tiny.cloud/1/jjqcoi1aa4yi5mopawkjpci4avx4z1dh8yyqa8t47lp4mk6u/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-		tinymce.init({
-			selector:'#description'
-		});
-	</script>
+    <div class="container">
+        @yield('content')
+    </div>
+ @include('footer-links')
 </body>
+
+
+
 
 </html>

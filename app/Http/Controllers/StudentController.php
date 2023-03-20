@@ -1,29 +1,21 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Expressiontable;
 use App\Models\Student;
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Models\School;
 use App\Models\Country;
+use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
-use Hash;
-
-use Illuminate\Support\Facades\Auth;
-
 class StudentController extends Controller
 {
-
-
-    public function Index()
+    public function index()
     {
-        $products = Student::all();
-
-        return view('student.student_details.college_choice', compact('products'));
+        $students = Student::all();
+        return view('Student.student-auth.college-choice', compact('students'));
     }
-    public function DataAjax(Request $request)
+
+    public function dataAjax(Request $request)
     {
         $data = [];
 
@@ -36,12 +28,14 @@ class StudentController extends Controller
 
             $data = $query->toArray();
         }
+
         return response()->json($data);
     }
 
-    public function country_list(Request $request)
+    public function countryList(Request $request)
     {
         $data = [];
+
         if ($request->has('q')) {
             $search = $request->q;
             $query = Country::select("code as id", "name as text")
@@ -51,85 +45,57 @@ class StudentController extends Controller
 
             $data = $query->toArray();
         }
+
         return response()->json($data);
     }
 
-    public function college_choice(Request $request)
+    public function collegeChoice(Request $request)
     {
-        $product = $request->session()->get('product');
+        $student = $request->session()->get('student');
 
-        return view('student.student_details.college_choice', compact('product'));
+        return view('Student.student-auth.college-choice', compact('student'));
     }
 
-    /**  
-     * Post Request to store step1 info in session
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function Postcollegechoice(Request $request)
+    public function postCollegechoice(Request $request)
     {
         $validatedData = $request->validate([
             'school_name' => 'required',
         ]);
 
-        if (empty($request->session()->get('product'))) {
-            $product = new Student();
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        } else {
-            $product = $request->session()->get('product');
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        }
+        $student = $request->session()->get('student', new Student());
+        $student->fill($validatedData);
+        $request->session()->put('student', $student);
 
         return redirect()->route('student.student_country.post');
     }
 
-    public function Student_country(Request $request)
+    public function studentCountry(Request $request)
     {
-        $product = $request->session()->get('product');
+        $student = $request->session()->get('student');
 
-        return view('student.student_details.student_country', compact('product'));
+        return view('Student.student-auth.student-country', compact('student'));
     }
 
-    /**  
-     * Post Request to store step1 info in session
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function poststudentcountry(Request $request)
     {
         $validatedData = $request->validate([
-
             'country' => 'required',
         ]);
 
-        if (empty($request->session()->get('product'))) {
-            $product = new Student();
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        } else {
-            $product = $request->session()->get('product');
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        }
+        $student = $request->session()->get('student', new Student());
+        $student->fill($validatedData);
+        $request->session()->put('student', $student);
 
         return redirect()->route('student.personal_details');
     }
-    public function Personal_details(Request $request)
-    {
-        $product = $request->session()->get('product');
 
-        return view('student.student_details.studentpersonal_details', compact('product'));
+    public function PersonalDetails(Request $request)
+    {
+        $student = $request->session()->get('student');
+
+        return view('Student.student-auth.personal-details', compact('student'));
     }
 
-    /**
-     * Show the step One Form for creating a new product.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function postpersonaldetail(Request $request)
     {
         $validatedData = $request->validate([
@@ -138,66 +104,58 @@ class StudentController extends Controller
             'student_email' => 'required',
             'student_phone' => 'required',
             'student_gender' => 'required',
-
         ]);
-        if (empty($request->session()->get('product'))) {
-            $product = new Student();
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        } else {
-            $product = $request->session()->get('product');
-            $product->fill($validatedData);
-            $request->session()->put('product', $product);
-        }
 
-
-
+        $student = $request->session()->get('student', new Student());
+        $student->fill($validatedData);
+        $request->session()->put('student', $student);
         return redirect()->route('student.password_details.post');
+
+       
+
     }
 
-    public function Password_details(Request $request)
+    public function PasswordDetail(Request $request)
     {
-        $product = $request->session()->get('product');
+        $student = $request->session()->get('student');
 
-        return view('student.student_details.password_account', compact('product'));
+        return view('Student.student-auth.secure-account', compact('student'));
     }
 
-    /**
-     * Show the step One Form for creating a new product.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function Postpassworddetail(Request $request)
     {
         $validatedData = $request->validate([
-
             'password' => 'required',
-            'confirm_password'  =>      'required|same:password',
+            'confirm_password' => 'required|same:password',
 
         ]);
+        $hashedPassword = bcrypt($validatedData['password']);
 
-        $product = $request->session()->get('product');
-        $product->fill($validatedData);
-        $request->session()->put('product', $product);
-        $product = $request->session()->get('product');
-        $request->session()->forget('product');
-        $product = $request->session()->get('product');
-        $request->session()->forget('product');
+        $student = $request->session()->get('student', new Student());
 
-        $product->save();
-        if ($product) {
+        $student->fill([
+            'password' => $hashedPassword,
+            'confirm_password' => null, // Remove the confirm password field from the model
+        ]);
 
-            Alert::success('Success', 'You\'ve successfully registered');
-            return back();
+        $request->session()->put('student', $student);
+
+        $student->save();
+
+        if ($student) {
+            Alert::success('Registration successful', 'You have successfully registered.')->persistent(true);
+
+            // Redirect the user to the login page with a success message
+            return redirect('studentlogin')->with('success', 'You have successfully registered.');
         } else {
-            Alert::error('Failed', 'Registration failed');
             return back();
         }
     }
-    // login 
+
+    // // // login 
     public function login()
     {
-        return view('student.student_details.student_login');
+        return view('Student.student-auth.student-login');
     }
     public function loginUser(Request $request)
     {
@@ -237,26 +195,25 @@ class StudentController extends Controller
             Session::put('greeting', $greeting);
 
 
-            return view('student.student_home', compact('data'));
+            return view('student.student-dashboard', compact('data'));
         }
 
 
-
-
-
-        // session(['greeting'=> $greeting]);
     }
 
-    // }else {
-    //     return  view('student.student_details.student_login);
+
+    // //     // session(['greeting'=> $greeting]);
     // }
+
+    // // // }else {
+    // // //     return  view('student.student_details.student_login);
+    // // // }
 
 
     public function logout(Request $request)
     {
-        if (Session::has('loginId')) {
-            Session::pull('loginId');
-            return  view('student.student_details.student_login');
-        }
+        $request->session()->forget('loginId');
+        return redirect('studentlogin')->with('success', 'Logged out successfully.');
     }
+    
 }
