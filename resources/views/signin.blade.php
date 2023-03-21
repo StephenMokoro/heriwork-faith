@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Heriwork</title>
     @include('header-links')
+    <style>
+        a{
+            text-decoration: none;
+        }
+
+    </style>
 
 </head>
+
 <body>
-<header id="header" class="header fixed-top">
+    <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="{{url('/')}}" class="logo d-flex align-items-center">
@@ -25,7 +34,7 @@
 
         </div>
     </header><!-- End Header -->
-<section id="hero" class="hero d-flex align-items-center">
+    <section id="hero" class="hero d-flex align-items-center">
         <div class="container col-lg-7  ">
             <br><br> <br><br><br>
             <div class="  border  pb-5 pt-5  rounded-5">
@@ -36,7 +45,7 @@
                         <div class="card rounded-3 border p-3">
                             <div class="card-body">
                                 <h5 class="card-title"> <b>For Students</b> </h5>
-                                <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle"></i></a> to find paid work opportunities</p>
+                                <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-toggle="modal" data-target="#exampleModal3"></i></a> to find paid work opportunities</p>
                                 <a href="{{url('studentlogin')}}" class="btn btn-success">Continue as Student</a>
 
                             </div>
@@ -46,7 +55,7 @@
                         <div class="card rounded-3  border p-3">
                             <div class="card-body">
                                 <h5 class="card-title"><b>For Impact Employers</b></h5>
-                                <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle"></i> </a> in paid work, you give them a future and a hope.     </p>
+                                <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle"data-toggle="modal" data-target="#exampleModal4"></i> </a> in paid work, you give them a future and a hope. </p>
                                 <a href="{{url ('employerlogin')}}" class="btn btn-success">Continue as Employer</a>
                             </div>
                         </div>
@@ -61,5 +70,14 @@
     </section>
     @include('footer-links')
 
+
+
+    <br><br>
+    
+
+   
+    
+
 </body>
+
 </html>

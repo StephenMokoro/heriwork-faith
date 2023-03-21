@@ -100,7 +100,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{url('dashboard')}}">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
 
 
                     <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>

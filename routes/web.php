@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\Intership_jobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 /*
@@ -54,3 +55,29 @@ Route::get('/studentlogin', [StudentController::class, 'login']);
 Route::post('/student-login', [StudentController::class, 'loginUser'])->name('student-login');
 Route::get('/studentdashboard', [StudentController::class, 'dashboard']);
 Route::get('/studentlogout', [StudentController::class, 'logout']);
+
+// internship
+
+Route::get('internship', [Intership_jobController::class, 'index'])->name('internship.index');
+
+Route::get('employer/internship/create-step-one', [Intership_jobController::class, 'createStepOne'])->name('internship.create.step.one');
+Route::post('employer/internship/create-step-one', [Intership_jobController::class, 'postCreateStepOne'])->name('internship.create.step.one.post');
+
+Route::get('employer/internship/create-step-two', [Intership_jobController::class, 'createStepTwo'])->name('internship.create.step.two');
+Route::post('employer/internship/create-step-two',  [Intership_jobController::class, 'postCreateStepTwo'])->name('internship.create.step.two.post');
+
+Route::get('employer/internship/create-step-three', [Intership_jobController::class, 'createStepThree'])->name('internship.create.step.three');
+Route::post('employer/internship/create-step-three', [Intership_jobController::class, 'postCreateStepThree'])->name('internship.create.step.three.post');
+
+
+Route::get('employer/internship/create-step-four', [Intership_jobController::class, 'createStepFour'])->name('internship.create.step.four');
+Route::post('employer/internship/create-step-four', [Intership_jobController::class, 'postCreateStepFour'])->name('internship.create.step.four.post');
+
+
+Route::get('employer/internship/create-step-five', [Intership_jobController::class, 'createStepFive'])->name('internship.create.step.five');
+Route::post('employer/internship/create-step-five', [Intership_jobController::class, 'postCreateStepFive'])->name('internship.create.step.five.post');
+
+Route::get('employer/employer/internship/create-step-six', [Intership_jobController::class, 'createStepSix'])->name('internship.create.step.six');
+Route::post('employer/employer/internship/create-step-six', [Intership_jobController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
+Route::get('employer/internship/create-step-two', [Intership_jobController::class, 'show'])->name('internship.create.step.two');
+

@@ -17,6 +17,7 @@
 <link href="{{url('assets/vendor/select2/css/select2-4.0.3.min.css')}}" rel="stylesheet" />
 <link href="{{url('assets/vendor/animate/css/animate-3.7.0.min.css')}}" rel="stylesheet">
 <link href="{{url('assets/css/style.css')}}" rel="stylesheet">
+   
 <style>
     .skill-tag {
         background-color: #e4ebe4;
@@ -36,9 +37,49 @@
     h5,
     h6,
     li,
+    i,
     p {
         text-decoration: none;
     }
-</style>
+
+        .modal-dialog-slideout {
+            min-height: 100%;
+            margin: 0 0 0 auto;
+            background: #fff;
+        }
+
+        .modal.fade .modal-dialog.modal-dialog-slideout {
+            -webkit-transform: translate(100%, 0)scale(1);
+            transform: translate(100%, 0)scale(1);
+        }
+
+        .modal.fade.show .modal-dialog.modal-dialog-slideout {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+            display: flex;
+            align-items: stretch;
+            -webkit-box-align: stretch;
+            height: 100%;
+        }
+
+        .modal.fade.show .modal-dialog.modal-dialog-slideout .modal-body {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .modal-dialog-slideout .modal-content {
+            border: 0;
+        }
+
+        .modal-dialog-slideout .modal-header,
+        .modal-dialog-slideout .modal-footer {
+            height: 69px;
+            display: block;
+        }
+
+        .modal-dialog-slideout .modal-header h5 {
+            float: left;
+        }
+    </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>

@@ -68,6 +68,35 @@
                     <label class="text-black" style="font-weight: 600;">Enter your phone number</label>
                     <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $product->employer_phone ?? '' }}" name="employer_phone">
                   </div>
+                  <label for="">What gender do you identify with? <span>*</span></label>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios1" value="option1">
+                    <label class="form-check-label" for="exampleRadios1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Female
+                    </label>
+                  </div>
+
+
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios1" value="option1">
+                    <label class="form-check-label" for="exampleRadios1">
+                      Other
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Prefer not to say
+                    </label>
+                  </div>
 
 
                 </div>

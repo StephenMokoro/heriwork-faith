@@ -61,6 +61,7 @@
         </div>
     </section>
     @include('footer-links')
+    
 </body>
 
 </html>

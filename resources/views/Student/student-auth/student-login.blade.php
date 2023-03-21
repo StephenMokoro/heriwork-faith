@@ -120,13 +120,11 @@
                                 <form id="validateForm" method="post" enctype="multipart/form-data" action="{{route('student-login')}}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="inputAddress">School email address</label>
-                                        <input type="email" class="form-control" id="student_email" name="student_email">
+                                        <input type="email" class="form-control" id="student_email" name="Enter student email">
                                         <span class="text-danger"> @error('student_email'){{$message}} @enderror</span>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" name="password">
+                                        <input type="password" class="form-control" id="password" name="Enter password">
                                         <span class="text-danger"> @error('password'){{$message}} @enderror</span>
 
                                     </div>
@@ -134,7 +132,7 @@
 
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary"> Login </button>
-                                        <p class="float-right mt-2"> Don't have an account? <a href="{{ url('signup')}}" class="" style="color:#ef6603;">Signup </a> </p>
+                                        <p class="float-right mt-2"> Don't have an account? <a href="{{ url('student_details')}}" class="" style="color:#ef6603;">Signup </a> </p>
                                     </div>
                                 </form>
                                 <!-- <form action="" method="POST" class="">

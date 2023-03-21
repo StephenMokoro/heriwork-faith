@@ -50,6 +50,8 @@ class EmployerController extends Controller
             'employer_last_name' => 'required',
             'employer_phone' => 'required',
             'personal_email' => 'required|email|unique:employers',
+            'employer_gender' => 'required',
+
         ]);
 
         $employer = new Employer();
