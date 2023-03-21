@@ -51,9 +51,9 @@ Route::get('personal_details', [StudentController::class, 'PersonalDetails'])->n
 Route::post('personal_details',[StudentController::class, 'postpersonaldetail'])->name('student.personal_details.post');
 Route::get('password_details', [StudentController::class, 'PasswordDetail'])->name('student.password_details');
 Route::post('password_details', [StudentController::class, 'Postpassworddetail'])->name('student.password_details.post');
-Route::get('/studentlogin', [StudentController::class, 'login']);
+Route::get('/studentlogin', [StudentController::class, 'login'])->middleware('studentalreadyloggedin');
 Route::post('/student-login', [StudentController::class, 'loginUser'])->name('student-login');
-Route::get('/studentdashboard', [StudentController::class, 'dashboard']);
+Route::get('/studentdashboard', [StudentController::class, 'dashboard'])->middleware('studentisLoggedIn');
 Route::get('/studentlogout', [StudentController::class, 'logout']);
 
 // internship

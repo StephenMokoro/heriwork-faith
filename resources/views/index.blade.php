@@ -229,7 +229,7 @@
                             <div class="swiper-slide"><img src="assets/img/clients/ilab.png" class="img-fluid" alt=""></div>
 
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <!-- <div class="swiper-pagination"></div> -->
                     </div>
                 </div>
 
