@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 text-right">
+                    <div class="col-lg-12 text-end">
                         <a href="{{ route('internship.create.step.four') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
 
                         <button type="submit" class="btn rounded-pill btn-success">Next: Skill</button>

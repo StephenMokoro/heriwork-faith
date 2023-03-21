@@ -116,7 +116,7 @@
     <div class="container">
         @yield('content')
     </div>
- @include('footer-links')
+    @include('footer-links')
 </body>
 
 

@@ -248,7 +248,7 @@ class Intership_jobController extends Controller
         if ($product) {
             $product->save();
             Alert::success('Success', 'You\'ve Successfully posted');
-            return view('employer/employer_details/employer_home');
+            return view('Employer.Internshippost');
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();

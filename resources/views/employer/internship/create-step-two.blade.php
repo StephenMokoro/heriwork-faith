@@ -84,7 +84,7 @@
                     <button class="border bg-light-green text-black rounded-pill skill-tag pl-2 pr-2 pt-0 pb-0 m-1" rel="tag" aria-label="Add Proofreading">Proofreading </span>&nbsp;<i class="bi bi-plus-lg"></i></button>
                     <button class="border bg-light-green text-black rounded-pill skill-tag pl-2 pr-2 pt-0 pb-0 m-1" rel="tag" aria-label="Add Writing">Writing </span><span>&nbsp;<i class="bi bi-plus-lg"></i></button>
                   </div> -->
-                  <div class="col-lg-12 text-right">
+                  <div class="col-lg-12 text-end">
                     <a href="{{ route('internship.create.step.one') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
 
                     <button type="submit" class="btn rounded-pill btn-success">Next: Skill</button>

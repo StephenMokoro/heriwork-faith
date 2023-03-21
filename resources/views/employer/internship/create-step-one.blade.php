@@ -58,7 +58,7 @@
                     <li>Facebook ad specialist needed for product launch</li>
                   </ul>
                 </div>
-                <div class="col-lg-12 text-right">
+                <div class="col-lg-12 text-end">
                   <button type="submit" class="btn rounded-pill btn-success">Next: Skill</button>
                 </div>
               </div>

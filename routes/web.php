@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\ExpressionformController;
 use App\Http\Controllers\Intership_jobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
@@ -81,3 +82,6 @@ Route::get('employer/employer/internship/create-step-six', [Intership_jobControl
 Route::post('employer/employer/internship/create-step-six', [Intership_jobController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
 Route::get('employer/internship/create-step-two', [Intership_jobController::class, 'show'])->name('internship.create.step.two');
 
+// Expression form
+Route::get('expressionform', [ExpressionformController::class, 'expression'])->name('expression');
+Route::post('expressionform', [ExpressionformController::class, 'expressionpage'])->name('expression-page');

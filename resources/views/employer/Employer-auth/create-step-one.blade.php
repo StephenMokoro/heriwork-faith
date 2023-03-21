@@ -24,9 +24,6 @@
                 </p>
               </div>
             </div>
-
-
-
           </div>
         </div>
       </div>
@@ -82,9 +79,6 @@
                       Female
                     </label>
                   </div>
-
-
-
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">

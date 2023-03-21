@@ -52,7 +52,7 @@
                   </div>
 
                   <p class="card-text mt-4 text-success" style="font-weight: 500;font-size: 14px;">
-                    If your university is not in the list, <a href="#">click here to express interest<i class="bi bi-arrow-right"></i></a>
+                    If your university is not in the list, <a href="{{route('expression')}}">click here to express interest<i class="bi bi-arrow-right"></i></a>
                   </p>
                 </div>
                 <div class="col-lg-12 text-end">
