@@ -122,8 +122,8 @@
             
             </ul>
           </li>
-          <a href="{{ route('employer.logout') }}" class="btn pl-4 pr-4 ml-3 mr-3 border hover" style="font-size:14px; background-color:#ef6603; color:white;">logout</a>
-          <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
+          <li><a class="getstarted  border text-black" style="background-color:#ef6603; color:white; opacity: 0.9" href="{{ route('employer.logout') }}">logout</a></li>
+          </li><!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
           <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
 
         </ul>
@@ -167,7 +167,7 @@
               </div>
 
               <div class="col-lg-4">
-                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> Welcome  <span style="color:#05115d; font-weight:bold; font-size:large;"></span> </h6>
+                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> Welcome  <span style="color:#05115d; font-weight:bold; font-size:large;">{{$data->employer_first_name}}</span> </h6>
               </div>
             </div>
           </div>

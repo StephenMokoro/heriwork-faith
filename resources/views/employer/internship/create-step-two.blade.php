@@ -43,14 +43,14 @@
                     </ul>
                   </div>
                   @endif
+                  
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Search skills or type your own</label>
                     <!-- <select name="ijob_skills" class="itemName form-control" value="{{{ $product->ijob_skills ?? '' }}}" id="" multiple="multiple"></select> -->
-                    <br>
-                    <select id="" class="countryName form-control" name="country"></select>
 
-                    <!-- <input class="form-control form-control-lg" type="text" placeholder="" value="{{{ $product->ijob_skills ?? '' }}}" name="ijob_skills"> -->
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{{ $product->ijob_skills ?? '' }}}" name="ijob_skills">
                   </div>
+                  <br><br>
                   <div class="form-group">
                     <label class="card-text mt-3 mb-2 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-star"></span> For the best results, add 3-5 skills</label>
                     <div id="selected-skills" style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;"></div>

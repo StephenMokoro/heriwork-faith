@@ -33,9 +33,9 @@ Route::post('employer_details', [EmployerController::class, 'postStepOne'])->nam
 
 Route::get('secure_account', [EmployerController::class, 'createStepTwo'])->name('employer.create.step.two');
 Route::post('secure_account',  [EmployerController::class, 'postStepTwo'])->name('employer.post.step.two');
-Route::get('employerlogin', [EmployerController::class, 'login']);
+Route::get('employerlogin', [EmployerController::class, 'login'])->middleware('alreadyloggedin');
 Route::post('login_user', [EmployerController::class, 'loginUser'])->name('login-user');
-Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 Route::get('/logout', [EmployerController::class, 'logout'])->name('employer.logout');
 
 // Student login

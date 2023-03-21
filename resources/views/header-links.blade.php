@@ -42,43 +42,20 @@
         text-decoration: none;
     }
 
-        .modal-dialog-slideout {
-            min-height: 100%;
-            margin: 0 0 0 auto;
-            background: #fff;
+   
+        .modal-dialog-sidebar-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 480px;
+            margin-right: -480px;
+            right: 0;
+            z-index: 1050;
+            transition: margin-right 0.3s ease-in-out;
         }
 
-        .modal.fade .modal-dialog.modal-dialog-slideout {
-            -webkit-transform: translate(100%, 0)scale(1);
-            transform: translate(100%, 0)scale(1);
-        }
-
-        .modal.fade.show .modal-dialog.modal-dialog-slideout {
-            -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-            display: flex;
-            align-items: stretch;
-            -webkit-box-align: stretch;
-            height: 100%;
-        }
-
-        .modal.fade.show .modal-dialog.modal-dialog-slideout .modal-body {
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .modal-dialog-slideout .modal-content {
-            border: 0;
-        }
-
-        .modal-dialog-slideout .modal-header,
-        .modal-dialog-slideout .modal-footer {
-            height: 69px;
-            display: block;
-        }
-
-        .modal-dialog-slideout .modal-header h5 {
-            float: left;
+        .modal.show .modal-dialog-sidebar-right {
+            margin-right: 0;
         }
     </style>
 

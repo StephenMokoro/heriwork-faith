@@ -3,7 +3,6 @@
 
 <head>
     @include('header-links')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
     <style>
         .form-horizontal {
@@ -93,7 +92,24 @@
 
 <body>
 
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
+            <a href="{{url('/')}}" class="logo d-flex align-items-center">
+                <span style="color:#ef6603;">Heriwork</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
     <section id="hero" class="hero d-flex align-items-center">
         <br><br>
         <div class="container ">
@@ -101,8 +117,8 @@
                 <div class="col-md-8 offset-md-2 ">
                     <div class="card border">
                         <div class="card-header">
-                            <h6></h6>
-                            <h4> <b> </b>Student login</h4>
+                           
+                        <h5> <b> Student Login</b></h5>
                         </div>
                         <div class="card-body">
                             @if(Session::has('success'))
@@ -120,15 +136,16 @@
                                 <form id="validateForm" method="post" enctype="multipart/form-data" action="{{route('student-login')}}">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="student_email" name="Enter student email">
+                                        <input type="email" class="form-control" id="student_email" name=" student_email" placeholder="Enter student email">
                                         <span class="text-danger"> @error('student_email'){{$message}} @enderror</span>
                                     </div>
+                                    <br>
                                     <div class="form-group ">
-                                        <input type="password" class="form-control" id="password" name="Enter password">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                                         <span class="text-danger"> @error('password'){{$message}} @enderror</span>
 
                                     </div>
-                                    <br><br>
+                                    <br>
 
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary"> Login </button>

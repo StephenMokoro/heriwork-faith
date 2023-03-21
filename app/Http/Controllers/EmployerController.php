@@ -173,11 +173,16 @@ public function loginUser(Request $request)
 
 public function dashboard()
 {
-    $loginId = session()->get('loginId');
+    $data = array();
+    if (Session::has('loginId')) {
 
-    $employer = Employer::find($loginId);
+        $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
+    }
+    return view('Employer.employer-dashboard', compact('data'));
 
-    return view('Employer.employer-dashboard', compact('employer'));
+
+   
+
 }
 
     

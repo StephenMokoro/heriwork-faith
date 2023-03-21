@@ -9,10 +9,9 @@
     <title>Heriwork</title>
     @include('header-links')
     <style>
-        a{
+        a {
             text-decoration: none;
         }
-
     </style>
 
 </head>
@@ -45,7 +44,7 @@
                         <div class="card rounded-3 border p-3">
                             <div class="card-body">
                                 <h5 class="card-title"> <b>For Students</b> </h5>
-                                <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-toggle="modal" data-target="#exampleModal3"></i></a> to find paid work opportunities</p>
+                                <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" data-bs-target="#sidebar-modal1"></i></a> to find paid work opportunities</p>
                                 <a href="{{url('studentlogin')}}" class="btn btn-success">Continue as Student</a>
 
                             </div>
@@ -55,7 +54,7 @@
                         <div class="card rounded-3  border p-3">
                             <div class="card-body">
                                 <h5 class="card-title"><b>For Impact Employers</b></h5>
-                                <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle"data-toggle="modal" data-target="#exampleModal4"></i> </a> in paid work, you give them a future and a hope. </p>
+                                <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" data-bs-target="#sidebar-modal"></i> </a> in paid work, you give them a future and a hope. </p>
                                 <a href="{{url ('employerlogin')}}" class="btn btn-success">Continue as Employer</a>
                             </div>
                         </div>
@@ -73,10 +72,34 @@
 
 
     <br><br>
-    
+    <!-- employer modal -->
+    <div class="modal fade" id="sidebar-modal" tabindex="-1" aria-labelledby="sidebar-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-sidebar modal-dialog-sidebar-right" style="width: 480px;">
+            <div class="modal-content" style="height: 80vh;">
+                <!-- Your content goes here -->
+                <p> <b>For Impact Employers</b> </p>
+                <br>
+                <h5>Every time you engage deserving students in paid work, you give them a future and a hope.
+                </h5>
+            </div>
+        </div>
+    </div>
+    <!-- student modal -->
+    <div class="modal fade" id="sidebar-modal1" tabindex="-1" aria-labelledby="sidebar-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-sidebar modal-dialog-sidebar-right" style="width: 480px;">
+            <div class="modal-content" style="height: 80vh;">
+            <p> <b>For Impact Employers</b> </p>
+                <br>
+                <h5>Every time you engage deserving students in paid work, you give them a future and a hope.
+                </h5>
+            </div>
+        </div>
+    </div>
 
-   
-    
+
+
+
+
 
 </body>
 
