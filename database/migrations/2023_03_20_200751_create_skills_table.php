@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('ijob_skills');
+            $table->string('ijob_category');
+
             $table->timestamps();
         });
     }

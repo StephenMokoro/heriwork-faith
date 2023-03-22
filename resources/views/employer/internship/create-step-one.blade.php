@@ -59,7 +59,7 @@
                   </ul>
                 </div>
                 <div class="col-lg-12 text-end">
-                  <button type="submit" class="btn rounded-pill btn-success">Next: Skill</button>
+                  <button type="submit" class="btn rounded-pill btn-success">Next: Job Category</button>
                 </div>
               </div>
         </form>

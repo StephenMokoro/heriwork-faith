@@ -60,7 +60,8 @@
 
                   <div class="form-group">
                     <label for="">What is your phone number <span>*</span></label>
-                    <input type="tel" class="form-control" placeholder="" name="student_phone">
+                    <input class="form-control form-control-lg" type="tel" placeholder=""  name="student_phone">
+
                   </div>
 
                   <label for="">What gender do you identify with? <span>*</span></label>

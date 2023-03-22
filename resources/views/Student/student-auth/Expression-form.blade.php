@@ -3,11 +3,10 @@
 
 <head>
     @include('header-links')
- 
 </head>
 
 <body>
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -27,7 +26,6 @@
 
         </div>
     </header><!-- End Header -->
-
     <section id="hero" class="hero d-flex align-items-center">
         <br><br>
         <div class="container ">
@@ -36,7 +34,7 @@
                     <div class="card border">
                         <div class="card-header">
                             <h6></h6>
-                            <h5> <b> Add your school</b></h5>
+                            <h5> <b> Please provide your details</b></h5>
                         </div>
                         <div class="card-body">
                             @if(Session::has('success'))
@@ -54,11 +52,13 @@
 
                                 <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('expression-page')}}">
                                     @csrf
-                                <div class="col-12">
+                                    <div class="col-12">
                                         <input type="text" class="form-control" id="school_name" placeholder="Add school name" name="school_name">
                                         <span class="text-danger"> @error('school_name'){{$message}} @enderror</span>
 
                                     </div>
+                                    <br>
+
                                     <br>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" id="student_first_name" name=" student_first_name" placeholder="Enter first name">
@@ -87,8 +87,14 @@
 
                                     </div>
                                     <br>
+                                    <div class="col-12">
+                                        <label for="" style="font-weight: 600;">Select your country of origin</label>
+                                        <br>
+                                        <select id="" class="countryName form-control" name="country"></select>
+                                        <!-- <input type="text" name="school_name" id="selected_value" hidden> -->
 
-
+                                    </div>
+                                    <br>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
@@ -100,6 +106,32 @@
             </div>
         </div>
     </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <script>
+        $('.countryName').select2({
+
+            placeholder: 'Select origin country',
+            ajax: {
+                url: 'country_list',
+                dataType: 'json',
+                delay: 250,
+                data: function(data) {
+                    return {
+                        q: data.term
+                    }
+                },
+                processResults: function(data) {
+                    return {
+                        results: data
+                    };
+                },
+                cache: true
+            }
+        });
+    </script>
 </body>
 
 </html>

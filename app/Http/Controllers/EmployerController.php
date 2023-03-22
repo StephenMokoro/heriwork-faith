@@ -178,7 +178,7 @@ public function dashboard()
 
         $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
     }
-    return view('Employer.employer-dashboard', compact('data'));
+    return view('Employer.employer-home', compact('data'));
 
 
    

@@ -54,7 +54,7 @@
                                     <a href="{{ url('student_details') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
 
                                     <button type="submit" class="btn rounded-pill btn-success">Next: Personal Details</button>
-                                               </div>
+                                </div>
                             </div>
                 </form>
             </div>

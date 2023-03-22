@@ -15,10 +15,16 @@ class Employer extends  Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $primaryKey ='employer_auto_id';
-    protected $fillable =['employer_first_name','employer_gender','employer_last_name','password','employer_phone','personal_email','status','email_verified_at'];
+    protected $fillable =['employer_first_name','employer_auto_id','employer_gender','employer_last_name','password','employer_phone','personal_email','status','email_verified_at'];
     
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function internship()
+{
+    return $this->hasMany(Internship_job::class);
+}
+
 
 }

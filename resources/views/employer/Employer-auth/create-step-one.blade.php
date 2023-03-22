@@ -50,22 +50,22 @@
                   @endif
 
                   <div class="form-group">
-                    <label class="text-black" style="font-weight: 600;">Enter your first name</label>
+                    <label class="text-black" style="font-weight: 600;">Enter your first name<span>*</span></label>
                     <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_first_name ?? '' }}" name="employer_first_name">
                   </div>
                   <div class="form-group">
-                    <label class="text-black" style="font-weight: 600;">Enter your Last name</label>
+                    <label class="text-black" style="font-weight: 600;">Enter your Last name<span>*</span></label>
                     <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->employer_last_name ?? '' }}" name="employer_last_name">
                   </div>
                   <div class="form-group">
-                    <label class="text-black" style="font-weight: 600;">Enter your email</label>
+                    <label class="text-black" style="font-weight: 600;">Enter your email<span>*</span></label>
                     <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $product->personal_email ?? '' }}" name="personal_email">
                   </div>
                   <div class="form-group">
-                    <label class="text-black" style="font-weight: 600;">Enter your phone number</label>
+                    <label class="text-black" style="font-weight: 600;">Enter your phone number<span>*</span></label>
                     <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $product->employer_phone ?? '' }}" name="employer_phone">
                   </div>
-                  <label for="">What gender do you identify with? <span>*</span></label>
+                  <label for=""class="text-black" style="font-weight: 600;">What gender do you identify with? <span>*</span></label>
 
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="employer_gender" id="exampleRadios1" value="option1">
@@ -95,7 +95,7 @@
 
                 </div>
                 <div class="col-lg-12 text-end">
-                  <button type="submit" class="btn rounded-pill btn-success">Next: Secure Account</button>
+                  <button type="submit" class="btn rounded-pill btn-success">Next: Secure Your Account</button>
                 </div>
               </div>
         </form>

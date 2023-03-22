@@ -8,6 +8,7 @@ use App\Models\internship_job;
 use App\Models\Skills;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Skill;
+use Illuminate\Support\Facades\Auth;
 
 class Intership_jobController extends Controller
 {
@@ -15,8 +16,9 @@ class Intership_jobController extends Controller
     public function show()
     {
         $student = Skill::all();
-        return view('employer.internship.create-step-two', compact('student'));
+        return view('employer.internship.create-step-three', compact('student'));
     }
+    
     public function skillsAjax(Request $request)
     {
         $data = [];
@@ -32,6 +34,23 @@ class Intership_jobController extends Controller
         }
         return response()->json($data);
     }
+    public function jobcategorylist(Request $request)
+    {
+        $data = [];
+
+        if ($request->has('q')) {
+            $search = $request->q;
+            $query = Skill::select("id as id", "ijob_category as text")
+                ->where('ijob_category', 'LIKE', "%$search%")
+                ->limit(10)
+                ->get();
+
+            $data = $query->toArray();
+        }
+
+        return response()->json($data);
+    }
+    
 
     public function index()
     {
@@ -98,8 +117,7 @@ class Intership_jobController extends Controller
     public function postCreateStepTwo(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_skills' => 'required',
-            'intern_skills' => 'required',
+            'ijob_category' => 'required',
         ]);
 
         if (empty($request->session()->get('product'))) {
@@ -139,9 +157,9 @@ class Intership_jobController extends Controller
     public function postCreateStepThree(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_size' => 'required',
-            'ijob_task' => 'required',
-            'ijob_task_run' => 'required',
+            'ijob_skills' => 'required',
+            'intern_skills' => 'required',
+
 
         ]);
 
@@ -174,9 +192,12 @@ class Intership_jobController extends Controller
     public function postCreateStepFour(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_budget_currency' => 'required',
-            'ijob_budget_amount' => 'required',
+            'ijob_size' => 'required',
+            'ijob_task' => 'required',
+            'ijob_task_run' => 'required',
 
+            // 'ijob_budget_currency' => 'required',
+            // 'ijob_budget_amount' => 'required',
 
         ]);
 
@@ -209,8 +230,8 @@ class Intership_jobController extends Controller
     public function postCreateStepFive(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_desc' => 'required',
-
+            'ijob_budget_currency' => 'required',
+            'ijob_budget_amount' => 'required',
         ]);
 
         if (empty($request->session()->get('product'))) {
@@ -226,8 +247,13 @@ class Intership_jobController extends Controller
         return redirect()->route('internship.create.step.six');
     }
 
-
-
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+   
     public function createStepSix(Request $request)
     {
         $product = $request->session()->get('product');
@@ -248,7 +274,7 @@ class Intership_jobController extends Controller
         if ($product) {
             $product->save();
             Alert::success('Success', 'You\'ve Successfully posted');
-            return view('Employer.Internshippost');
+            return view('employer.employer-dashboard');
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();

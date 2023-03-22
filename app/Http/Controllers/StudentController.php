@@ -195,7 +195,7 @@ class StudentController extends Controller
             Session::put('greeting', $greeting);
 
 
-            return view('student.student-dashboard', compact('data'));
+            return view('student.student-home', compact('data'));
         }
 
 

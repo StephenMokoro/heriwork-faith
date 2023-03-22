@@ -111,19 +111,15 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-          <li><a class="nav-link scrollto active" href="{{url('/')}}"><i class="bi bi-person-circle" style="font-size: larger;font-weight:400;"></i></a></li>
-
-
-          <li class="dropdown"  ><a href="#" ><span></span>Jobs <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span></span>Jobs <i class="bi bi-chevron-down"></i></a>
 
             <ul>
               <li><a href="{{url('internship')}}">Post a job</a></li>
-              <li><a href="#">My jobs</a></li>
-            
-            </ul>
+              <li><a class="getstarted  border text-black" style="background-color:#ef6603; color:white; opacity: 0.9" href="{{ route('employer.logout') }}">logout</a></li>
           </li>
-          <li><a class="getstarted  border text-black" style="background-color:#ef6603; color:white; opacity: 0.9" href="{{ route('employer.logout') }}">logout</a></li>
-          </li><!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
+        </ul>
+        </li>
+        <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
           <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
 
         </ul>
@@ -152,9 +148,9 @@
             </div>
           </div>
           <div class="col-lg-4">
-          
-            <a href="{{url('internship')}}"  class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border hover" style="font-size:14px; background-color:#05115d; color:white;"> Post a job</a>
-        </div>
+
+            <a href="{{url('internship')}}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border hover" style="font-size:14px; background-color:#05115d; color:white;"> Post a job</a>
+          </div>
         </div>
       </h3>
       <div class="col-lg-12 col-job-card">
@@ -167,17 +163,13 @@
               </div>
 
               <div class="col-lg-4">
-                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> Welcome  <span style="color:#05115d; font-weight:bold; font-size:large;">{{$data->employer_first_name}}</span> </h6>
+                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> Welcome <span style="color:#05115d; font-weight:bold; font-size:large;">{{$data->employer_first_name}}</span> </h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    
-
     <br>
     <div class="row">
 
@@ -195,7 +187,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="row job-row border-top border pl-0 pr-0 rounded">
@@ -316,21 +308,14 @@
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
           </div>
         </div>
       </div>
-      <div class="col-lg-4 pl-5 mt-5">
+      <div class="col-lg-4 ps-5 mt-5">
         <div class="row mt-5">
           <div class="card mb-4 border">
             <div class="card-body p-0 m-0">
-              <div class="row  pl-3 pr-3 pt-4">
+              <div class="row  ps-3 pe-3 pt-4">
                 <div class="col-lg-12 mb-3">
                   <a href="#">
                     <h3 class="card-title text-black line-height" style="font-weight: 700;">Want to post an internship?</h3>
@@ -342,26 +327,28 @@
         </div>
       </div>
     </div>
+
+
+    
   </div>
 
   <script>
-/* When the user clicks on the button, 
+    /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
     }
-  }
-}
 
-</script>
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+  </script>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

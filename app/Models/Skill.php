@@ -9,7 +9,7 @@ class Skill extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'ijob_skills'
+        'ijob_skills','ijob_category'
     ];
 
 }

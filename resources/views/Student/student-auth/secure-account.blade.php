@@ -50,10 +50,14 @@
                                             Password
                                         </label>
                                         <div class="col-md-12">
-                                            <input id="password" class="form-control input-md" name="password" type="password" value="{{ $product->password ?? '' }}" placeholder="Enter your password">
-                                            <span class="show-pass" onclick="toggle()">
-                                                <i class="far fa-eye" onclick="myFunction(this)"></i>
-                                            </span>
+                                            <div class="input-group mb-3">
+                                                <input id="password" class="form-control input-md" name="password" type="password" value="{{ $product->password ?? '' }}" placeholder="Enter your password">
+
+                                                <label class="btn" style="left:-30px!important;" type="button" id="button-addon2">
+                                                    <span class="show-pass" style="position: absolute; top:5px" onclick="toggle()">
+                                                        <i class="far fa-eye" onclick="myFunction(this)"></i>
+                                                    </span></label>
+                                            </div>
                                             <div id="popover-password">
                                                 <p><span id="result"></span></p>
                                                 <div class="progress">

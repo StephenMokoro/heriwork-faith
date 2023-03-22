@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('student_first_name');
             $table->string('student_last_name');
             $table->string('student_email');
+
             $table->string('student_phone');
+            $table->string('country');
+
 
 
 

@@ -16,7 +16,7 @@
     </head>
 
     <body>
-    @include('sweetalert::alert')
+        @include('sweetalert::alert')
 
         <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top">
@@ -29,7 +29,9 @@
                 <nav id="navbar" class="navbar">
                     <ul>
                         <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-                        <li><a class="nav-link scrollto" href="#partner">Partner With Us</a></li>
+                        <li><a class="nav-link " href="{{url('partner')}}">Partner With Us</a></li>
+                        <li><a class="nav-link " href="#">Donate</a></li>
+
                         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                         <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('signin')}}">Sign In</a></li>
                         <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li>
@@ -142,7 +144,7 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="service-box red">
-                                <i class="ri-discuss-line icon"></i>
+                                <i class="bi bi-telephone-forward"></i>
                                 <h3>Customer service and support</h3>
                                 <p>Provide technical assistance with products and answer customers questions.</p>
                             </div>
@@ -150,7 +152,7 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                             <div class="service-box purple">
-                                <i class="ri-discuss-line icon"></i>
+                                <i class="bi bi-telephone-forward"></i>
                                 <h3>Telemarketing and sale support.</h3>
                                 <p>Analyzing, identifying trends in customer interactionsand scheduling posts to be used in online platforms </p>
                             </div>
@@ -158,7 +160,7 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                             <div class="service-box pink">
-                                <i class="ri-discuss-line icon"></i>
+                                <i class="bi bi-telephone-forward"></i>
                                 <h3>IT and technical support</h3>
                                 <p>Analyzing, identifying trends in customer interactionsand scheduling posts to be used in online platforms</p>
                             </div>
@@ -182,8 +184,109 @@
                     </header>
 
                     <br>
-
                     <div class="row">
+                        <!-- section starts here -->
+
+                        <div class="col-lg-6 mb-5 col-project-card">
+                            <div class="card border mb-4 project-card">
+                                <div class="highlight">
+                                    <span class="details ml-4 mt-5" style="background-color: #ef6603; color:#fff;">Upcoming</span>
+                                </div>
+                                <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
+                                    <div class="row">
+                                        <div class="col-lg-12 ps-5 pe-5 pt-5">
+                                            <a href="">
+                                                <h3 class="card-title text-black un_ mt-5 line-height"><b>Article writing</b> </h3>
+                                            </a>
+
+                                            <p class="card-text line-height">conducting thorough research on industry-related topics, generating ideas for new content types and proofreading articles before publication. If you're familiar with producing online content and have an eye for detail, we'd like to meet you.</p>
+
+                                            <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none" style="background-image:url('/assets/img/geography-kenya.jpeg');">
+                                            </div>
+
+                                            <div class="bg-green pt-4 pb-2 ps-4 pe-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
+                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
+
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Application closing date — &nbsp;</span> Jan 20, 2022</h6>
+
+                                                <h6 class="mb-4 mt-2 text-black"><a href="#"><span style="color: #186A3B;">Project start date — </span> &nbsp;&nbsp;Mar 21, 2022</a></h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row card-body">
+                                    <div class="col-lg-12 ps-2 pe-2 mt-2 order-sm-1 order-md-1 order-lg-2">
+                                        <div class="col-lg-12 ps-2 pe-2">
+                                            <h4 class="text-black">Skills</h4>
+                                        </div>
+                                        <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Creative writing</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Editing skills</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Research Skills</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">SEO and Content Strategy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Section ends here -->
+
+                        <!-- Section starts here -->
+                        <div class="col-lg-6  mb-5 col-project-card">
+                            <div class="card border mb-4 project-card">
+                                <div class="highlight">
+                                    <span class="details ml-4 mt-5" style="background-color: #ef6603; color:#fff;">Upcoming</span>
+                                </div>
+                                <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
+                                    <div class="row">
+                                        <div class="col-lg-12 ps-5 pr-5 pt-5">
+                                            <a href="">
+                                                <h3 class="card-title text-black un_ mt-5 line-height"><b>Website development</b> </h3>
+                                            </a>
+                                            <p class="card-text line-height">It involves makes and maintains websites,handle the technical aspects of a website, including its performance (website speed) and capacity (the maximum amount of traffic the site could handle at a given time)</p>
+
+                                            <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none" style="background-image:url('/assets/img/geography-kenya.jpeg');">
+                                            </div>
+
+                                            <div class="bg-green pt-4 pb-2 ps-4 ps-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
+                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
+
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Application closing date — &nbsp;</span> April 20, 2023</h6>
+
+                                                <h6 class="mb-4 mt-2 text-black"><a href="#"><span style="color: #186A3B;">Project start date — </span> &nbsp;&nbsp;May 1, 2022</a></h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row card-body">
+                                    <div class="col-lg-12 ps-2 pe-2 mt-2 order-sm-1 order-md-1 order-lg-2">
+                                        <div class="col-lg-12 ps-2 pe-2">
+                                            <h4 class="text-black">Skills</h4>
+                                        </div>
+                                        <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Machine Learning</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Image Processing</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Internet of Things</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">UI/UX design</a>
+                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Computer Vision</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 text-center mb-4">
+                            <a href="#" class="btn border-0 explore btn btn-primary">Load more projects</a>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="row">
 
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="box">
@@ -205,7 +308,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
