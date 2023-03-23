@@ -28,11 +28,10 @@
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
                         <li><a class="nav-link " href="{{url('partner')}}">Partner With Us</a></li>
-                        <li><a class="nav-link " href="#">Donate</a></li>
+                        <li><a class="nav-link " href="#" style="color:#ef6603;">Donate</a></li>
 
-                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                        <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
                         <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('signin')}}">Sign In</a></li>
                         <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li>
                     </ul>
@@ -207,9 +206,7 @@
                                             <div class="bg-green pt-4 pb-2 ps-4 pe-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
                                                 <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
 
-                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Application closing date — &nbsp;</span> Jan 20, 2022</h6>
-
-                                                <h6 class="mb-4 mt-2 text-black"><a href="#"><span style="color: #186A3B;">Project start date — </span> &nbsp;&nbsp;Mar 21, 2022</a></h6>
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date— &nbsp;</span> Jan 20, 2022</h6>
                                             </div>
                                         </div>
 
@@ -222,10 +219,10 @@
                                             <h4 class="text-black">Skills</h4>
                                         </div>
                                         <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Creative writing</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Editing skills</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Research Skills</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">SEO and Content Strategy</a>
+                                            <a href="#" class=" btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Creative writing</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Editing skills</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Research Skills</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">SEO and Content Strategy</a>
                                         </div>
                                     </div>
                                 </div>
@@ -253,9 +250,8 @@
                                             <div class="bg-green pt-4 pb-2 ps-4 ps-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
                                                 <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
 
-                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Application closing date — &nbsp;</span> April 20, 2023</h6>
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span> April 20, 2023</h6>
 
-                                                <h6 class="mb-4 mt-2 text-black"><a href="#"><span style="color: #186A3B;">Project start date — </span> &nbsp;&nbsp;May 1, 2022</a></h6>
                                             </div>
                                         </div>
 
@@ -268,11 +264,11 @@
                                             <h4 class="text-black">Skills</h4>
                                         </div>
                                         <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Machine Learning</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Image Processing</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Internet of Things</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">UI/UX design</a>
-                                            <a href="#" class="btn-info rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag" style="background-color:#05115d; color:#fff;">Computer Vision</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Machine Learning</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Image Processing</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Internet of Things</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">UI/UX design</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Computer Vision</a>
                                         </div>
                                     </div>
                                 </div>
@@ -281,7 +277,7 @@
                         </div>
 
                         <div class="col-lg-12 text-center mb-4">
-                            <a href="#" class="btn border-0 explore btn btn-primary">Load more projects</a>
+                            <a href="#" class="btn border-0 explore btn btn-info">Load more projects</a>
                         </div>
 
                     </div>

@@ -312,6 +312,23 @@ class Intership_jobController extends Controller
                   </a>
                 </div>
                 <div class="col-lg-4">
+                        <h6 class="text-secondary">Fixed-Price</h6>
+                        <h6 class="text-secondary">Created 4 minutes ago</h6>
+                      </div>
+
+                      <div class="col-lg-8">
+                        <div class="row">
+                          <div class="col-lg-4 text-center">
+                            <h6><a href="#" class="text-primary"> 38 </a></h6>
+                            <h6 class="text-secondary">Applications</h6>
+                          </div>
+                          <div class="col-lg-4 text-center">
+                            <h6 class="text-secondary">8</h6>
+                            <h6 class="text-secondary">Hired</h6>
+                          </div>
+                        </div>
+                      </div>
+                <div class="col-lg-4">
                   <h6 class="" style="color:#ef6603;">' . $row->ijob_skills . '</h6>
                 </div>
                 <div class="col-lg-8">
