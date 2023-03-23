@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\UserVerify;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 
 class EmployerController extends Controller
@@ -23,10 +24,10 @@ class EmployerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-{
-    $employers = Employer::all();
-    return view('Employer.Employer-auth.create-step-one', compact('employers'));
-}
+    {
+        $employers = Employer::all();
+        return view('Employer.Employer-auth.create-step-one', compact('employers'));
+    }
 
 
     /**
@@ -145,52 +146,47 @@ class EmployerController extends Controller
     //     }
     // }
     public function login()
-{
-    return view('Employer.Employer-auth.employer-login');
-}
+    {
+        return view('Employer.Employer-auth.employer-login');
+    }
 
-public function loginUser(Request $request)
-{
-    $request->validate([
-        'personal_email' => 'required|email|',
-        'password' => 'required|min:5',
-    ]);
+    public function loginUser(Request $request)
+    {
+        $request->validate([
+            'personal_email' => 'required|email|',
+            'password' => 'required|min:5',
+        ]);
 
-    $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
+        $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
 
-    if ($employer) {
-        // Use Laravel's built-in check method to compare the submitted password to the hashed password in the database
-        if (Hash::check($request->password, $employer->password)) {
-            $request->session()->put('loginId', $employer->employer_auto_id);
-            return redirect()->route('dashboard');
+        if ($employer) {
+            // Use Laravel's built-in check method to compare the submitted password to the hashed password in the database
+            if (Hash::check($request->password, $employer->password)) {
+                Auth::login($employer); // Log the user in
+                $request->session()->put('loginId', $employer->employer_auto_id);
+                return redirect()->route('dashboard');
+            } else {
+                return back()->with('fail', 'Incorrect password');
+            }
         } else {
-            return back()->with('fail', 'Incorrect password');
+            return back()->with('fail', 'No user found with this email');
         }
-    } else {
-        return back()->with('fail', 'No user found with this email');
     }
-}
 
-public function dashboard()
-{
-    $data = array();
-    if (Session::has('loginId')) {
+    public function dashboard()
+    {
+        $data = array();
+        if (Session::has('loginId')) {
 
-        $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
+            $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
+        }
+        return view('Employer.employer-dashboard', compact('data'));
     }
-    return view('Employer.employer-home', compact('data'));
 
 
-   
-
-}
-
-    
-public function logout(Request $request)
-{
-    $request->session()->forget('loginId');
-    return redirect('/employerlogin')->with('success', 'Logged out successfully.');
-}
-
-    
+    public function logout(Request $request)
+    {
+        $request->session()->forget('loginId');
+        return redirect('/employerlogin')->with('success', 'Logged out successfully.');
+    }
 }

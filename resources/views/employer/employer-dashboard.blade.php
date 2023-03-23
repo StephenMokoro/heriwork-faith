@@ -73,14 +73,18 @@
 
   <!-- Google Fonts -->
   @include('header-links')
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type="text/css">
     .nav-pills .nav-link {
       background: white;
       color: rgba(5, 17, 93, 0.9);
       font-weight: 600;
     }
-
+    a{
+      text-decoration: none;
+    }
 
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
@@ -128,8 +132,10 @@
 
     </div>
   </header>
-
   <br><br>
+  
+  <br><br>
+
   <div class="container">
     <br><br>
 
@@ -143,6 +149,11 @@
                   <div class="col-lg-12">
                     <span class="card-title  line-height" style="font-weight: 700; color:#05115d;">Your Dashboard</span>
                   </div>
+                  <h3 style=" color:black; font-weight:bolder;">         <br>         &nbsp;&nbsp;
+
+               {{$data->employer_first_name}}
+                </h3>
+                
                 </div>
               </div>
             </div>
@@ -163,7 +174,6 @@
               </div>
 
               <div class="col-lg-4">
-                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> Welcome <span style="color:#05115d; font-weight:bold; font-size:large;">{{$data->employer_first_name}}</span> </h6>
               </div>
             </div>
           </div>
@@ -171,9 +181,9 @@
       </div>
     </div>
     <br>
-    <div class="row">
 
-      <div class="col-lg-8">
+    <div class="row job-row border-top border pl-0 pr-0 rounded-4 pl-0 pr-0 rounded-4">
+      <div class="col-lg-12 ">
         <div class="card">
           <div class="card-body">
             <!-- <h5 class="card-title">Special title treatment</h5> -->
@@ -187,150 +197,52 @@
             </ul>
           </div>
         </div>
-
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="row job-row border-top border pl-0 pr-0 rounded">
-              <h3 class="text-black">
-                <div class="row mt-4">
-                  <div class="col-lg-8">
-                    <div class="card">
-                      <div class="card-body p-0 ml-0 mr-0 mb-0">
-                        <div class="row  pl-5 pr-5">
-                          <div class="col-lg-12">
-                            <span class="card-title text-black line-height" style="font-weight: 700;">Your Postings </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4"><a href="#" style="font-size:14px;">See all postings</a></div>
-                </div>
-              </h3>
-              <div class="col-lg-12 col-job-card">
-                <div class="card mb-4">
-                  <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
-                    <div class="row  pl-5 pr-5">
-                      <div class="col-lg-12 mb-3">
-                        <a href="#">
-                          <h5 class="card-title text-black line-height" style="font-weight: 600;">Combating climate change through satellite image analysis </h5>
-                        </a>
-                      </div>
-
-                      <div class="col-lg-4">
-                        <h6 class="text-secondary">Fixed-Price</h6>
-                        <h6 class="text-secondary">Created 4 minutes ago</h6>
-                      </div>
-
-                      <div class="col-lg-8">
-                        <div class="row">
-                          <div class="col-lg-4 text-center">
-                            <h6><a href="#" class="text-primary"> 38 </a></h6>
-                            <h6 class="text-secondary">Applications</h6>
-                          </div>
-                          <div class="col-lg-4 text-center">
-                            <h6 class="text-secondary">8</h6>
-                            <h6 class="text-secondary">Hired</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-job-card">
-                <div class="card mb-4">
-                  <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
-                    <div class="row  pl-5 pr-5">
-                      <div class="col-lg-12 mb-3">
-                        <a href="#">
-                          <h5 class="card-title text-black line-height" style="font-weight: 600;">Today I don't feel like doing anything, nothing at all </h5>
-                        </a>
-                      </div>
-
-                      <div class="col-lg-4">
-                        <h6 class="text-secondary">Fixed-Price</h6>
-                        <h6 class="text-secondary">Created 10 minutes ago</h6>
-                      </div>
-
-                      <div class="col-lg-8">
-                        <div class="row">
-                          <div class="col-lg-4 text-center">
-                            <h6><a href="#" class="text-primary"> 108 </a></h6>
-                            <h6 class="text-secondary">Applications</h6>
-                          </div>
-                          <div class="col-lg-4 text-center">
-                            <h6 class="text-secondary">100</h6>
-                            <h6 class="text-secondary">Hired</h6>
-                          </div>
-                        </div>
-                      </div>
+       
+        <div class="row job-row border-top border pl-0 pr-0 rounded">
+        <h3 class="text-black">
+          <div class="row mt-4">
+            <div class="col-lg-8">
+              <div class="card">
+                <div class="card-body p-0 ml-0 mr-0 mb-0">
+                  <div class="row  pl-5 pr-5">
+                    <div class="col-lg-12">
+                      <span class="card-title text-black line-height" style="font-weight: 700;">Your Postings </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="col-lg-4"><a href="#" style="font-size:14px;  color:#ef6603;">See all postings</a></div>
           </div>
-          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="row job-row border-top border pl-0 pr-0 rounded">
-              <h3 class="text-black">
-                <div class="row mt-4">
-                  <div class="col-lg-8">
-                    <div class="card">
-                      <div class="card-body p-0 ml-0 mr-0 mb-0">
-                        <div class="row  pl-5 pr-5">
-                          <div class="col-lg-12">
-                            <span class="card-title text-black line-height" style="font-weight: 700;">Your Drafts </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4"><a href="#" style="font-size:14px;">See all drafts</a></div>
-                </div>
-              </h3>
-              <div class="col-lg-12 col-job-card">
-                <div class="card mb-4">
-                  <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
-                    <div class="row  pl-5 pr-5">
-                      <div class="col-lg-12 mb-3">
-                        <a href="#">
-                          <h5 class="card-title text-black line-height" style="font-weight: 600;">Combating climate change through satellite image analysis </h5>
-                        </a>
-                      </div>
+        </h3>
+        <div class="col-lg-12 col-job-card">
+          <div class="card mb-4">
 
-                      <div class="col-lg-4">
-                        <h6 class="text-secondary">Saved 4 minutes ago</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
+            <div class="row  pl-5 pr-5">
+            {{ csrf_field() }}
+            </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 ps-5 mt-5">
-        <div class="row mt-5">
-          <div class="card mb-4 border">
-            <div class="card-body p-0 m-0">
-              <div class="row  ps-3 pe-3 pt-4">
-                <div class="col-lg-12 mb-3">
-                  <a href="#">
-                    <h3 class="card-title text-black line-height" style="font-weight: 700;">Want to post an internship?</h3>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
+        <div id="post_data"></div>
       </div>
     </div>
-
-
-    
   </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <br />
+  <br />
+ 
+
+
+
+ 
 
   <script>
     /* When the user clicks on the button, 
@@ -348,6 +260,37 @@ toggle between hiding and showing the dropdown content */
         }
       }
     }
+  </script>
+
+  <script>
+    $(document).ready(function() {
+
+      var _token = $('input[name="_token"]').val();
+
+      load_data('', _token);
+
+      function load_data(id = "", _token) {
+        $.ajax({
+          url: "{{ route('loadmore.load_data') }}",
+          method: "POST",
+          data: {
+            id: id,
+            _token: _token
+          },
+          success: function(data) {
+            $('#load_more_button').remove();
+            $('#post_data').append(data);
+          }
+        })
+      }
+
+      $(document).on('click', '#load_more_button', function() {
+        var id = $(this).data('ijob_auto_id');
+        $('#load_more_button').html('<b>Loading...</b>');
+        load_data(id, _token);
+      });
+
+    });
   </script>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

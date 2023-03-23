@@ -79,25 +79,60 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel">Employer </h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel" style="color: rgba(5, 17, 93, 0.9); font-size:xx-large; font-weight:bolder;  justify-content:center; align-items:center;">Heriwork <i class="bi bi-person-workspace" style="color:#ef6603;"></i> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
-          Every time you engage deserving students in paid work, you give them a future and a hope.
+
+          <div class="row">
+            <div class="col-md-6 border-right d-flex align-items-center justify-content-center" style="border-right: 2px solid grey;">
+
+              <span class="bi bi-person-circle   p-3" style="font-size: 3rem; color: rgba(5, 17, 93, 0.9);"></span>
+              <h3>Heriwork</h3>
+
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: black; font-weight:bold;">Who we are </h4>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees.</h6>
+              <h6 style="color: black; "> Your support means the world to us and we're excited to have you on board as we prepare to launch our platform.</h6>
+              <h6 style="color: black; "> We appreciate your commitment to supporting underprivileged students through paid workstudy and internship opportunities, and we look forward to working with you to give the students a future and a hope.</h6>
+              </h6>
+              </h6>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
+
   <div class="modal  fade" id="exampleModal1Toggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel">Student</h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel" style="color: rgba(5, 17, 93, 0.9); font-size:xx-large; font-weight:bolder;  justify-content:center; align-items:center;">Heriwork <i class="bi bi-person-workspace" style="color:#ef6603;"></i> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
-          We always work hard to help deserving students to find paid work opportunities
+
+          <div class="row">
+            <div class="col-md-6 border-right d-flex align-items-center justify-content-center" style="border-right: 2px solid grey;">
+
+              <span class="bi bi-person-circle   p-3" style="font-size: 3rem; color: rgba(5, 17, 93, 0.9);"></span>
+              <h3>Heriwork</h3>
+
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: black; font-weight:bold;">Who we are </h4>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees.</h6>
+              <h6 style="color: black; "> We believe that every student deserves the opportunity to pursue their education to completion regardless of their financial background. That is why we are excited to help deserving students like yourself to raise some income for your upkeep and fees through paid workstudy and internship opportunities courtesy of our partners.
+
+                <h6 style="color: black; "> In addition to raising some income, you will gain valuable experience that will help you grow your career.</h6>
+              
+            </div>
+          </div>
         </div>
 
       </div>

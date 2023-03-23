@@ -37,7 +37,7 @@ Route::post('employer_details', [EmployerController::class, 'postStepOne'])->nam
 
 Route::get('secure_account', [EmployerController::class, 'createStepTwo'])->name('employer.create.step.two');
 Route::post('secure_account',  [EmployerController::class, 'postStepTwo'])->name('employer.post.step.two');
-Route::get('employerlogin', [EmployerController::class, 'login'])->middleware('alreadyloggedin');
+Route::get('employerlogin', [EmployerController::class, 'login'])->middleware('alreadyloggedin')->name('login');
 Route::post('login_user', [EmployerController::class, 'loginUser'])->name('login-user');
 Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 Route::get('/logout', [EmployerController::class, 'logout'])->name('employer.logout');
@@ -81,7 +81,9 @@ Route::get('create-step-five', [Intership_jobController::class, 'createStepFive'
 Route::post('create-step-five', [Intership_jobController::class, 'postCreateStepFive'])->name('internship.create.step.five.post');
 
 Route::get('create-step-six', [Intership_jobController::class, 'createStepSix'])->name('internship.create.step.six');
-Route::post('create-step-six', [Intership_jobController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
+    Route::post('create-step-six', [Intership_jobController::class, 'postCreateStepSix'])->name('internship.create.step.six.post');
+
+
 Route::get('create-step-three', [Intership_jobController::class, 'show'])->name('internship.create.step.three');
 Route::get('jobcategorylist', [Intership_jobController::class, 'jobcategorylist']);
 // Route::get('create-step-two',[Internship_jobController::class,'createStepTwo']);
@@ -94,3 +96,7 @@ Route::get('partner', [PartnerController::class, 'partner'])->name('partner');
 Route::post('partner', [PartnerController::class, 'partnerpage'])->name('partner-page');
 
 Route::view('home', 'Employer.employer-home');
+
+Route::get('/loadmore', [Intership_jobController::class,'load']);
+Route::post('/loadmore/load_data', [Intership_jobController::class,'load_data'])->name('loadmore.load_data');
+

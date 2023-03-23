@@ -61,6 +61,16 @@
         </div>
     </section>
     @include('footer-links')
+    <div class="row">
+              <div class="col-md-6 border-right" style="border-right: 2px solid red;">
+                <h2>Left Column</h2>
+                <p>Some text here...</p>
+              </div>
+              <div class="col-md-6">
+                <h2>Right Column</h2>
+                <p>Some text here...</p>
+              </div>
+            </div>
     
 </body>
 

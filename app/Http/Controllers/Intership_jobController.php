@@ -8,6 +8,7 @@ use App\Models\internship_job;
 use App\Models\Skills;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Skill;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class Intership_jobController extends Controller
@@ -18,7 +19,7 @@ class Intership_jobController extends Controller
         $student = Skill::all();
         return view('employer.internship.create-step-three', compact('student'));
     }
-    
+
     public function skillsAjax(Request $request)
     {
         $data = [];
@@ -50,7 +51,7 @@ class Intership_jobController extends Controller
 
         return response()->json($data);
     }
-    
+
 
     public function index()
     {
@@ -253,7 +254,7 @@ class Intership_jobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   
+
     public function createStepSix(Request $request)
     {
         $product = $request->session()->get('product');
@@ -278,6 +279,73 @@ class Intership_jobController extends Controller
         } else {
             Alert::error('Failed', 'Registration failed');
             return back();
+        }
+    }
+
+
+    function load_data(Request $request)
+    {
+        if ($request->ajax()) {
+            if ($request->id > 0) {
+                $data = DB::table('internship_jobs')
+                    ->where('id', '<', $request->id)
+                    ->orderBy('id', 'DESC')
+                    ->limit(2)
+                    ->get();
+            } else {
+                $data = DB::table('internship_jobs')
+                    ->orderBy('id', 'DESC')
+                    ->limit(2)
+                    ->get();
+            }
+            $output = '';
+            $last_id = '';
+
+            if (!$data->isEmpty()) {
+                foreach ($data as $row) {
+                    $output .= '
+                    
+       
+                <div class="col-lg-12 mb-3">
+                  <a href="#"  style="text-decoration:none;">
+                    <h5 class="card-title text-black line-height" style="font-weight: 600;  style="text-decoration:none;">' . $row->ijob_title . '</h5>
+                  </a>
+                </div>
+                <div class="col-lg-4">
+                  <h6 class="" style="color:#ef6603;">' . $row->ijob_skills . '</h6>
+                </div>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-4 text-center">
+                      <h6><a href="#" class="" style="text-decoration:none;color:rgba(5, 17, 93, 0.9);"> ' . $row->intern_skills . ' </a></h6>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                      <h6 class="">' . $row->intern_skills . '</h6>
+                    </div>
+                  </div>
+                
+                  </div>
+                  </div>
+                </div>
+                <hr style= "border:2px solid black;">
+
+            
+        ';
+                    $last_id = $row->id;
+                }
+                $output .= '
+       <div id="load_more">
+        <button type="button" name="load_more_button" class="btn  form-control" style ="background-color:rgba(5, 17, 93, 0.9); color:white;" data-id="' . $last_id . '" id="load_more_button">Load More</button>
+       </div>
+       ';
+            } else {
+                $output .= '
+       <div id="load_more">
+        <button type="button" name="load_more_button" class="btn btn-info form-control">No Data Found</button>
+       </div>
+       ';
+            }
+            echo $output;
         }
     }
 }
