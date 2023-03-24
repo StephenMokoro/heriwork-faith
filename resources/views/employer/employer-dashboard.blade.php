@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +12,19 @@
 
   <!-- Google Fonts -->
   @include('header-links')
-  
- <style type="text/css">
+
+  <style type="text/css">
     .nav-pills .nav-link {
       background: white;
       color: rgba(5, 17, 93, 0.9);
       font-weight: 600;
     }
-    a,li {
+
+    a,
+    li {
       text-decoration: none;
     }
+
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
       background: white;
@@ -31,6 +33,7 @@
       border-radius: 0 !important;
       font-weight: 600
     }
+
     /*  this skips the first div and puts a border top on the subsequent ones      */
     .job-row>.col-job-card:not(:first-of-type) {
       border-top: 1px solid #ccc;
@@ -49,17 +52,66 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#">Home</a></li>
           <li><a class="nav-link scrollto active" href="#">Partner with us</a></li>
           <li><a class="nav-link scrollto active" href="#">Donate</a></li>
           <li><a class="nav-link scrollto active" href="{{url('internship')}}">Post a job</a></li>
-          <li class="dropdown"><a href="#"><span></span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a class="getstarted  border text-black" style="background-color:#ef6603; color:white; opacity: 0.9" href="{{ route('employer.logout') }}">logout</a></li>
-          </li>
-        </ul>
-        </li>
-      
+          <li class="nav-item dropdown pe-3">
+
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle rounded-circle"></i>
+              <span class="d-none d-md-block dropdown-toggle ps-2">Profile</span>
+            </a><!-- End Profile Iamge Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li class="dropdown-header">
+                <h6>{{$data->employer_first_name}}
+</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="{{url('profile')}}">
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="{{url('profile')}}">
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+
+            </ul><!-- End Profile Dropdown Items -->
+          </li><!-- End Profile Nav -->
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -73,14 +125,13 @@
 
   <div class="container">
     <br><br>
-
-    <div class="row job-row border-top border pl-0 pr-0 rounded-4" style="width:100%; height:25vh">
+    <div class="row job-row border-top border pe-0 ps-0 rounded-4" style="width:100%; height:25vh">
       <h3 class="text-black">
         <div class="row mt-4">
           <div class="col-lg-8">
             <div class="card">
               <div class="card-body p-0 ml-0 mr-0 mb-0">
-                <div class="row  pl-5 pr-5">
+                <div class="row  pe-5 ps-5">
                   <div class="col-lg-12">
                     <span class="card-title  line-height" style="font-weight: 700; color:#05115d;">Your Dashboard</span>
                   </div>
@@ -102,21 +153,18 @@
       <div class="col-lg-12 col-job-card">
         <div class="card mb-4">
           <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
-            <div class="row  pl-5 pr-5">
+            <div class="row  pe-5 ps-5">
               <div class="col-lg-12 mb-3">
                 <a href="#">
                 </a>
               </div>
 
-              <div class="col-lg-4">
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <br>
-
     <div class="row rounded-4">
       <div class="col-lg-8 ">
         <div class="card">
@@ -133,13 +181,13 @@
           </div>
         </div>
 
-        <div class="row job-row border-top border pl-0 pr-0 rounded">
+        <div class="row job-row border-top border pe-0 ps-0 rounded">
           <h3 class="text-black">
             <div class="row mt-4">
               <div class="col-lg-8">
                 <div class="card">
                   <div class="card-body p-0 ml-0 mr-0 mb-0">
-                    <div class="row  pl-5 pr-5">
+                    <div class="row  pe-5 ps-5">
                       <div class="col-lg-12">
                         <span class="card-title text-black line-height" style="font-weight: 700;">Your Postings </span>
                       </div>
@@ -153,15 +201,13 @@
           <div class="col-lg-12 col-job-card">
             <div class="card mb-4">
 
-              <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
-                <div class="row  pl-5 pr-5">
+              <div class="card-body p-0 me-0 ms-0 mt-4 mb-0">
+                <div class="row  pe-5 ps-5">
                   {{ csrf_field() }}
                 </div>
               </div>
             </div>
           </div>
-
-
           <div id="post_data"></div>
         </div>
       </div>
@@ -183,16 +229,13 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
-  </div>
 
-  <br />
-  <br />
+
+
+  @include('footer-links')
 
   <script>
-    @include('footer-links')
-     function myFunction() {
+    function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
 

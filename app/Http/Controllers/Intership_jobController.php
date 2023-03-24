@@ -282,6 +282,7 @@ class Intership_jobController extends Controller
         }
     }
 
+    //    load more functionality
 
     function load_data(Request $request)
     {
@@ -300,7 +301,6 @@ class Intership_jobController extends Controller
             }
             $output = '';
             $last_id = '';
-
             if (!$data->isEmpty()) {
                 foreach ($data as $row) {
                     $output .= '
@@ -315,19 +315,18 @@ class Intership_jobController extends Controller
                         <h6 class="text-secondary">Fixed-Price</h6>
                         <h6 class="text-secondary">Created 4 minutes ago</h6>
                       </div>
-
                       <div class="col-lg-8">
-                        <div class="row">
-                          <div class="col-lg-4 text-center">
-                            <h6><a href="#" class="text-primary"> 38 </a></h6>
+                        <div class="row pe-5 ps-5">
+                          <div class="col-lg-6 text-center">
+                             <h6><a href="#" class="text-primary"> 38 </a></h6>
                             <h6 class="text-secondary">Applications</h6>
                           </div>
-                          <div class="col-lg-4 text-center">
+                          <div class="col-lg-6 text-left">
                             <h6 class="text-secondary">8</h6>
                             <h6 class="text-secondary">Hired</h6>
                           </div>
                         </div>
-                      </div>
+                     
                 <div class="col-lg-4">
                   <h6 class="" style="color:#ef6603;">' . $row->ijob_skills . '</h6>
                 </div>
@@ -344,9 +343,7 @@ class Intership_jobController extends Controller
                   </div>
                   </div>
                 </div>
-                <hr style= "border:2px solid black;">
-
-            
+                <hr style= "border:2px solid black;">         
         ';
                     $last_id = $row->id;
                 }

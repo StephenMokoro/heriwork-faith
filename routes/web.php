@@ -99,4 +99,8 @@ Route::view('home', 'Employer.employer-home');
 
 Route::get('/loadmore', [Intership_jobController::class,'load']);
 Route::post('/loadmore/load_data', [Intership_jobController::class,'load_data'])->name('loadmore.load_data');
+Route::view('profile','Employer.Employer-auth.employer-profile');
+Route::view('collegeadminlogin','college.college-auth.college-admin-login');
+Route::view('collegeadminldashboard','college.home.college-admin-home');
 
+Route::view('collegeprofile','college.home.college-admin-profile');
