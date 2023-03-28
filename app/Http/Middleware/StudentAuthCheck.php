@@ -16,7 +16,7 @@ class StudentAuthCheck
     public function handle(Request $request, Closure $next): Response
     {
         if(!Session()->has('loginId')){
-            return redirect('studentlogin')->with('fail','You have to login first');
+            return redirect('student-login')->with('fail','You have to login first');
         }
         return $next($request);
     }

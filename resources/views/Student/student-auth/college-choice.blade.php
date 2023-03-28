@@ -42,7 +42,7 @@
                   </div>
                   @endif
                   <div class="form-group">
-                    <label for="" style="font-weight: 600;">Let's start with your University</label>
+                    <label for="" class="text-black" style="font-weight: 600;">Let's start with your University</label>
 
                     <br>
 

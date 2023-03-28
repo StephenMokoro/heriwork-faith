@@ -64,7 +64,6 @@
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
               <li class="dropdown-header">
-                <h6>{{$data->employer_first_name}}
 </h6>
                 <span>Web Designer</span>
               </li>
@@ -103,7 +102,7 @@
               </li>
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="{{route('employer.logout')}}">
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Sign Out</span>
                 </a>
@@ -137,7 +136,6 @@
                   </div>
                   <h3 style=" color:black; font-weight:bolder;"> <br> &nbsp;&nbsp;
 
-                    {{$data->employer_first_name}}
                   </h3>
 
                 </div>

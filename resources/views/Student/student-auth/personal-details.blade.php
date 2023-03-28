@@ -43,28 +43,28 @@
 
 
                   <div class="form-group">
-                    <label for="">What is your first name? <span>*</span> </label>
+                    <label for=""class="text-black" style="font-weight: 600;">What is your first name? <span>*</span> </label>
                     <input type="text" class="form-control" placeholder="" name="student_first_name">
                   </div>
 
                   <div class="form-group">
-                    <label for="">What is your last name? <span>*</span></label>
+                    <label for="" class="text-black" style="font-weight: 600;">What is your last name? <span>*</span></label>
                     <input type="text" class="form-control" placeholder="" name="student_last_name">
                   </div>
 
                   <div class="form-group">
-                    <label for="">What is your school email? <span>*</span></label>
+                    <label for="" class="text-black" style="font-weight: 600;">What is your school email? <span>*</span></label>
                     <input type="email" class="form-control" placeholder="" name="student_email">
                     <small id="email" class="form-text text-success">This is the email your university gave you, often ends with <b>.edu, .ac.ke</b> etc</small>
                   </div>
 
                   <div class="form-group">
-                    <label for="">What is your phone number <span>*</span></label>
+                    <label for="" class="text-black" style="font-weight: 600;">What is your phone number <span>*</span></label>
                     <input class="form-control form-control-lg" type="tel" placeholder=""  name="student_phone">
 
                   </div>
 
-                  <label for="">What gender do you identify with? <span>*</span></label>
+                  <label for="" class="text-black" style="font-weight: 600;">What gender do you identify with? <span>*</span></label>
 
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="student_gender" id="exampleRadios1" value="option1">

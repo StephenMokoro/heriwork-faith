@@ -21,7 +21,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <span style="color:#ef6603;">Heriwork</span>
+        <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
       </a>
 
       <nav id="navbar" class="navbar">
@@ -45,7 +45,7 @@
               <div class="card-body">
                 <h5 class="card-title"> <b>For Students</b> </h5>
                 <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModal1Toggle" role="button"></i></a> to find paid work opportunities</p>
-                <a href="{{url('studentlogin')}}" class="btn btn-success">Continue as Student</a>
+                <a href="{{url('student-login')}}" class="btn btn-success">Continue as Student</a>
 
               </div>
             </div>
@@ -55,7 +55,7 @@
               <div class="card-body">
                 <h5 class="card-title"><b>For Impact Employers</b></h5>
                 <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModalToggle" role="button"></i> </a> in paid work, you give them a future and a hope. </p>
-                <a href="{{url ('employerlogin')}}" class="btn btn-success">Continue as Employer</a>
+                <a href="{{url ('employer-login')}}" class="btn btn-success">Continue as Employer</a>
               </div>
             </div>
           </div>
@@ -87,12 +87,10 @@
 
           <div class="row">
             <div class="col-md-12">
-              <h4 style="color: black; font-weight:bold;">Who we are </h4>
-              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees.</h6>
-              <h6 style="color: black; "> Your support means the world to us and we're excited to have you on board as we prepare to launch our platform.</h6>
-              <h6 style="color: black; "> We appreciate your commitment to supporting underprivileged students through paid workstudy and internship opportunities, and we look forward to working with you to give the students a future and a hope.</h6>
-              </h6>
-              </h6>
+
+              <h4 style="color: black; font-weight:bold;">Deserving student </h4>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is an underprivileged college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities and have demonstrated leadership skills or held leadership positions in school or community organizations. At Heriwork, we believe that these deserving students deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities and support these students in their academic and professional pursuits.</h6>
+
             </div>
           </div>
         </div>
@@ -112,14 +110,11 @@
         <div class="modal-body">
 
           <div class="row">
-            
-            <div class="col-md-12">
-              <h4 style="color: black; font-weight:bold;">Who we are </h4>
-              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees.</h6>
-              <h6 style="color: black; "> We believe that every student deserves the opportunity to pursue their education to completion regardless of their financial background. That is why we are excited to help deserving students like yourself to raise some income for your upkeep and fees through paid workstudy and internship opportunities courtesy of our partners.
 
-                <h6 style="color: black; "> In addition to raising some income, you will gain valuable experience that will help you grow your career.</h6>
-              
+            <div class="col-md-12">
+              <h4 style="color: black; font-weight:bold;">Deserving student </h4>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is an underprivileged college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities and have demonstrated leadership skills or held leadership positions in school or community organizations. At Heriwork, we believe that these deserving students deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities and support these students in their academic and professional pursuits.</h6>
+
             </div>
           </div>
         </div>

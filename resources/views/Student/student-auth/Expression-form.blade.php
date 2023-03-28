@@ -33,7 +33,7 @@
                 <div class="col-md-8 offset-md-2 ">
                     <div class="card border">
                         <div class="card-header">
-                            <h6></h6>
+                            <h6>Expression table</h6>
                             <h5> <b> Please provide your details</b></h5>
                         </div>
                         <div class="card-body">
@@ -60,14 +60,14 @@
                                     <br>
 
                                     <br>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input type="text" class="form-control" id="student_first_name" name=" student_first_name" placeholder="Enter first name">
                                         <span class="text-danger"> @error('student_first_name'){{$message}} @enderror</span>
 
                                     </div>
                                     <br>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input type="text" class="form-control" id="student_last_name" name="student_last_name" placeholder="Enter last name">
                                         <span class="text-danger"> @error('student_last_name'){{$message}} @enderror</span>
 

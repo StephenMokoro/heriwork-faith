@@ -4,14 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
         <title>Heriwork</title>
         <meta content="" name="description">
-
         <meta content="" name="keywords">
+        <link href="{{url('assets/img/logo/logo2.png')}}">
+        <link href="{{url('assets/img/logo/logo2.png')}}">
         @include('header-links')
-
-
 
     </head>
 
@@ -23,12 +21,13 @@
             <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
                 <a href="{{url('/')}}" class="logo d-flex align-items-center">
-                    <span style="color:#ef6603;">Heriwork</span>
+                    <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
                 </a>
+
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link " href="{{url('partner')}}">Partner With Us</a></li>
+                        <li><a class="nav-link " href="{{url('partner-details')}}">Partner With Us</a></li>
                         <li><a class="nav-link " href="#" style="color:#ef6603;">Donate</a></li>
 
                         <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
@@ -89,7 +88,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                            <img src="{{url('assets/img/heriwork.jpeg')}}" class="img-fluid" alt="">
                         </div>
 
                     </div>
@@ -143,7 +142,7 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="service-box red">
-                                <i class="bi bi-telephone-forward"></i>
+                                <i class="bi bi-telephone-forward fa-3x"></i>
                                 <h3>Customer service and support</h3>
                                 <p>Provide technical assistance with products and answer customers questions.</p>
                             </div>
@@ -151,7 +150,7 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                             <div class="service-box purple">
-                                <i class="bi bi-telephone-forward"></i>
+                                <i class="bi bi-bank2 fa-3x"></i>
                                 <h3>Telemarketing and sale support.</h3>
                                 <p>Analyzing, identifying trends in customer interactionsand scheduling posts to be used in online platforms </p>
                             </div>
@@ -159,9 +158,10 @@
 
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                             <div class="service-box pink">
-                                <i class="bi bi-telephone-forward"></i>
-                                <h3>IT and technical support</h3>
-                                <p>Analyzing, identifying trends in customer interactionsand scheduling posts to be used in online platforms</p>
+                                <i class="bi bi-laptop fa-3x"></i>
+
+                                <h3>Technical support</h3>
+                                <p>Help customers with troubleshooting, maintenance, installation, configuration and upgrading of hardware and software.</p>
                             </div>
                         </div>
 
@@ -198,15 +198,15 @@
                                                 <h3 class="card-title text-black un_ mt-5 line-height"><b>Article writing</b> </h3>
                                             </a>
 
-                                            <p class="card-text line-height">conducting thorough research on industry-related topics, generating ideas for new content types and proofreading articles before publication. If you're familiar with producing online content and have an eye for detail, we'd like to meet you.</p>
+                                            <p class="card-text line-height">Conducting thorough research on industry-related topics, generating ideas for new content types and proofreading articles before publication. If you're familiar with producing online content and have an eye for detail.</p>
 
                                             <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none" style="background-image:url('/assets/img/geography-kenya.jpeg');">
                                             </div>
 
                                             <div class="bg-green pt-4 pb-2 ps-4 pe-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
-                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
+                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href="{{url('student-login')}}"><b>Apply now!</b></a></h5>
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span>@php $today = date('Y-m-d'); $stop_date = date('Y-m-d', strtotime('+1 day')); echo date('j F, Y', strtotime($stop_date)); @endphp</h6>
 
-                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date— &nbsp;</span> Jan 20, 2022</h6>
                                             </div>
                                         </div>
 
@@ -221,8 +221,8 @@
                                         <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
                                             <a href="#" class=" btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Creative writing</a>
                                             <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Editing skills</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Research Skills</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">SEO and Content Strategy</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Research skills</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag"> Content Strategy</a>
                                         </div>
                                     </div>
                                 </div>
@@ -242,15 +242,15 @@
                                             <a href="">
                                                 <h3 class="card-title text-black un_ mt-5 line-height"><b>Website development</b> </h3>
                                             </a>
-                                            <p class="card-text line-height">It involves makes and maintains websites,handle the technical aspects of a website, including its performance (website speed) and capacity (the maximum amount of traffic the site could handle at a given time)</p>
+                                            <p class="card-text line-height">It involves makes and maintains websites,handle the technical aspects of a website, including its performance (website speed) and capacity (the maximum amount of traffic the site could handle at a given time)...</p>
 
                                             <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none" style="background-image:url('/assets/img/geography-kenya.jpeg');">
                                             </div>
 
                                             <div class="bg-green pt-4 pb-2 ps-4 ps-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
-                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href=""><b>Apply now!</b></a></h5>
+                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href="{{url('student-login')}}"><b>Apply now!</b></a></h5>
 
-                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span> April 20, 2023</h6>
+                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span>@php $today = date('Y-m-d'); $stop_date = date('Y-m-d', strtotime('+1 day')); echo date('j F, Y', strtotime($stop_date)); @endphp</h6>
 
                                             </div>
                                         </div>
@@ -264,53 +264,29 @@
                                             <h4 class="text-black">Skills</h4>
                                         </div>
                                         <div style="display: flex;flex-flow: row wrap; justify-content: left; align-items: left;">
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Machine Learning</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Image Processing</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Internet of Things</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">UI/UX design</a>
-                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Computer Vision</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Debugging skills</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Problem solving skills</a>
+                                            <a href="#" class="btn btn-secondary rounded-pill ps-2 pe-2 pt-1 pb-1 m-1 " rel="tag">Database management</a>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-
+                        <br>
                         <div class="col-lg-12 text-center mb-4">
-                            <a href="#" class="btn border-0 explore btn btn-info">Load more projects</a>
+                            <a href="#" class="btn border-0 explore btn btn-primary" style="color:#fff;">Load more projects</a>
                         </div>
 
                     </div>
 
-                    <!-- <div class="row">
 
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="box">
-                                <h3>Data Entry</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sdolores...</p>
-                                <p>Deadline 12/05/2023 </p>
-
-                                <button class="btn btn-success">Apply</button>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-                            <div class="box">
-                                <h3>Filing and organization support</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sdolores...</p>
-                                <p>Deadline 12/05/2023</p>
-
-                                <button class="btn btn-success">Apply</button>
-
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
 
             </section><!-- End Values Section -->
 
-            <!-- ======= Clients Section ======= -->
+            <!-- ======= partners Section ======= -->
             <section id="partner" class="partner">
 
                 <div class="container" data-aos="fade-up">
@@ -322,13 +298,15 @@
 
                     <div class="clients-slider swiper ">
                         <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide"><img src="assets/img/clients/strathmore.png" class="img-fluid" alt=""></div>
                             <div class="swiper-slide"><img src="assets/img/clients/ilab.png" class="img-fluid" alt=""></div>
-                            <div class="swiper-slide"><img src="assets/img/clients/strathmore.png" class="img-fluid" alt=""></div>
                             <div class="swiper-slide"><img src="assets/img/clients/ilab.png" class="img-fluid" alt=""></div>
 
                         </div>
                         <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+                    <br><br>
+                    <div class="col-lg-12 text-center mb-4">
+                        <a href="#" class="btn border-0 explore btn btn-primary" style="color:#fff;">Explore more partners</a>
                     </div>
                 </div>
 
@@ -461,9 +439,10 @@
                 <div class="container">
                     <div class="row gy-4">
                         <div class="col-lg-5 col-md-12 footer-info">
-                            <a href="index.html" class="logo d-flex align-items-center">
-                                <span>Heriwork</span>
+                            <a href="{{url('/')}}" class="logo d-flex align-items-center">
+                                <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
                             </a>
+
                             <p>Expanding workstudy job opportunities for underprivileged college students to generate some income for upkeep and fees .</p>
                             <div class="social-links mt-3">
                                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>

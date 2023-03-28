@@ -14,9 +14,8 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="{{url('/')}}" class="logo d-flex align-items-center">
-                <span style="color:#ef6603;">Heriwork</span>
+                <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
             </a>
-
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
@@ -38,7 +37,7 @@
                             <div class=" card-body">
                                 <h5 class="card-title "> <b>Join as Student</b> </h5>
                                 <p class="card-text">I am a student in need of financial support and looking for paid opportunities to help fund my college education</p>
-                                <a href="{{url('student_details')}}" class="btn btn-success">Proceed as Student</a>
+                                <a href="{{url('student-detail')}}" class="btn btn-success">Proceed as Student</a>
 
                             </div>
                         </div>
@@ -48,7 +47,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><b>Join as Impact Employer</b></h5>
                                 <p class="card-text">I am an employer interested in providing paid workstudy jobs or internship opportunities to deserving college students </p>
-                                <a href="{{url('employer_details')}}" class="btn btn-success">Proceed as Employer</a>
+                                <a href="{{url('employer-details')}}" class="btn btn-success">Proceed as Employer</a>
                             </div>
                         </div>
                     </div>
@@ -62,16 +61,16 @@
     </section>
     @include('footer-links')
     <div class="row">
-              <div class="col-md-6 border-right" style="border-right: 2px solid red;">
-                <h2>Left Column</h2>
-                <p>Some text here...</p>
-              </div>
-              <div class="col-md-6">
-                <h2>Right Column</h2>
-                <p>Some text here...</p>
-              </div>
-            </div>
-    
+        <div class="col-md-6 border-right" style="border-right: 2px solid red;">
+            <h2>Left Column</h2>
+            <p>Some text here...</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Right Column</h2>
+            <p>Some text here...</p>
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('internship_jobs', function (Blueprint $table) {
             $table->id();
             // add other columns
+        
             $table->string('ijob_title');
             $table->string('ijob_category');
 

@@ -124,19 +124,50 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="{{url('/')}}" class="logo d-flex align-items-center">
-                <span style="color:#ef6603;">Heriwork</span>
+                <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li> &nbsp; &nbsp;
-                    <!-- <li><a class="nav-link scrollto active" href="{{url('/')}}"><i class="bi bi-person-circle" style="font-size: larger;font-weight:400;"></i></a></li> -->
-                    <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
-          <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
-                    <!-- <li><a class="nav-link scrollto active" href="{{url('studentlogout')}}"><i class="bi bi-person-circle" style="font-size: larger;font-weight:400;"></i>logout</a></li> -->
-                    <li> <a href="{{url('studentlogin')}}"> <img src="{{url('assets/img/about.jpg')}}" alt="Avatar" class="avatar nav-link scrollto"></a>
-                    </li>
-                    <li class="btn"><a href="{{url('studentlogout')}}">Logout</a></li>
+                    <li class="nav-item dropdown pe-3">
 
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle rounded-circle"></i>
+                            <span class="d-none d-md-block dropdown-toggle ps-2">{{$data->student_first_name}}</span>
+                        </a><!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            <li class="dropdown-header" style="text-align:center;align-items:center; justify-content:center;">
+                                <img src="{{url('assets/img/team/team-1.jpg')}}" style="width: 50%; height: auto; " alt="Your Image" class="rounded-circle">
+                                <br>
+                                <h6 class="text-black" style="text-align: center; font-weight:bold; font-size:larger; ">{{$data->student_first_name}}
+                                </h6>
+                                <span>Freelancer</span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center " style="font-size: large; font-weight:bold; color:rgba(5, 17, 93, 0.9); " href="#">
+                                    <i class="bi bi-gear fa-3x" style="color:rgba(5, 17, 93, 0.9); font-weight:bold;"></i>&nbsp;&nbsp;
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" style="font-size: large; font-weight:bold; color:rgba(5, 17, 93, 0.9); " href="{{url('studentlogout')}}">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+
+                        </ul><!-- End Profile Dropdown Items -->
+                    </li><!-- End Profile Nav -->
                 </ul>
 
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -339,11 +370,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 pl-5 mt-5">
+            <div class="col-lg-4 ps-5 mt-5">
                 <div class="row mt-5">
                     <div class="card mb-3 border">
                         <div class="card-body p-0 m-0">
-                            <div class="row  pl-3 pr-3 pt-4">
+                            <div class="row   ps-3 pe-3 pt-4">
                                 <div class="col-lg-12 mb-3">
 
                                     <a href="#">

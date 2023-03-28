@@ -222,7 +222,7 @@ section {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: rgba(5, 17, 93, 0.9);
+  color: #013289;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -238,12 +238,12 @@ section {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: rgba(5, 17, 93, 0.9);
+  color: #4154f1;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: rgba(5, 17, 93, 0.9);
+  background: #4154f1;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -253,7 +253,7 @@ section {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: rgba(5, 17, 93, 0.9);
+  background: #5969f3;
 }
 
 .navbar .dropdown ul {
@@ -310,6 +310,16 @@ section {
   top: 0;
   left: 100%;
   visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
 }
 
 @media (max-width: 1366px) {

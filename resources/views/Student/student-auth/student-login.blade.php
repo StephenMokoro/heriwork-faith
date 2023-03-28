@@ -149,7 +149,7 @@
 
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary"> Login </button>
-                                        <p class="float-right mt-2"> Don't have an account? <a href="{{ url('student_details')}}" class="" style="color:#ef6603;">Signup </a> </p>
+                                        <p class="float-right mt-2"> Don't have an account? <a href="{{ url('student-detail')}}" class="" style="color:#ef6603;">Signup </a> </p>
                                     </div>
                                 </form>
                                 <!-- <form action="" method="POST" class="">

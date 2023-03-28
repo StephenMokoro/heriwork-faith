@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Student;
@@ -7,6 +8,7 @@ use App\Models\Country;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
+
 class StudentController extends Controller
 {
     public function index()
@@ -17,6 +19,7 @@ class StudentController extends Controller
 
     public function dataAjax(Request $request)
     {
+        //school selection
         $data = [];
 
         if ($request->has('q')) {
@@ -34,6 +37,7 @@ class StudentController extends Controller
 
     public function countryList(Request $request)
     {
+        //country selrction
         $data = [];
 
         if ($request->has('q')) {
@@ -110,9 +114,6 @@ class StudentController extends Controller
         $student->fill($validatedData);
         $request->session()->put('student', $student);
         return redirect()->route('student.password_details.post');
-
-       
-
     }
 
     public function PasswordDetail(Request $request)
@@ -143,10 +144,12 @@ class StudentController extends Controller
         $student->save();
 
         if ($student) {
-            Alert::success('Registration successful', 'You have successfully registered.')->persistent(true);
-
+            Alert::success('Partnered successful', 'You have registered successfully')
+            ->persistent(true)
+            ->autoClose(5000);
             // Redirect the user to the login page with a success message
-            return redirect('studentlogin')->with('success', 'You have successfully registered.');
+            return redirect('student-login')->with('success', 'You will be contacted as soon as possible.');
+      
         } else {
             return back();
         }
@@ -169,7 +172,7 @@ class StudentController extends Controller
         $student = Student::where('student_email', '=', $request->student_email)->first();
         if ($student) {
             $request->session()->put('loginId', $student->student_auto_id);
-            return redirect('/studentdashboard');
+            return redirect('/student-dashboard');
         } else {
             return back()->with('fail', 'This password not correct');
         }
@@ -182,7 +185,7 @@ class StudentController extends Controller
         if (Session::has('loginId')) {
 
             $data = Student::where('student_auto_id', Session::get('loginId'))->first();
-
+            ///checks current time
             $current_time = date('H:i:s');
             $greeting = '';
             if ($current_time >= '00:00:00' && $current_time < '12:00:00') {
@@ -197,23 +200,14 @@ class StudentController extends Controller
 
             return view('student.student-home', compact('data'));
         }
-
-
     }
 
 
-    // //     // session(['greeting'=> $greeting]);
-    // }
-
-    // // // }else {
-    // // //     return  view('student.student_details.student_login);
-    // // // }
 
 
     public function logout(Request $request)
     {
         $request->session()->forget('loginId');
-        return redirect('studentlogin')->with('success', 'Logged out successfully.');
+        return redirect('student-login')->with('success', 'Logged out successfully.');
     }
-    
 }

@@ -12,13 +12,40 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('partners', function (Blueprint $table) {
-            $table->id();
-            $table->string('company_name');
-            $table->string('company_email');
-            $table->string('company_category');
-            $table->string('social_link');
-            $table->string('social_url');
+            // $table->id();
+            // $table->string('partner_first_name');
+            // $table->string('partner_last_name');
+            // $table->string('partner_phone');
 
+            // $table->string('partner_email');
+            // $table->string('partner_as');
+            // $table->string('company_name');
+            // $table->string('company_type');
+            // $table->string('partner_email');
+
+
+            // $table->string('partner_email');
+
+            $table->id('partner_auto_id');
+            $table->string('partner_first_name');
+            $table->string('partner_last_name');
+            $table->string('partner_email');
+            $table->string('partner_phone');
+            $table->string('partner_type')->default();
+            $table->string('company_name');
+            $table->string('company_type');
+            $table->string('company_size');
+            $table->string('role');
+            $table->string('country');
+
+
+
+            $table->string('company_address');
+            $table->string('brief_desc');
+            $table->string('contact')->nullable();
+            $table->string('web_link');
+            $table->string('hear_us');
+            $table->string('add_note')->nullable();
             $table->timestamps();
         
         });

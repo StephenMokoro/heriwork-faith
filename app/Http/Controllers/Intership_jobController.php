@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Auth;
 class Intership_jobController extends Controller
 {
     //
-    public function show()
+    //
+    public function skill()
     {
         $student = Skill::all();
         return view('employer.internship.create-step-three', compact('student'));
@@ -268,19 +269,21 @@ class Intership_jobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function postCreateStepSix(Request $request)
-    {
-        $product = $request->session()->get('product');
+{
+    $product = $request->session()->get('product');
 
-        $request->session()->forget('product');
-        if ($product) {
-            $product->save();
-            Alert::success('Success', 'You\'ve Successfully posted');
-            return view('employer.employer-dashboard');
-        } else {
-            Alert::error('Failed', 'Registration failed');
-            return back();
-        }
+    $request->session()->forget('product');
+    if ($product) {
+
+        $product->save();
+        Alert::success('Success', 'You\'ve Successfully posted');
+        return view('employer.employer-dashboard');
+    } else {
+        Alert::error('Failed', 'Registration failed');
+        return back();
     }
+}
+
 
     //    load more functionality
 
@@ -307,7 +310,10 @@ class Intership_jobController extends Controller
                     
        
                 <div class="col-lg-12 mb-3">
-                  <a href="#"  style="text-decoration:none;">
+                <a href="' . url('edit-student/' . $row->id) . '"><i class="bi bi-pencil-square"></i></a>
+                <a href="' . url('delete-student/' . $row->id) . '"><i class="bi bi-trash"></i>
+                </a>
+             <a href="#"  style="text-decoration:none;">
                     <h5 class="card-title text-black line-height" style="font-weight: 600;  style="text-decoration:none;">' . $row->ijob_title . '</h5>
                   </a>
                 </div>
@@ -361,5 +367,25 @@ class Intership_jobController extends Controller
             }
             echo $output;
         }
+    }
+    public function edit($id)
+    {
+        $student = internship_job::find($id);
+        return view('Employer.internship.edit', compact('student'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $student = internship_job::find($id);
+        $student->ijob_title = $request->input('ijob_title');
+        $student->intern_skills = $request->input('intern_skills');
+        $student->update();
+        return redirect()->back()->with('status', 'Student Updated Successfully');
+    }
+    public function destroy($id)
+    {
+        $student = internship_job::find($id);
+        $student->delete();
+        return redirect()->back()->with('status', 'Student Deleted Successfully');
     }
 }

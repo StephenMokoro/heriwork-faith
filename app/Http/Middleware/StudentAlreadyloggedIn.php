@@ -13,9 +13,10 @@ class StudentAlreadyloggedIn
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+    
     public function handle(Request $request, Closure $next): Response
     {
-        if(Session()->has('loginId') && url('studentlogin')==$request->url()||url('student_details') ==$request->url()){
+        if(Session()->has('loginId') && url('student-login')==$request->url()||url('student_details') ==$request->url()){
           return back();
         }
         return $next($request);

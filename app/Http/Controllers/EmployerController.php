@@ -100,7 +100,7 @@ class EmployerController extends Controller
             Alert::success('Registration successful', 'You have successfully registered.')->persistent(true);
 
             // Redirect the user to the login page with a success message
-            return redirect('employerlogin')->with('success', 'You have successfully registered.');
+            return redirect('employer-login')->with('success', 'You have successfully registered.');
         } else {
             // Redirect the user back to the form with an error message
             return back()->with('error', 'Registration failed.');
@@ -162,7 +162,9 @@ class EmployerController extends Controller
         if ($employer) {
             // Use Laravel's built-in check method to compare the submitted password to the hashed password in the database
             if (Hash::check($request->password, $employer->password)) {
-                Auth::login($employer); // Log the user in
+                Auth::login($employer);
+
+                // Log the user in
                 $request->session()->put('loginId', $employer->employer_auto_id);
                 return redirect()->route('dashboard');
             } else {
@@ -180,13 +182,13 @@ class EmployerController extends Controller
 
             $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
         }
-        return view('Employer.employer-dashboard', compact('data'));
+        return view('Employer.employer-home', compact('data'));
     }
 
 
     public function logout(Request $request)
     {
         $request->session()->forget('loginId');
-        return redirect('/employerlogin')->with('success', 'Logged out successfully.');
+        return redirect('/employer-login')->with('success', 'Logged out successfully.');
     }
 }
