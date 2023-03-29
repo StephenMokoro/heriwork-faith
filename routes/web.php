@@ -114,7 +114,7 @@ Route::get('delete-student/{id}', [Intership_jobController::class, 'destroy']);
 Route::get('partner-details', [PartnerController::class, 'index'])->name('internship.index');
 Route::get('partner-detals', [PartnerController::class, 'createStepOne'])->name('partner.create.step.one');
 Route::post('partner-detail', [PartnerController::class, 'postStepOne'])->name('partner.post.step.one');
-Route::get('country-list',    [PartnerController::class, 'country'])->name('partner.create.step.one');
+Route::get('country-list',    [PartnerController::class, 'country']);
 
 Route::get('partner-as', [PartnerController::class, 'createStepTwo'])->name('partner.create.step.two');
 Route::post('partner-as',  [PartnerController::class, 'postStepTwo'])->name('partner.post.step.two');

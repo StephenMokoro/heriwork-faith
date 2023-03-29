@@ -12,10 +12,10 @@
               <div class="col-lg-12 pl-5 pr-5 mb-3">
                 <p class="text-secondary">3/5 &nbsp; &nbsp;</p>
                 <a href="#" style="text-decoration:none;">
-                  <h3 class="card-title  line-height" style="color:#05115d;">Thank you for your interest. We kindly request that you fill out the form below<b></b></h3>
+                  <h3 class="card-title  line-height" style="color:#05115d;">Thank you for expressing your interest. We kindly request that you fill in the form provided<b></b></h3>
                 </a>
                 <br>
-                <p class="card-text line-">This form will allow us to gather the necessary information to ensure a smooth and successful participation for your organization. </p>
+                <p class="card-text line-">This form will allow us to gather the necessary information to ensure a smooth and successful partnership with your organization. </p>
 
               </div>
             </div>

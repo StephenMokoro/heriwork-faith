@@ -15,7 +15,7 @@
                   <h3 class="card-title  line-height" style="color:#05115d;">Please provide any additional information<b></b></h3>
                 </a>
                 <br>
-                <p class="card-text line-">Thank you for being in touch.If you have any additional information to share .Our team will contact you as soon as possible </p>
+                <p class="card-text line-">Thank you for being in touch. Please provide any additional information. Our team will contact you as soon as possible. </p>
 
               </div>
             </div>
@@ -55,10 +55,10 @@
 
 
                   <div class="col-lg-12 text-end">
-                    <a href="" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
+                    <a href="{{route('partner.create.step.three')}}}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
                     &nbsp;&nbsp;
 
-                    <button type="submit" class="btn rounded-pill btn-success"> Next: Submit</button>
+                    <button type="submit" class="btn rounded-pill btn-success"> Next: Hear about us</button>
                   </div>
                 </div>
         </form>

@@ -16,7 +16,7 @@
                                     <h3 class="card-title  line-height" style="color:#05115d;"><b>How would you like to partner with us?</b></h3>
                                 </a>
                                 <br>
-                                <p class="card-text line-">We are interested in exploring potential partnership opportunities with your organization, and we would like to know if you would prefer to partner with us as an individual or as a company. </p>
+                                <p class="card-text line-">We are interested in exploring potential partnership opportunities with your organization, and we would like to know if you would prefer to partner with us as an individual or as a organization. </p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                         <select onchange="window.location.href=this.value;" class="form-control form-control-lg" name="partner_type">
                                             <option value=""></option>
                                             <option value="{{url('partner-account')}}">Individual</option>
-                                            <option value="{{url('company-account')}}">Company</option>
+                                            <option value="{{url('company-account')}}">Organization</option>
                                         </select>
                                         <input type="hidden" name="partner_type" value="{{ old('partner_type') ?? $partner->partner_type ?? '' }}">
 
@@ -60,7 +60,7 @@
 
 
                                     <div class="col-lg-12 text-end">
-                                        <a href="{{ route('internship.create.step.one') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
+                                        <a href="{{ route('partner.create.step.one') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
                                         &nbsp;&nbsp;
 
                                     </div>

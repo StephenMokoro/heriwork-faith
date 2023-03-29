@@ -30,10 +30,10 @@
               <div class="col-lg-12 pl-5 pr-5 mb-3">
                 <p class="text-secondary">1/5 &nbsp; &nbsp;Collaboration</p>
                 <a href="#">
-                  <h3 class="card-title  line-height" style="color:#05115d;"><b>Thank you for your interest in partnering with us. </b></h3>
+                  <h3 class="card-title  line-height" style="color:#05115d;"><b>Thank you for expressing your interest in partnering with us </b></h3>
                 </a>
                 <br>
-                <p class="card-text line-">We are excited to collaborate with you to create programs that align with your organization's goals and principles. These programs will aim to assist young individuals in your community. </p>
+                <p class="card-text line-">We are excited to collaborate with you to create programs that align with your organization's goals and principles. These programs aim at assisting young individuals in our community. </p>
               </div>
             </div>
           </div>

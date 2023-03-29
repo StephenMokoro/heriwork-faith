@@ -32,18 +32,18 @@ return new class extends Migration
             $table->string('partner_email');
             $table->string('partner_phone');
             $table->string('partner_type')->default();
-            $table->string('company_name');
-            $table->string('company_type');
-            $table->string('company_size');
-            $table->string('role');
+            $table->string('company_name')->nullable();
+            $table->string('company_type')->nullable();
+            $table->string('company_size')->nullable();
+            $table->string('role')->nullable();
             $table->string('country');
 
 
 
-            $table->string('company_address');
-            $table->string('brief_desc');
+            $table->string('company_address')->nullable();
+            $table->string('brief_desc')->nullable();
             $table->string('contact')->nullable();
-            $table->string('web_link');
+            $table->string('web_link')->nullable();
             $table->string('hear_us');
             $table->string('add_note')->nullable();
             $table->timestamps();

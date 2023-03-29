@@ -1,9 +1,9 @@
 @extends('Employer.layout.app')
 @section('content')
 @if (session('success'))
-    <script>
-        swal("Partner successfully!", "{{ session('success') }}", "success");
-    </script>
+<script>
+    swal("Partner successfully!", "{{ session('success') }}", "success");
+</script>
 @endif
 <div id="wrapper" class="toggle">
     <div class="container">
@@ -15,11 +15,13 @@
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
                                 <p class="text-secondary">5/5 &nbsp; &nbsp; Hear about us</p>
                                 <a href="#">
-                                    <h3 class="card-title  line-height" style="color:#05115d;"><b><b>Referral</b></b></h3>
+                                    <h3 class="card-title  line-height" style="color:#05115d;"><b><b>How did you hear about us?</b></b></h3>
                                 </a>
                                 <br>
 
-                                <p class="card-text line-">Please let us know how you heard about us</p>
+                                <p class="card-text line-">We are committed to reaching out to a wide scope of users who may benefit from our platform.
+                                    Sharing how you heard about us would help a great deal in attainment of this goal.
+                                    Please let us know how you heard about us</p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +30,7 @@
             <div class="col-lg-1 border-left">
                 <div class="border-bottom d-none d-md-none d-sm-block"></div>
             </div>
-            <div class="col-lg-6 pl-0 pr-0 mb-5">
+            <div class="col-lg-6 ps-0 pe-0 mb-5">
 
                 <form action="{{ route('partner.post.step.five') }}" method="POST">
                     @csrf
@@ -51,7 +53,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="text-black" style="font-weight: 600;">How did you find out about us<span style="color:red;">*</span></label>
+                                        <label class="text-black" style="font-weight: 600;">Select an option<span style="color:red;">*</span></label>
 
                                         <select class="form-control form-control-lg" name="hear_us">
                                             <option value=""></option>
@@ -74,8 +76,7 @@
                     </div>
             </div>
             <div class="col-lg-12 text-end" style=" bottom:0">
-                <a href="{{ route('internship.create.step.three') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
-                &nbsp;&nbsp;
+              
 
                 <button type="submit" class="btn rounded-pill btn-success">Next:Submit</button>
 
