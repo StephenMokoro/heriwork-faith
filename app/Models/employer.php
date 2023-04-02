@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,21 +11,22 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
+
 class Employer extends  Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $primaryKey ='employer_auto_id';
-    protected $fillable =['employer_first_name','employer_gender','employer_last_name','password','employer_phone','personal_email','status','email_verified_at'];
-    
+    protected $primaryKey = 'employer_auto_id';
+    protected $fillable = [
+        'employer_first_name',        'is_email_verified', 'employer_gender', 'employer_last_name', 'password', 'employer_phone', 'personal_email', 'status', 'email_verified_at'
+    ];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     public function internship()
-{
-    return $this->hasMany(Internship_job::class);
-}
-
-
+    {
+        return $this->hasMany(Internship_job::class);
+    }
 }

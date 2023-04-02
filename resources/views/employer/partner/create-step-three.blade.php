@@ -45,11 +45,11 @@
                   @endif
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your company name<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->company_name ?? '' }}"  name="company_name">
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->company_name ?? '' }}"  name="company_name">
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Type of business<span style="color:red;">*</span></label>
-                  <select  id="" class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->company_type ?? '' }}"  name="company_type">
+                  <select  id="" class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->company_type ?? '' }}"  name="company_type">
                     <option value="Accounting/Finance">Accounting/Finance</option>
                     <option value="Advertising/Public Relations">Advertising/Public Relations</option>
                     <option value="Aerospace/Aviation">Aerospace/Aviation</option>
@@ -78,12 +78,12 @@
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Designation/ Role<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="address" placeholder="" value="{{ $product->role ?? '' }}"  name="role">
+                    <input class="form-control form-control-lg" type="address" placeholder="" value="{{ $partner->role ?? '' }}"  name="role">
 
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Company Size (Employees)<span style="color:red;">*</span></label>
-                    <select  id="" class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->company_size ?? '' }}"  name="company_size">
+                    <select  id="" class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->company_size ?? '' }}"  name="company_size">
                     <option value="0-1">0-1</option>
                     <option value="2-10">2-10</option>
                     <option value="11-50">11-50</option>
@@ -98,18 +98,18 @@
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your physical address<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="address" placeholder="" value="{{ $product->company_address ?? '' }}"  name="company_address">
+                    <input class="form-control form-control-lg" type="address" placeholder="" value="{{ $partner->company_address ?? '' }}"  name="company_address">
 
                   </div>
 
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Brief description of your company<span style="color:red;">*</span></label>
-                    <textarea name="brief_desc" class="form-control form-control-lg" id="" value="{{ $product->brief_desc ?? '' }}"  cols="20" rows="5"></textarea>
+                    <textarea name="brief_desc" class="form-control form-control-lg" id="" value="{{ $partner->brief_desc ?? '' }}"  cols="20" rows="5"></textarea>
                   </div>
 
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your website link<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="url" placeholder="" value="{{ $product->web_link ?? '' }}"  name="web_link">
+                    <input class="form-control form-control-lg" type="url" placeholder="" value="{{ $partner->web_link ?? '' }}"  name="web_link">
                   </div>
 
                   <div class="col-lg-12 text-end">

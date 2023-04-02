@@ -44,12 +44,12 @@
                   @endif
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Please add a secondary contact person (optional) <span style="color:red">❤</span> </label>
-                    <input class="form-control form-control-lg" type="tel" placeholder="" value="" name="contact">
+                    <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $partner->web_link ?? '' }}" name="contact">
                   </div>
                   <br>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">If you have any additional information or details that you would like to share with us, you can add a note (optional). <span style="color:red">❤</span></label>
-                    <textarea name="add_note" class="form-control form-control-lg" id="" cols="20" rows="5"></textarea>
+                    <textarea name="add_note" class="form-control form-control-lg" id="" cols="20" rows="5" value="{{ $partner->add_note ?? '' }}"></textarea>
                   </div>
 
 

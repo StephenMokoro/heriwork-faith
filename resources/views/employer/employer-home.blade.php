@@ -56,7 +56,7 @@
           <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
               <i class="bi bi-person-circle rounded-circle"></i>
-              <span class="d-none d-md-block dropdown-toggle ps-2">{{$data->employer_first_name}}
+              <span class="d-none d-md-block dropdown-toggle ps-2">Faith
               </span>
             </a><!-- End Profile Iamge Icon -->
 
@@ -92,7 +92,7 @@
       <br><br>
       <div class="  border pe-5 ps-5  pb-5 pt-5  rounded-5">
         <h3 style="text-align:center; color:black; font-weight:bolder;">
-          Dear {{$data->employer_first_name}}
+        Dear Faith
         </h3>
 
         <h5 style=" color:black; font-weight:bolder;justify-content:center;">

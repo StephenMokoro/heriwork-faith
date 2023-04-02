@@ -44,23 +44,23 @@
 
                   <div class="form-group">
                     <label for=""class="text-black" style="font-weight: 600;">What is your first name? <span>*</span> </label>
-                    <input type="text" class="form-control" placeholder="" name="student_first_name">
+                    <input type="text" class="form-control" placeholder="" name="student_first_name" value="{{ $student->student_first_name ?? '' }}">
                   </div>
 
                   <div class="form-group">
                     <label for="" class="text-black" style="font-weight: 600;">What is your last name? <span>*</span></label>
-                    <input type="text" class="form-control" placeholder="" name="student_last_name">
+                    <input type="text" class="form-control" placeholder="" name="student_last_name" value="{{ $student->student_last_name ?? '' }}">
                   </div>
 
                   <div class="form-group">
                     <label for="" class="text-black" style="font-weight: 600;">What is your school email? <span>*</span></label>
-                    <input type="email" class="form-control" placeholder="" name="student_email">
+                    <input type="email" class="form-control" placeholder="" name="student_email" value="{{ $student->student_email ?? '' }}">
                     <small id="email" class="form-text text-success">This is the email your university gave you, often ends with <b>.edu, .ac.ke</b> etc</small>
                   </div>
 
                   <div class="form-group">
                     <label for="" class="text-black" style="font-weight: 600;">What is your phone number <span>*</span></label>
-                    <input class="form-control form-control-lg" type="tel" placeholder=""  name="student_phone">
+                    <input class="form-control form-control-lg" type="tel" placeholder=""  name="student_phone" value="{{ $student->student_phone ?? '' }}">
 
                   </div>
 
@@ -96,7 +96,7 @@
 
                 </div>
                 <div class="col-lg-12 text-end">
-                  <a href="{{ url('student_country') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
+                  <a href="{{ url('student-country') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
                   <button type="submit" class="btn rounded-pill btn-success">Next: Secure Your Account</button>
                 </div>
               </div>

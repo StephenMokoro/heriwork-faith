@@ -134,7 +134,7 @@
 
   $('.itemName').select2({
 
-    placeholder: 'Select an item',
+    placeholder: 'Search for school',
     ajax: {
       url: 'student-details',
       dataType: 'json',

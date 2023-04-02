@@ -7,6 +7,8 @@ use App\Http\Controllers\Intership_jobController;
 use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ForgotPasswordController;
+
 use App\Models\Internship_job;
 
 /*
@@ -111,7 +113,7 @@ Route::get('delete-student/{id}', [Intership_jobController::class, 'destroy']);
 
 //partner with us
 
-Route::get('partner-details', [PartnerController::class, 'index'])->name('internship.index');
+Route::get('partner-details', [PartnerController::class, 'index'])->name('index');
 Route::get('partner-detals', [PartnerController::class, 'createStepOne'])->name('partner.create.step.one');
 Route::post('partner-detail', [PartnerController::class, 'postStepOne'])->name('partner.post.step.one');
 Route::get('country-list',    [PartnerController::class, 'country']);
@@ -130,5 +132,15 @@ Route::post('partner-account',  [PartnerController::class, 'postStepFive'])->nam
 
 Route::get('employer-login', [EmployerController::class, 'login'])->middleware('alreadyloggedin')->name('login');
 Route::post('login_user', [EmployerController::class, 'loginUser'])->name('login-user');
-Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
+// Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 Route::get('/logout', [EmployerController::class, 'logout'])->name('employer.logout');
+
+  
+Route::get('dashboard', [EmployerController::class, 'dashboard'])->middleware( 'is_verify_email')->name('dashboard'); 
+Route::get('account/verify/{token}', [EmployerController::class, 'verifyAccount'])->name('user.verify'); 
+
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

@@ -66,20 +66,20 @@
 
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your first name<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->partner_first_name ?? '' }}" name="partner_first_name">
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->partner_first_name ?? '' }}" name="partner_first_name">
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your last name<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $product->partner_last_name ?? '' }}" name="partner_last_name">
+                    <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->partner_last_name ?? '' }}" name="partner_last_name">
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your email address<span style="color:red;">*</span></label>
-                    <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $product->partner_email ?? '' }}" name="partner_email">
+                    <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $partner->partner_email ?? '' }}" name="partner_email">
                   </div>
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your phone number<span style="color:red;">*</span></label>
 
-                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $product->partner_phone ?? '' }}" placeholder="712219585" name="partner_phone">
+                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $partner->partner_phone ?? '' }}" placeholder="712219585" name="partner_phone">
 
                   </div>
                   <br>

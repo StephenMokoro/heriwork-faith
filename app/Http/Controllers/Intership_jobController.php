@@ -249,6 +249,15 @@ class Intership_jobController extends Controller
         return redirect()->route('internship.create.step.six');
     }
 
+
+    /**  
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+
     /**  
      * Post Request to store step1 info in session
      *
@@ -269,20 +278,28 @@ class Intership_jobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function postCreateStepSix(Request $request)
-{
-    $product = $request->session()->get('product');
+    {
+        $product = $request->session()->get('product');
 
-    $request->session()->forget('product');
-    if ($product) {
+        $request->session()->forget('product');
 
-        $product->save();
-        Alert::success('Success', 'You\'ve Successfully posted');
-        return view('employer.employer-dashboard');
-    } else {
-        Alert::error('Failed', 'Registration failed');
-        return back();
+        if ($product) {
+            if (auth()->check()) { // Make sure the user is authenticated
+                $employer = auth()->user()->employer; // Get the authenticated employer
+                $product->employer_auto_id = $employer->id; // Assign the employer's id to the product's employer_id attribute
+                $product->save();
+                Alert::success('Success', 'You\'ve Successfully posted');
+                return view('employer.employer-dashboard');
+            } else {
+                Alert::error('Failed', 'You need to log in as an employer to post a job');
+                return redirect()->route('login'); // Redirect the user to the login page for employers
+            }
+        } else {
+            Alert::error('Failed', 'Registration failed');
+            return back();
+        }
     }
-}
+
 
 
     //    load more functionality
@@ -293,6 +310,8 @@ class Intership_jobController extends Controller
             if ($request->id > 0) {
                 $data = DB::table('internship_jobs')
                     ->where('id', '<', $request->id)
+                    ->where('employer_auto_id', Auth::user()->id)
+
                     ->orderBy('id', 'DESC')
                     ->limit(2)
                     ->get();

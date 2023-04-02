@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string('personal_email');
             $table->string('employer_gender');
             $table->boolean('status')->default(0);
+            $table->boolean('is_email_verified')->default(0);
+
             $table->timestamp('email_verified_at')->nullable();
+
 
             $table->timestamps();
         });

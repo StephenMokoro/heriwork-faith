@@ -52,7 +52,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="text-center mt-4">
                     <p class="text-black">Already have an account ? <a href="{{url('signin')}}">Sign In</a> </p>
                 </div>
@@ -60,17 +59,7 @@
         </div>
     </section>
     @include('footer-links')
-    <div class="row">
-        <div class="col-md-6 border-right" style="border-right: 2px solid red;">
-            <h2>Left Column</h2>
-            <p>Some text here...</p>
-        </div>
-        <div class="col-md-6">
-            <h2>Right Column</h2>
-            <p>Some text here...</p>
-        </div>
-    </div>
-
+    
 </body>
 
 </html>

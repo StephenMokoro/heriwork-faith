@@ -46,6 +46,10 @@
                                                 @endif
                                                 <!-- Password input-->
                                                 <div class="form-group">
+                                                    <label class="text-black" style="font-weight: 600;">Enter your email<span>*</span></label>
+                                                    <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $employer->personal_email ?? '' }}" name="personal_email">
+                                                </div>
+                                                <div class="form-group">
                                                     <label class="col-md-12 control-label" for="passwordinput">
                                                         Password
                                                     </label>

@@ -102,7 +102,12 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
 
-
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="{{route('employer.logout')}}">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
                     <!-- <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
           <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li> -->
 

@@ -44,7 +44,7 @@
             <div class="card rounded-3 border p-3">
               <div class="card-body">
                 <h5 class="card-title"> <b>For Students</b> </h5>
-                <p class="card-text">We always work hard to help <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModal1Toggle" role="button"></i></a> to find paid work opportunities</p>
+                <p class="card-text">We always work hard to help <a href="#" style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModal1Toggle" role="button"></i></a> to find paid work opportunities</p>
                 <a href="{{url('student-login')}}" class="btn btn-success">Continue as Student</a>
 
               </div>
@@ -54,7 +54,7 @@
             <div class="card rounded-3  border p-3">
               <div class="card-body">
                 <h5 class="card-title"><b>For Impact Employers</b></h5>
-                <p class="card-text">Every time you engage <a href="#" class="text-success"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModalToggle" role="button"></i> </a> in paid work, you give them a future and a hope. </p>
+                <p class="card-text">Every time you engage <a href="#" style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"> deserving students <i class="bi bi-arrow-up-right-circle " data-bs-toggle="modal" href="#exampleModalToggle" role="button"></i> </a> in paid work, you give them a future and a hope. </p>
                 <a href="{{url ('employer-login')}}" class="btn btn-success">Continue as Employer</a>
               </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="col-md-12">
 
               <h4 style="color: black; font-weight:bold;">Deserving student </h4>
-              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is an underprivileged college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities and have demonstrated leadership skills or held leadership positions in school or community organizations. At Heriwork, we believe that these deserving students deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities and support these students in their academic and professional pursuits.</h6>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities. At Heriwork, we believe that these are students who deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities, support, training and mentoring these students in their academic and professional pursuits.</h6>
 
             </div>
           </div>
@@ -113,7 +113,7 @@
 
             <div class="col-md-12">
               <h4 style="color: black; font-weight:bold;">Deserving student </h4>
-              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is an underprivileged college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities and have demonstrated leadership skills or held leadership positions in school or community organizations. At Heriwork, we believe that these deserving students deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities and support these students in their academic and professional pursuits.</h6>
+              <h6 style="color: rgba(5, 17, 93, 0.9); font-weight:bold;">A deserving student in Heriwork is college student who is committed to their education and is facing financial difficulties. They are willing to put in the effort to balance work and study and have demonstrated academic excellence and/or a strong work ethic. These students have a clear career path or goal and can benefit from gaining real-world work experience in their chosen field. They are also eager to give back to their communities. At Heriwork, we believe that these are students who deserve access to paid work-study jobs and internship opportunities to generate income for their upkeep and fees. We are committed to collaborating with colleges and universities to expand these opportunities to support, train and mentor these students in their academic and professional pursuits.</h6>
 
             </div>
           </div>
