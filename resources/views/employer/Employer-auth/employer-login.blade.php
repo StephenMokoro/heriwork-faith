@@ -31,6 +31,7 @@
 </head>
 
 <body>
+  @include('sweetalert::alert')
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
@@ -93,11 +94,11 @@
                       <button type="submit" class="btn btn-primary"> Login </button>
                       <p class="float-right mt-2"> Don't have an account? <a href="{{ url('employer-details')}}" class="" style="color:#ef6603;">Signup </a> </p>
                       <label class="text-end">
-                            <a href="{{ route('forget.password.get') }}">Forgot  Password ?</a>
-                          </label>
-                    
+                        <a href="{{ route('forget.password.get') }}">Forgot Password ?</a>
+                      </label>
+
                     </div>
-                  
+
                   </div>
               </div>
               </form>

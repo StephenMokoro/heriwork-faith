@@ -15,6 +15,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Mime\Address;
 
+use Illuminate\Support\Facades\Redirect;
 
 class EmployerController extends Controller
 {
@@ -110,8 +111,12 @@ class EmployerController extends Controller
                 $message->to($validatedData['personal_email']);
                 $message->subject('Email Verification Mail');
             });
-
-            return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+            Alert::success('Registered successful', 'You have registered successfully')
+            ->persistent(true)
+            ->autoClose(5000);
+            // Redirect the user to the login page with a success message
+            return redirect('employer-login')->withSuccess('Great! An email has been sent to your account please verify before login in');
+      
         }
     }
 
@@ -129,46 +134,19 @@ class EmployerController extends Controller
 
 
 
-    /**
-     * Show the step One Form for creating a new product.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-
-    // public function createStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
-
-    //     return view('employer.employer_details.create-step-three', compact('product'));
-    // }
 
     /**
      * Show the step One Form for creating a new product.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function postCreateStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
 
-    //     $request->session()->forget('product');
-    //     if ($product) {
-    //         $product->save();
-    //         Alert::success('Success', 'You\'ve Successfully posted');
-    //         return redirect()->route('login-user');
-    //     } else {
-    //         Alert::error('Failed', 'Registration failed');
-    //         return back();
-    //     }
-    // }
     public function login()
     {
         return view('Employer.Employer-auth.employer-login');
     }
 
-    
+
     public function loginUser(Request $request)
 {
 
@@ -179,34 +157,51 @@ class EmployerController extends Controller
 
     $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
 
-    if ($employer ) {
-        Auth::login($employer);
-        $request->session()->put('loginId', $employer->employer_auto_id);
-        return view('Employer.employer-home');
+    if ($employer) {
+        if (Hash::check($request->password, $employer->password)) {
+            Auth::login($employer);
+            $request->session()->put('loginId', $employer->employer_auto_id);
+            return view('Employer.employer-home');
+        } else {
+            return back()->with('fail', 'Incorrect password');
+        }
     } else {
         return back()->with('fail', 'Invalid login details');
     }
 }
 
 
-
     public function dashboard()
     {
-        $data = array();
-        if (Session::has('loginId')) {
 
-            $data = Employer::where('employer_auto_id', Session::get('loginId'))->first();
+        // check if user logged in
+        if (Auth::check()) {
+            return view('dashboard');
         }
-        return view('Employer.employer-home', compact('data'));
+
+        return redirect::to("employer-login")->withSuccess('Oopps! You do not have access please login again');
     }
 
+
+    // ------------------- [ User logout function ] ----------------------
 
     public function logout(Request $request)
     {
-        $request->session()->forget('loginId');
-        return redirect('/employer-login')->with('success', 'Logged out successfully.');
-    }
+        Auth::guard('web')->logout();
 
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        $response = redirect()->to('/employer-login')->with('success', 'Logged out successfully.');
+
+        // Add headers to prevent caching of the page
+        $response->headers->set('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate');
+        $response->headers->set('Pragma', 'no-cache');
+        $response->headers->set('Expires', 'Fri, 01 Jan 1990 00:00:00 GMT');
+
+        return $response;
+    }
     public function verifyAccount($token)
     {
         $verifyUser = UserVerify::where('token', $token)->first();

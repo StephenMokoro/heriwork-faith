@@ -44,7 +44,7 @@
             <div class="card rounded-3 border p-3">
               <div class="card-body">
                 <h5 class="card-title"> <b>For Students</b> </h5>
-                <p class="card-text">We always work hard to help <a href="#" style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"> deserving students <i class="bi bi-arrow-up-right-circle" data-bs-toggle="modal" href="#exampleModal1Toggle" role="button"></i></a> to find paid work opportunities</p>
+                <p class="card-text">We always work hard to help <a  style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"  data-bs-toggle="modal" href="#Modal1Toggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle"></i></a> to find paid work opportunities</p>
                 <a href="{{url('student-login')}}" class="btn btn-success">Continue as Student</a>
 
               </div>
@@ -54,7 +54,7 @@
             <div class="card rounded-3  border p-3">
               <div class="card-body">
                 <h5 class="card-title"><b>For Impact Employers</b></h5>
-                <p class="card-text">Every time you engage <a href="#" style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"> deserving students <i class="bi bi-arrow-up-right-circle " data-bs-toggle="modal" href="#exampleModalToggle" role="button"></i> </a> in paid work, you give them a future and a hope. </p>
+                <p class="card-text">Every time you engage <a  style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;" data-bs-toggle="modal" href="#exampleModalToggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle " ></i> </a> in paid work, you give them a future and a hope. </p>
                 <a href="{{url ('employer-login')}}" class="btn btn-success">Continue as Employer</a>
               </div>
             </div>
@@ -98,12 +98,12 @@
       </div>
     </div>
   </div>
-
-  <div class="modal  fade" id="exampleModal1Toggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<!-- student modal -->
+  <div class="modal  fade" id="Modal1Toggle" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel" style="color:#ef6603; font-size:xx-large; font-weight:bolder;  justify-content:center; align-items:center;">Heriwork</h5>
+          <h5 class="modal-title" id="ModalToggleLabel" style="color:#ef6603; font-size:xx-large; font-weight:bolder;  justify-content:center; align-items:center;">Heriwork</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 

@@ -56,6 +56,7 @@ class Kernel extends HttpKernel
         'studentisLoggedIn' => \App\Http\Middleware\StudentAuthCheck::class,
         'studentalreadyloggedin' => \App\Http\Middleware\StudentAlreadyloggedIn::class,
         'is_verify_email' => \App\Http\Middleware\IsVerifyEmail::class,
+        'student_verify_email' => \App\Http\Middleware\Studentverifyemail::class,
 
         'isLoggedIn' => \App\Http\Middleware\AuthCheck::class,
         'alreadyloggedin' => \App\Http\Middleware\AlreadyloggedIn::class,

@@ -6,8 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
-
-class IsVerifyEmail
+class Studentverifyemail
 {
     /**
      * Handle an incoming request.
@@ -18,9 +17,9 @@ class IsVerifyEmail
     {
         $user = Auth::user();
 
-        if (!is_null($user) && !$user->is_email_verified) {
+        if (!is_null($user) && !$user->student_email_verified) {
             auth()->logout();
-            return redirect()->route('employer-login')
+            return redirect()->route('student-login')
                 ->with('message', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
 

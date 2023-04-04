@@ -54,15 +54,15 @@
 
                             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                                 <i class="bi bi-person-circle rounded-circle"></i>
-                                <span class="d-none d-md-block dropdown-toggle ps-2">{{$data->student_first_name}}</span>
+                                <span class="d-none d-md-block dropdown-toggle ps-2">{{ ucfirst(Auth()->user()->student_first_name) }}</span>
                             </a><!-- End Profile Iamge Icon -->
 
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                                 <li class="dropdown-header" style="text-align:center;align-items:center; justify-content:center;">
                                     <!-- <img src="{{url('assets/img/team/team-1.jpg')}}" style="width: 50%; height: auto; " alt="Your Image" class="rounded-circle">
                                     <br> -->
-                                    <h6 class="text-black" style="text-align: center; font-weight:bold; font-size:larger; ">{{$data->student_first_name}}
-                                    </h6>
+                                    
+                                    <h6 class="text-black" style="text-align: center; font-weight:bold; font-size:larger; ">{{ ucfirst(Auth()->user()->student_first_name) }}                                 </h6>
                                     <span>Student</span>
                                 </li>
                                 <li>
@@ -91,7 +91,7 @@
             <div class="container col-lg-7  ">
                 <div class="  border  pe-5 ps-5 pb-5 pt-5  rounded-5">
                     <h5 style="text-align:center; color:black; font-weight:bolder;">
-                        Dear {{$data->student_first_name}}
+                        Dear {{ ucfirst(Auth()->user()->student_first_name) }}
                     </h5>
                     <br>
                     <h5 style=" color:black; font-weight:bolder;"> We are thrilled to have you on board. As one of our first sign-ups. You will be among the first to access our platform when it launches. We are putting the final touches on our platform and are eager to share it with you soon.

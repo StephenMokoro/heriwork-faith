@@ -30,8 +30,8 @@
                             <li><a class="nav-link " href="{{url('partner-details')}}">Partner With Us</a></li>
 
                             <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                            <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('signin')}}">Sign In</a></li>
-                            <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li>
+                            <li><a class=" nav-link getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('signin')}}">Sign In</a></li>
+                            <li><a class="nav-link getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
@@ -48,7 +48,7 @@
                             <h1 data-aos="fade-up">Heriwork</h1>
                             <h4 data-aos="fade-up" class="text-black"> <b>Empowering students through work</b> </h4>
 
-                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. Enabling the students to support their education unlocks their future and a hope  </h2>
+                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. Enabling the students to support their education unlocks their future and a hope </h2>
 
                             <div data-aos="fade-up" data-aos-delay="600">
                                 <div class="text-center text-lg-start">
@@ -246,7 +246,7 @@
                                                 </a>
                                                 <p class="card-text line-height">It involves makes and maintains websites,handle the technical aspects of a website, including its performance (website speed) and capacity (the maximum amount of traffic the site could handle at a given time)...</p>
 
-                                                <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none" style="background-image:url('/assets/img/geography-kenya.jpeg');">
+                                                <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none">
                                                 </div>
 
                                                 <div class="bg-green pt-4 pb-2 ps-4 ps-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">

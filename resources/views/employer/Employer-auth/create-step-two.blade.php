@@ -49,6 +49,7 @@
                                                     <label class="text-black" style="font-weight: 600;">Enter your email<span>*</span></label>
                                                     <input class="form-control form-control-lg" type="email" placeholder="" value="{{ $employer->personal_email ?? '' }}" name="personal_email">
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label class="col-md-12 control-label" for="passwordinput">
                                                         Password
@@ -97,6 +98,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+
+
                                                 <div class="form-group">
                                                     <label class="col-md-12 control-label text-black" style="font-weight: 600;" for="passwordinput">
                                                         Confirm Password
@@ -271,25 +276,5 @@
                     });
             </script>
 
-            <!-- <script type="text/javascript">
-            $('.itemName').select2({
-                placeholder: ' Select a skill',
-                ajax: {
-                url: '/select2-autocomplete-ajax',
-                dataType: 'json',
-                delay: 250,
-                processResults: function(data) {
-                    return {
-                    results: $.map(data, function(item) {
-                        return {
-                        text: item.ijob_skills,
-                        id: item.id
-                        }
-                    })
-                    };
-                },
-                cache: true
-                }
-            });
-            </script> -->
+          
             @endsection

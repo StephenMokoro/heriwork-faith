@@ -1,64 +1,4 @@
-<!--  
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <span style="color:#ef6603;">Heriwork</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-          <li><a class="nav-link scrollto" href="#partner">Partner With Us</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            
-              <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            <li><a class="getstarted scrollto border text-black" style="background-color:#fff;color:#05115d; opacity: 0.9" href="{{url('employer_login')}}">Sign In</a></li>
-        <li><a class="getstarted scrollto" href="{{url('signup')}}">Sign Up</a></li>
-
-            </ul>
-         
-        
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header> -->
-
-
-<!-- End Header -->
-
-<!-- <div class="container">
-        <div class="row">
-            <div class="col-md-4-offset-4" style="margin-top:20px;">
-           <h3>Welcome to dashboard</h3>
-           <hr>
-           <table class="table">
-            <thead><th>name</th><th>Action</th></thead>
-            <tbody>
-                <tr>
-                  
-                </tr>
-
-                
-            </tbody>
-
-           </table>
-        </div>
-        </div>
-    </div> -->
-<!-- Credit card form -->
-<!--  -->
-<!-- Credit card form -->
-<!-- Vendor JS Files -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,14 +73,14 @@
 
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle rounded-circle"></i>
-                            <span class="d-none d-md-block dropdown-toggle ps-2">{{$data->student_first_name}}</span>
+                            <span class="d-none d-md-block dropdown-toggle ps-2">Njeri </span>
                         </a><!-- End Profile Iamge Icon -->
 
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                             <li class="dropdown-header" style="text-align:center;align-items:center; justify-content:center;">
                                 <img src="{{url('assets/img/team/team-1.jpg')}}" style="width: 50%; height: auto; " alt="Your Image" class="rounded-circle">
                                 <br>
-                                <h6 class="text-black" style="text-align: center; font-weight:bold; font-size:larger; ">{{$data->student_first_name}}
+                                <h6 class="text-black" style="text-align: center; font-weight:bold; font-size:larger; ">njeri
                                 </h6>
                                 <span>Freelancer</span>
                             </li>

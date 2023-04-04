@@ -40,8 +40,8 @@ Route::post('employer-details', [EmployerController::class, 'postStepOne'])->nam
 Route::get('account-details', [EmployerController::class, 'createStepTwo'])->name('employer.create.step.two');
 Route::post('account-details',  [EmployerController::class, 'postStepTwo'])->name('employer.post.step.two');
 Route::get('employer-login', [EmployerController::class, 'login'])->middleware('alreadyloggedin')->name('login');
-Route::post('login_user', [EmployerController::class, 'loginUser'])->name('login-user');
-Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
+Route::post('login-user', [EmployerController::class, 'loginUser'])->name('login-user');
+Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'is_verify_email'], 'isLoggedIn');
 Route::get('/logout', [EmployerController::class, 'logout'])->name('employer.logout');
 
 // Student login
@@ -61,6 +61,11 @@ Route::get('/student-login', [StudentController::class, 'login'])->middleware('s
 Route::post('/student-login', [StudentController::class, 'loginUser'])->name('student-login');
 Route::get('/student-dashboard', [StudentController::class, 'dashboard'])->middleware('studentisLoggedIn');
 Route::get('/studentlogout', [StudentController::class, 'logout']);
+Route::get('/student-dashboard', [StudentController::class, 'dashboard'])->middleware(['auth', 'student_verify_email'],'studentalreadyloggedin'); 
+Route::get('account/verify/{token}', [StudentController::class, 'verifyAccount'])->name('student.verify'); 
+Route::get('edit-student/{id}', [StudentController::class, 'edit'])->name('show');
+Route::put('update-student/{id}', [StudentController::class, 'update']);
+
 
 // internship
 
@@ -105,9 +110,9 @@ Route::view('profile', 'Employer.Employer-auth.employer-profile');
 Route::view('collegeadminlogin', 'college.college-auth.college-admin-login');
 Route::view('collegeadminldashboard', 'college.home.college-admin-home');
 Route::view('collegeprofile', 'college.home.college-admin-profile');
-Route::get('edit-student/{id}',[Intership_jobController::class,'edit'])->name('show');
-Route::put('update-student/{id}', [Intership_jobController::class, 'update']);
-Route::get('delete-student/{id}', [Intership_jobController::class, 'destroy']);
+// Route::get('edit-student/{id}', [Intership_jobController::class, 'edit'])->name('show');
+// Route::put('update-student/{id}', [Intership_jobController::class, 'update']);
+// Route::get('delete-student/{id}', [Intership_jobController::class, 'destroy']);
 
 
 
@@ -135,12 +140,18 @@ Route::post('login_user', [EmployerController::class, 'loginUser'])->name('login
 // Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 Route::get('/logout', [EmployerController::class, 'logout'])->name('employer.logout');
 
-  
-Route::get('dashboard', [EmployerController::class, 'dashboard'])->middleware( 'is_verify_email')->name('dashboard'); 
-Route::get('account/verify/{token}', [EmployerController::class, 'verifyAccount'])->name('user.verify'); 
+
+Route::get('dashboard', [EmployerController::class, 'dashboard'])->middleware('is_verify_email')->name('dashboard');
+Route::get('account/verify/{token}', [EmployerController::class, 'verifyAccount'])->name('user.verify');
 
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+
+Route::get('studentforget-password', [StudentController::class, 'showForgetPasswordForm'])->name('studentforget.password.get');
+Route::post('studentforget-password', [StudentController::class, 'submitForgetPasswordForm'])->name('studentforget.password.post');
+Route::get('studentreset-password/{token}', [StudentController::class, 'showResetPasswordForm'])->name('studentreset.password.get');
+Route::post('studentreset-password', [StudentController::class, 'submitResetPasswordForm'])->name('studentreset.password.post');

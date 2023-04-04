@@ -88,6 +88,8 @@ class ForgotPasswordController extends Controller
  
           DB::table('password_resets')->where(['personal_email'=> $request->personal_email])->delete();
   
+
+          
           return redirect('employer-login')->with('message', 'Your password has been changed!');
       }
 }

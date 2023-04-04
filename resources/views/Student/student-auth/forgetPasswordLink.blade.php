@@ -146,23 +146,25 @@
 
                             <div class="col-lg-12">
 
-                                <form action="{{ route('reset.password.post') }}" id="validateForm" method="POST">
+                                <form action="{{ route('studentreset.password.post') }}" id="validateForm" method="POST">
 
                                     <div class="row gy-4">
                                         @csrf
                                         <input type="hidden" name="token" value="{{ $token }}">
 
                                         <div class="form-group">
-                                            <input type="text" id="personal_email" class="form-control" name="personal_email" required autofocus placeholder="Enter Email">
-                                            @if ($errors->has('personal_email'))
-                                            <span class="text-danger">{{ $errors->first('personal_email') }}</span>
+                                            <input type="text" id="student_email" class="form-control" name="student_email" required autofocus placeholder="Enter Email">
+                                            @if ($errors->has('student_email'))
+                                            <span class="text-danger">{{ $errors->first('student_email') }}</span>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                           
+                                            <label class="col-md-12 control-label" for="passwordinput">
+                                                Password
+                                            </label>
                                             <div class="col-md-12">
                                                 <div class="input-group mb-3">
-                                                <input type="password" id="password" class="form-control" name="password" required autofocus placeholder="Enter new password">
+                                                    <input type="password" id="password" class="form-control" name="password" required autofocus placeholder="Enter new password">
 
                                                     @if ($errors->has('password'))
                                                     <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -208,12 +210,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- <div class="col-md-12">
-                                            <input type="password" id="password" class="form-control" name="password" required autofocus placeholder="Enter new password">
-                                            @if ($errors->has('password'))
-                                            <span class="text-danger">{{ $errors->first('password') }}</span>
-                                            @endif
-                                        </div> -->
+                                     
                                         <br> <br>
                                         <div class="form-group">
                                             <input type="password" id="password-confirm" class="form-control" name="password_confirmation" required autofocus placeholder="Confirm password">

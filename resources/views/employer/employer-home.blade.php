@@ -92,7 +92,7 @@
       <br><br>
       <div class="  border pe-5 ps-5  pb-5 pt-5  rounded-5">
         <h3 style="text-align:center; color:black; font-weight:bolder;">
-        Dear Faith
+       Dear {{ ucfirst(Auth()->user()->employer_first_name) }}
         </h3>
 
         <h5 style=" color:black; font-weight:bolder;justify-content:center;">
