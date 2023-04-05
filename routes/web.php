@@ -57,19 +57,19 @@ Route::get('personal-detail', [StudentController::class, 'PersonalDetails'])->na
 Route::post('personal-detail', [StudentController::class, 'postpersonaldetail'])->name('student.personal_details.post');
 Route::get('account-detail', [StudentController::class, 'PasswordDetail'])->name('student.password_details');
 Route::post('account-detail', [StudentController::class, 'Postpassworddetail'])->name('student.password_details.post');
-Route::get('/student-login', [StudentController::class, 'login'])->middleware('studentalreadyloggedin');
-Route::post('/student-login', [StudentController::class, 'loginUser'])->name('student-login');
-Route::get('/student-dashboard', [StudentController::class, 'dashboard'])->middleware('studentisLoggedIn');
-Route::get('/studentlogout', [StudentController::class, 'logout']);
-Route::get('/student-dashboard', [StudentController::class, 'dashboard'])->middleware(['auth', 'student_verify_email'],'studentalreadyloggedin'); 
-Route::get('account/verify/{token}', [StudentController::class, 'verifyAccount'])->name('student.verify'); 
+Route::get('student-login', [StudentController::class, 'login'])->middleware('studentalreadyloggedin');
+Route::post('student-login', [StudentController::class, 'loginUser'])->name('student-login');
+Route::get('student-dashboard', [StudentController::class, 'dashboard'])->middleware('studentisLoggedIn');
+Route::get('studentlogout', [StudentController::class, 'logout']);
+Route::get('student-dashboard', [StudentController::class, 'dashboard'])->middleware(['auth', 'student_verify_email'],'studentalreadyloggedin'); 
+Route::get('account/verification/{token}', [StudentController::class, 'verifyAccount'])->name('student.verify'); 
 Route::get('edit-student/{id}', [StudentController::class, 'edit'])->name('show');
 Route::put('update-student/{id}', [StudentController::class, 'update']);
 
 
-// internship
+// workstudy
 
-Route::get('internship', [Intership_jobController::class, 'index'])->name('internship.index');
+Route::get('work-study', [Intership_jobController::class, 'index'])->name('internship.index');
 
 Route::get('create-step-one', [Intership_jobController::class, 'createStepOne'])->name('internship.create.step.one');
 Route::post('create-step-one', [Intership_jobController::class, 'postCreateStepOne'])->name('internship.create.step.one.post');

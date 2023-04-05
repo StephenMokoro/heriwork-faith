@@ -22,7 +22,7 @@
                     <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
                         <div class="row">
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
-                                <p class="text-secondary">3/5 &nbsp; &nbsp;Job category</p>
+                                <p class="text-secondary">2/5 &nbsp; &nbsp;Job category</p>
                                 <a href="#" style="text-decoration:none;">
                                     <h3 class="card-title  line-height" style="color:#05115d;"><b>What is the job category of the job you want to post?</b></h3>
                                 </a>

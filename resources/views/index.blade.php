@@ -48,7 +48,7 @@
                             <h1 data-aos="fade-up">Heriwork</h1>
                             <h4 data-aos="fade-up" class="text-black"> <b>Empowering students through work</b> </h4>
 
-                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. Enabling the students to support their education unlocks their future and a hope </h2>
+                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. Enabling the students to support their education unlocks their future. </h2>
 
                             <div data-aos="fade-up" data-aos-delay="600">
                                 <div class="text-center text-lg-start">
@@ -78,7 +78,7 @@
                                     <h6 class="text-danger">WHO WE ARE</h6>
                                     <h1 class="text-black"><b>Our purpose</b></h1>
                                     <h4 class="custom-line-height1">
-                                        We are an impact startup working with individuals and cooporates to extend paid work-study and internship opportunities to underprivileged college students to help them raise income for their upkeep and fees.
+                                        We are an impact startup working with individuals and corporates to extend paid work-study and internship opportunities to underprivileged college students to help them raise income for their upkeep and fees.
                                     </h4>
                                     <div class="text-center text-lg-start mt-4">
                                         <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -103,12 +103,12 @@
                     <div class="container" data-aos="fade-up">
 
                         <header class="section-header mb-5">
-                            <h6 class="text-danger text-center"> SERVICES</h6>
-                            <h1 class=" text-center mb-3" style="color: #05115d;"><b>Engage us through</b></h1>
+                            <h6 class="text-danger text-center"> WORK-STUDY JOBS </h6>
+                            <h1 class=" text-center mb-3" style="color: #05115d;"><b>Engage our students</b></h1>
                             <div class="row">
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-8">
-                                    <h4 class="text-black float-left">Our impact employers have engaged our students in varying tasks depending on their needs.The example below will get you started</h4>
+                                    <h4 class="text-black float-left">Our impact employers have engaged our students in varying work-study jobs depending on their needs.The example below will get you started</h4>
                                 </div>
                                 <div class="col-lg-2"></div>
                             </div>
@@ -120,16 +120,17 @@
                                 <div class="service-box blue">
                                     <i class="bi bi-file-earmark-spreadsheet  fa-3x"></i>
 
-                                    <h3>Data entry and record keeping</h3>
-                                    <p>Entering data into different computer databases, manage and maintaining record keeping.</p>
+                                    <h3>Data entry </h3>
+                                    <p>Accurately and efficiently enter data into a computer system or database.This includes data such as customer information and any other relevant information.</p>
+
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                                 <div class="service-box orange">
                                     <i class="bi bi-card-checklist fa-3x"></i>
-                                    <h3>Filing and organizational support</h3>
-                                    <p>Handling assignments within their departments and filing documents</p>
+                                    <h3>Online Research</h3>
+                                    <p>It involves conducting research on various topics using online resources and tools. The primary responsibilities of an online researcher include:identifying research objectives, conducting research, analyzing data, and writing reports</p>
                                 </div>
                             </div>
 
@@ -137,25 +138,28 @@
                                 <div class="service-box green">
                                     <i class="bi bi-badge-vr fa-3x"></i>
                                     <h3>Virtual assistance and administrative support</h3>
-                                    <p>Respond to emails and phone calls and offer administrative support to clients.</p>
+                                    <p>Providing administrative support to organizations and busy professionals, including scheduling appointments, making phone calls, making travel arrangements, managing email accounts, and other tasks as required.</p>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                                 <div class="service-box red">
                                     <i class="bi bi-telephone-forward fa-3x"></i>
-                                    <h3>Customer service and support</h3>
-                                    <p>Provide technical assistance with products and answer customers questions.</p>
+                                    <h3>Customer  support</h3>
+                                    <p>Handling customer inquiries, complaints, and feedback via phone, email, or chat with excellent communication and problem-solving skills.</p>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                                 <div class="service-box purple">
                                     <i class="bi bi-bank2 fa-3x"></i>
-                                    <h3>Telemarketing and sale support.</h3>
-                                    <p>Analyzing, identifying trends in customer interactionsand scheduling posts to be used in online platforms </p>
+                                    <h3>Marketing and sales support </h3>
+                                    <p>Assisting with marketing and sales support tasks such as lead generation, market research, sales outreach, and social media management.
+ </p>
                                 </div>
                             </div>
+
+                            
 
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                                 <div class="service-box pink">

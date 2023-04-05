@@ -62,8 +62,6 @@
                     </ul>
                   </div>
                   @endif
-
-
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your first name<span style="color:red;">*</span></label>
                     <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $partner->partner_first_name ?? '' }}" name="partner_first_name">
@@ -79,7 +77,7 @@
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Enter your phone number<span style="color:red;">*</span></label>
 
-                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $partner->partner_phone ?? '' }}" placeholder="712219585" name="partner_phone">
+                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $partner->partner_phone ?? '' }}" placeholder="712219585" name="partner_phone" pattern="[1-9][0-9]{8}">
 
                   </div>
                   <br>

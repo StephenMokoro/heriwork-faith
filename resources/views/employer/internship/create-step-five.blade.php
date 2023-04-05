@@ -9,7 +9,7 @@
                     <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
                         <div class="row">
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
-                                <p class="text-secondary">4/5 &nbsp; &nbsp;Budget</p>
+                                <p class="text-secondary">5/5 &nbsp; &nbsp;Budget</p>
                                 <a href="#">
                                     <h3 class="card-title  line-height" style="color:#05115d;"><b><b>Tell us about your budget</b></b></h3>
                                 </a>

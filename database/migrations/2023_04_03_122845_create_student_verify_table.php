@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('student_verify', function (Blueprint $table) {
             $table->integer('user_id');
 
-            $table->string('token');
+            $table->string ('token');
             $table->timestamps();
         });
     }

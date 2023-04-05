@@ -115,34 +115,37 @@ class StudentController extends Controller
             'student_phone' => 'required',
             'student_gender' => 'required',
         ]);
-    
+
         $student = $request->session()->get('student', new Student());
         $student->fill($validatedData);
         $request->session()->put('student', $student);
         return redirect()->route('student.password_details.post');
     }
-    
+
     public function PasswordDetail(Request $request)
     {
         $student = $request->session()->get('student');
-    
+
         return view('Student.student-auth.secure-account', compact('student'));
     }
-    
+
     public function Postpassworddetail(Request $request)
     {
+        $messages = [
+            'student_email.ends_with' => 'Only .edu and ac.ke email addresses are allowed.',
+        ];
         $validatedData = $request->validate([
-            'student_email' => 'required|email|unique:students',
-    
+            'student_email' => 'required|email|unique:students|ends_with:edu,ac.ke|unique:students,student_email',
+
             'password' => 'required',
             'confirm_password' => 'required|same:password',
-    
-        ]);
+
+        ], $messages);
         $hashedPassword = bcrypt($validatedData['password']);
-    
+
         // Get the employer data from the session
         $student = $request->session()->get('student');
-    
+
         // Fill the employer data with the hashed password and other fields
         $student->fill([
             'password' => $hashedPassword,
@@ -151,32 +154,32 @@ class StudentController extends Controller
             // Remove the confirm password field from the model
             // Add any other fields that need to be filled
         ]);
-    
+
         // Save the employer data to the database
         $createUser = $this->create($student->toArray());
-    
+
         // Check if the user was created successfully
         if ($createUser) {
             $token = Str::random(64);
-    
+
             // Create a new verification record for the user
             StudentVerify::create([
                 'user_id' => $createUser->student_auto_id,
                 'token' => $token
             ]);
-    
-            Mail::send('email.emailVerificationEmail', ['token' => $token], function ($message) use ($validatedData) {
+
+            Mail::send('email.studentemailVerificationEmail', ['token' => $token], function ($message) use ($validatedData) {
                 $message->to($validatedData['student_email']);
                 $message->subject('Email Verification Mail');
             });
-            Alert::success('Registered successful', 'You have registered successfully')
+            Alert::success('Registration successful', 'You have registered successfully')
                 ->persistent(true)
                 ->autoClose(5000);
             // Redirect the user to the login page with a success message
             return redirect('student-login')->withSuccess('Great! An email has been sent to your account please verify before login in');
         }
     }
-    
+
     public function create(array $data)
     {
         return Student::create([
@@ -189,27 +192,22 @@ class StudentController extends Controller
             'country' => $data['country'],
             'password' => Hash::make($data['password'])
         ]);
-    
-
     }
     public function verifyAccount($token)
     {
         $verifyUser = StudentVerify::where('token', $token)->first();
-    
+
         $message = 'Sorry your email cannot be identified.';
-    
+
         if (!is_null($verifyUser) && !is_null($verifyUser->user)) {
             $user = $verifyUser->user;
-    
             if (!$user->student_email_verified) {
                 $user->student_email_verified = 1;
                 $user->save();
-             
-    
             }
         }
-        }
-    
+    }
+
     // // // login \\
 
     public function login()
@@ -238,9 +236,6 @@ class StudentController extends Controller
             return back()->with('fail', 'Invalid login details');
         }
     }
-
-
-
 
 
     public function dashboard()
@@ -313,9 +308,9 @@ class StudentController extends Controller
             $message->subject('Reset Password');
         });
         Alert::success('Sent email', 'We have e-mailed your password reset link!')
-        ->persistent(true)
-        ->autoClose(5000);
-    // Redirect the user to the login page with a success message
+            ->persistent(true)
+            ->autoClose(5000);
+        // Redirect the user to the login page with a success message
 
         return back();
     }

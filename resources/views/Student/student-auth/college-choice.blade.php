@@ -46,7 +46,8 @@
 
                     <br>
 
-                    <select id="" class="itemName form-control" name="school_name"></select>
+                    <select class="itemName form-control" name="school_name">
+                    </select>
                     <!-- <input type="text" name="school_name" id="selected_value" hidden> -->
 
                   </div>
@@ -131,7 +132,6 @@
   });
   // let selected_input = $('#selected_value').val();
 
-
   $('.itemName').select2({
 
     placeholder: 'Search for school',
@@ -152,28 +152,7 @@
       cache: true
     }
   });
+  $('select').val('Us').trigger('change');
 
-  // $('.itemName').select2({
-
-  //   placeholder: 'Select an item',
-  //   ajax: {
-  //     url: 'student-details',
-  //     dataType: 'json',
-  //     delay: 250,
-  //     processResults: function(data) {
-  //       return {
-  //         results: $.map(data, function(item) {
-  //           selected_input = item.school_name
-  //           return {
-  //             text: item.school_name,
-  //             id: item.school_auto_id
-
-  //           }
-  //         })
-  //       };
-  //     },
-  //     cache: true
-  //   }
-  // });
 </script>
 @endsection

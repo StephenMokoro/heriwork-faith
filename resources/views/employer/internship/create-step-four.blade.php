@@ -10,7 +10,7 @@
                     <div class="card-body pt-4 pl-0 pr-0 pb-5 ml-0 mr-0 mt-4 mb-0">
                         <div class="row">
                             <div class="col-lg-12 pl-5 pr-5 mb-3">
-                                <p class="text-secondary">3/5 &nbsp; &nbsp;Scope</p>
+                                <p class="text-secondary">4/5 &nbsp; &nbsp;Scope</p>
                                 <a href="#">
                                     <h3 class="card-title text-black line-height" style="color:blue;"><b>Estimate the scope of your work</b></h3>
                                 </a>

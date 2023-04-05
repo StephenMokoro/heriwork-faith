@@ -53,7 +53,7 @@
                                 <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('expression-page')}}">
                                     @csrf
                                     <div class="col-12">
-                                        <input type="text" class="form-control" id="school_name" placeholder="Add school name" name="school_name">
+                                        <input type="text" class="form-control" id="school_name" placeholder="School name" name="school_name">
                                         <span class="text-danger"> @error('school_name'){{$message}} @enderror</span>
 
                                     </div>

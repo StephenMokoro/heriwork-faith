@@ -43,7 +43,16 @@
                                     <div class="form-group">
                                         <label for="" style="font-weight: 600;">Select your country of origin</label>
                                         <br>
-                                        <select id="" class="countryName form-control" name="country"></select>
+                                        <select id="" class="countryName form-control" name="country">
+                                            @php
+                                            $myvar='Kenya';
+                                        
+                                            @endphp
+
+                                            @if(!empty($myvar))
+                                            <option value="country">{{$myvar}}</option>
+                                            @endif
+                                        </select>
                                         <!-- <input type="text" name="school_name" id="selected_value" hidden> -->
                                     </div>
 
@@ -129,8 +138,8 @@
 
 
     $('.countryName').select2({
+        placeholder: 'Search for country',
 
-        placeholder: 'Select origin country',
         ajax: {
             url: 'country_list',
             dataType: 'json',
@@ -148,28 +157,5 @@
             cache: true
         }
     });
-
-    // $('.itemName').select2({
-
-    //   placeholder: 'Select an item',
-    //   ajax: {
-    //     url: 'student-details',
-    //     dataType: 'json',
-    //     delay: 250,
-    //     processResults: function(data) {
-    //       return {
-    //         results: $.map(data, function(item) {
-    //           selected_input = item.school_name
-    //           return {
-    //             text: item.school_name,
-    //             id: item.school_auto_id
-
-    //           }
-    //         })
-    //       };
-    //     },
-    //     cache: true
-    //   }
-    // });
 </script>
 @endsection

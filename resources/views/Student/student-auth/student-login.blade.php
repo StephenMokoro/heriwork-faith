@@ -91,7 +91,7 @@
 </head>
 
 <body>
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -118,8 +118,8 @@
                 <div class="col-md-8 offset-md-2 ">
                     <div class="card border">
                         <div class="card-header">
-                           
-                        <h5> <b> Student Login</b></h5>
+
+                            <h5> <b> Student Login</b></h5>
                         </div>
                         <div class="card-body">
                             @if(Session::has('success'))
@@ -152,12 +152,11 @@
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary"> Login </button>
                                         <p class="float-right mt-2"> Don't have an account? <a href="{{ url('student-detail')}}" class="" style="color:#ef6603;">Signup </a> </p>
+                                        <label class="text-end">
+                                            <a href="{{ route('studentforget.password.get') }}">Reset Password</a>
+                                        </label>
                                     </div>
-                                    <div class="checkbox">
-                                      <label>
-                                          <a href="{{ route('studentforget.password.get') }}">Reset Password</a>
-                                      </label>
-                                  </div>
+
                                 </form>
                                 <!-- <form action="" method="POST" class="">
                                     @csrf

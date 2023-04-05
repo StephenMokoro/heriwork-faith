@@ -208,73 +208,13 @@
                 passwordStrength.style = 'width: 100%';
             }
         }
-        if ($("#validateForm").length > 0) {
-            $("#validateForm").validate({
-                rules: {
-                    employer_first_name: {
-                        required: true,
-                    },
 
-                    employer_last_name: {
-                        required: true,
-                    },
-
-                    personal_email: {
-                        required: true,
-                        maxlength: 60,
-                        email: true,
-                    },
-
-                    employer_phone: {
-                        required: true,
-                    },
-
-                    password: {
-                        required: true,
-                        minlength: 5
-                    },
-
-                    confirm_password: {
-                        required: true,
-                        minlength: 5,
-                        equalTo: '[name="password"]'
-                    }
-                },
-
-
-                messages: {
-                    name: {
-                        required: "Name is required.",
-                    },
-                    email: {
-                        required: "Email is required.",
-                        email: "It does not seem to be a valid email.",
-                        maxlength: "The email should be or equal to 60 chars.",
-                    },
-                    confirm_password: {
-                        equalTo: "Please enter the same password!"
-                    },
-                },
-            })
-        }
         let main_div = document.getElementById("root");
         let chosen_skills = document.getElementById("chosen-skills");
         let skills_list = document.getElementById("skills-list");
 
 
-        main_div.childNodes.forEach(
-            skill => {
-                skill.addEventListener("click", function(e) {
-                    if (e.target.parentNode.id == "skills-list") {
-                        console.log(e.target);
-                        chosen_skills.appendChild(e.target);
-                    } else if (e.target.parentNode.id == "chosen-skills") {
-                        console.log(e.target);
-                        skills_list.appendChild(e.target);
-                        chosen_skills.removeChild(e.target);
-                    }
-                })
-            });
+        
     </script>
 
     @endsection
