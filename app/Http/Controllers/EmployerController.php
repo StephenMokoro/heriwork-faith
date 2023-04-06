@@ -111,7 +111,7 @@ class EmployerController extends Controller
                 $message->to($validatedData['personal_email']);
                 $message->subject('Email Verification Mail');
             });
-            Alert::success('Registered successful', 'You have registered successfully')
+            Alert::success('Registration successful', 'You have registered successfully')
             ->persistent(true)
             ->autoClose(5000);
             // Redirect the user to the login page with a success message

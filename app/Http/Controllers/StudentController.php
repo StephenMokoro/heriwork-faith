@@ -94,9 +94,8 @@ class StudentController extends Controller
             'country' => 'required',
         ]);
 
-        $student = $request->session()->get('student', new Student());
-        $student->fill($validatedData);
-        $request->session()->put('student', $student);
+        $selectedCountry = $validatedData['country'];
+        session(['selectedCountry' => $selectedCountry]);
 
         return redirect()->route('student.personal_details');
     }
@@ -193,6 +192,9 @@ class StudentController extends Controller
             'password' => Hash::make($data['password'])
         ]);
     }
+
+
+
     public function verifyAccount($token)
     {
         $verifyUser = StudentVerify::where('token', $token)->first();
@@ -201,12 +203,20 @@ class StudentController extends Controller
 
         if (!is_null($verifyUser) && !is_null($verifyUser->user)) {
             $user = $verifyUser->user;
+
             if (!$user->student_email_verified) {
-                $user->student_email_verified = 1;
-                $user->save();
+                $verifyUser->user->student_email_verified = 1;
+                $verifyUser->user->save();
+                $message = "Your e-mail is verified. You can now login.";
+            } else {
+                $message = "Your e-mail is already verified. You can now login.";
             }
         }
+
+        return redirect()->route('student-login')->with('message', $message);
     }
+
+
 
     // // // login \\
 

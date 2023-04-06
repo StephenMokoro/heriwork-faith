@@ -65,7 +65,10 @@ Route::get('student-dashboard', [StudentController::class, 'dashboard'])->middle
 Route::get('account/verification/{token}', [StudentController::class, 'verifyAccount'])->name('student.verify'); 
 Route::get('edit-student/{id}', [StudentController::class, 'edit'])->name('show');
 Route::put('update-student/{id}', [StudentController::class, 'update']);
+Route::view('/confirmation', 'confirmation')->name('confirmation');
 
+// Route for the error page
+Route::view('/error', 'error')->name('error');
 
 // workstudy
 

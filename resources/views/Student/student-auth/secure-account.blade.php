@@ -52,7 +52,7 @@
                                         <div class="form-group">
                                             <label for="" class="text-black" style="font-weight: 600;">What is your school email? <span>*</span></label>
                                             <input type="email" class="form-control" placeholder="" name="student_email" value="{{ $student->student_email ?? '' }}">
-                                            <small id="email" class="form-text text-success">This is the email your university gave you, often ends with <b>.edu, .ac.ke</b> etc</small>
+                                            <small id="email" class="form-text text-success">This is the email your university gave you, often ends with <b>.edu, .ac.ke</b> </small>
                                         </div>
                                         <!-- Password input-->
                                         <div class="form-group">

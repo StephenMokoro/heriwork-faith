@@ -45,16 +45,16 @@
                                         <br>
                                         <select id="" class="countryName form-control" name="country">
                                             @php
-                                            $myvar='Kenya';
-                                        
+                                            $countries = App\Models\Country::pluck('name')->toArray();
+                                            $selectedCountry = session('selectedCountry');
                                             @endphp
 
-                                            @if(!empty($myvar))
-                                            <option value="country">{{$myvar}}</option>
-                                            @endif
+                                            @foreach ($countries as $id => $name)
+                                            <option value="{{ $id }}" @if ($selectedCountry==$id) selected @endif>{{ $name }}</option>
+                                            @endforeach
                                         </select>
-                                        <!-- <input type="text" name="school_name" id="selected_value" hidden> -->
                                     </div>
+
 
                                     <p class="card-text mt-4 text-success" style="font-weight: 500;font-size: 14px;">
                                     </p>

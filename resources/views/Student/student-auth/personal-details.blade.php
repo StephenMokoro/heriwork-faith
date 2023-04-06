@@ -43,7 +43,7 @@
 
 
                   <div class="form-group">
-                    <label for=""class="text-black" style="font-weight: 600;">What is your first name? <span>*</span> </label>
+                    <label for="" class="text-black" style="font-weight: 600;">What is your first name? <span>*</span> </label>
                     <input type="text" class="form-control" placeholder="" name="student_first_name" value="{{ $student->student_first_name ?? '' }}">
                   </div>
 
@@ -52,43 +52,44 @@
                     <input type="text" class="form-control" placeholder="" name="student_last_name" value="{{ $student->student_last_name ?? '' }}">
                   </div>
 
-                 
+
 
                   <div class="form-group">
                     <label for="" class="text-black" style="font-weight: 600;">What is your phone number <span>*</span></label>
-                    <input class="form-control form-control-lg" type="tel" placeholder=""  name="student_phone" value="{{ $student->student_phone ?? '' }}">
+                    <input class="form-control form-control-lg" type="tel" placeholder="" name="student_phone" value="{{ $student->student_phone ?? '' }}">
 
                   </div>
 
                   <label for="" class="text-black" style="font-weight: 600;">What gender do you identify with? <span>*</span></label>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="student_gender" id="exampleRadios1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">
+                    <input class="form-check-input" type="radio" name="student_gender" id="maleRadio" value="Male" {{ (isset($student) && $student->student_gender == 'Male') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="maleRadio">
                       Male
                     </label>
                   </div>
+
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="student_gender" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="student_gender" id="femaleRadio" value="Female" {{ (isset($student) && $student->student_gender == 'Female') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="femaleRadio">
                       Female
                     </label>
                   </div>
 
-
-
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="student_gender" id="exampleRadios1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">
+                    <input class="form-check-input" type="radio" name="student_gender" id="otherRadio" value="Others" {{ (isset($student) && $student->student_gender == 'Others') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="otherRadio">
                       Other
                     </label>
                   </div>
+
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="student_gender" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="student_gender" id="notSayRadio" value="prefer not to say" {{ (isset($student) && $student->student_gender == 'prefer not to say') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="notSayRadio">
                       Prefer not to say
                     </label>
                   </div>
+
 
                 </div>
                 <div class="col-lg-12 text-end">

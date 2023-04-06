@@ -25,7 +25,7 @@ return new class extends Migration
             // $table->string('others')->nullable();
             $table->integer('institution_id')->nullable();
             // $table->string('school_name');
-            $table->boolean('student_email_verified')->default(false);
+            $table->boolean('student_email_verified')->default(0);
 
             $table->string('password');
             $table->boolean('student_status')->default(0);
