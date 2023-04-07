@@ -92,7 +92,8 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="{{url('/')}}" class="logo d-flex align-items-center">
-                <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
+                <img src="{{url('assets/img/capture.PNG')}}" alt="">
+
             </a>
 
             <nav id="navbar" class="navbar">

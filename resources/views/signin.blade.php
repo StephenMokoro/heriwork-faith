@@ -21,7 +21,9 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <img src="{{url('assets/img/logo/logo2.png')}}" alt="">
+        <img src="{{url('assets/img/capture.PNG')}}" alt="">
+
+
       </a>
 
       <nav id="navbar" class="navbar">
@@ -44,7 +46,7 @@
             <div class="card rounded-3 border p-3">
               <div class="card-body">
                 <h5 class="card-title"> <b>For Students</b> </h5>
-                <p class="card-text">We always work hard to help <a  style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;"  data-bs-toggle="modal" href="#Modal1Toggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle"></i></a> to find paid work opportunities</p>
+                <p class="card-text">We always work hard to help <a style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;" data-bs-toggle="modal" href="#Modal1Toggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle"></i></a> to find paid work opportunities</p>
                 <a href="{{url('student-login')}}" class="btn btn-success">Continue as Student</a>
 
               </div>
@@ -54,7 +56,7 @@
             <div class="card rounded-3  border p-3">
               <div class="card-body">
                 <h5 class="card-title"><b>For Impact Employers</b></h5>
-                <p class="card-text">Every time you engage <a  style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;" data-bs-toggle="modal" href="#exampleModalToggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle " ></i> </a> in paid work, you give them a future and a hope. </p>
+                <p class="card-text">Every time you engage <a style="color:rgba(5, 17, 93, 0.9); font-weight:900; font-size:larger;" data-bs-toggle="modal" href="#exampleModalToggle" role="button"> deserving students <i class="bi bi-arrow-up-right-circle "></i> </a> in paid work, you give them a future and a hope. </p>
                 <a href="{{url ('employer-login')}}" class="btn btn-success">Continue as Employer</a>
               </div>
             </div>
@@ -98,7 +100,7 @@
       </div>
     </div>
   </div>
-<!-- student modal -->
+  <!-- student modal -->
   <div class="modal  fade" id="Modal1Toggle" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
