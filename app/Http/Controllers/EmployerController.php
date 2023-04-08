@@ -112,11 +112,10 @@ class EmployerController extends Controller
                 $message->subject('Email Verification Mail');
             });
             Alert::success('Registration successful', 'You have registered successfully')
-            ->persistent(true)
-            ->autoClose(5000);
+                ->persistent(true)
+                ->autoClose(5000);
             // Redirect the user to the login page with a success message
             return redirect('employer-login')->withSuccess('Great! An email has been sent to your account please verify before login in');
-      
         }
     }
 
@@ -148,28 +147,27 @@ class EmployerController extends Controller
 
 
     public function loginUser(Request $request)
-{
+    {
+        $request->validate([
+            'personal_email' => 'required|email',
+            'password' => 'required|min:5',
+        ]);
 
-    $request->validate([
-        'personal_email' => 'required|email',
-        'password' => 'required|min:5',
-    ]);
+        $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
 
-    $employer = Employer::where('personal_email', '=', $request->personal_email)->first();
+        if ($employer) {
+            if ($employer->is_email_verified == 1) {
 
-    if ($employer) {
-        if (Hash::check($request->password, $employer->password)) {
-            Auth::login($employer);
-            $request->session()->put('loginId', $employer->employer_auto_id);
-            return view('Employer.employer-home');
+                Auth::login($employer);
+                $request->session()->put('loginId', $employer->employer_auto_id);
+                return view('Employer.employer-home');
+            } else {
+                return back()->with('fail', 'Please verify your email before logging in.');
+            }
         } else {
-            return back()->with('fail', 'Incorrect password');
+            return back()->with('fail', 'Invalid login details');
         }
-    } else {
-        return back()->with('fail', 'Invalid login details');
     }
-}
-
 
     public function dashboard()
     {
@@ -202,24 +200,55 @@ class EmployerController extends Controller
 
         return $response;
     }
-    public function verifyAccount($token)
+
+
+    public function verifyAccount(Request $request, $token)
     {
-        $verifyUser = UserVerify::where('token', $token)->first();
+        // Find the verification record for the token
+        $verificationRecord = UserVerify::where('token', $token)->first();
 
-        $message = 'Sorry your email cannot be identified.';
+        if ($verificationRecord) {
+            // Find the employer associated with the verification record
+            $employer = Employer::find($verificationRecord->user_id);
 
-        if (!is_null($verifyUser) && !is_null($verifyUser->user)) {
-            $user = $verifyUser->user;
+            if ($employer) {
+                // Set the is_email_verified and status fields to 1
+                $employer->is_email_verified = 1;
+                $employer->status = 1;
+                $employer->save();
 
-            if (!$user->is_email_verified) {
-                $user->is_email_verified = 1;
-                $user->save();
-                $message = "Your e-mail is verified. You can now login.";
-            } else {
-                $message = "Your e-mail is already verified. You can now login.";
+                // Delete the verification record
+                $verificationRecord->delete();
+
+                // Redirect the user to the login page with a success message
+                return redirect('employer-login')->withSuccess('Email verified successfully. You can now login.');
             }
         }
 
-        return redirect()->route('login')->with('message', $message);
+        // If the verification token is invalid or expired, redirect the user to the registration page
+        return redirect('employer-login')->withErrors(['Verification token is invalid or has expired. Please register again.']);
     }
+
+
+
+    // public function verifyAccount($token)
+    // {
+    //     $verifyUser = UserVerify::where('token', $token)->first();
+
+    //     $message = 'Sorry your email cannot be identified.';
+
+    //     if (!is_null($verifyUser) && !is_null($verifyUser->user)) {
+    //         $user = $verifyUser->user;
+
+    //         if (!$user->is_email_verified) {
+    //             $user->is_email_verified = 1;
+    //             $user->save();
+    //             $message = "Your e-mail is verified. You can now login.";
+    //         } else {
+    //             $message = "Your e-mail is already verified. You can now login.";
+    //         }
+    //     }
+
+    //     return redirect()->route('login')->with('message', $message);
+    // }
 }

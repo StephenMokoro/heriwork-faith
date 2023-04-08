@@ -38,7 +38,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <span style="color:#ef6603;">Heriwork</span>
+        <img src="{{url('assets/img/capture.PNG')}}" alt="">
       </a>
 
       <nav id="navbar" class="navbar">

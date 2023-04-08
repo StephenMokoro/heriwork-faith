@@ -10,7 +10,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use Mail;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use DB;
 use App\Models\StudentVerify;
 
@@ -94,9 +94,9 @@ class StudentController extends Controller
             'country' => 'required',
         ]);
 
-        $selectedCountry = $validatedData['country'];
-        session(['selectedCountry' => $selectedCountry]);
-
+        $student = $request->session()->get('student', new Student());
+        $student->fill($validatedData);
+        $request->session()->put('student', $student);
         return redirect()->route('student.personal_details');
     }
 
@@ -135,8 +135,7 @@ class StudentController extends Controller
         ];
         $validatedData = $request->validate([
             'student_email' => 'required|email|unique:students|ends_with:edu,ac.ke|unique:students,student_email',
-
-            'password' => 'required',
+            'password' => 'required|min:5|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
             'confirm_password' => 'required|same:password',
 
         ], $messages);
@@ -194,31 +193,35 @@ class StudentController extends Controller
     }
 
 
-
-    public function verifyAccount($token)
+    public function verifyAccount(Request $request, $token)
     {
-        $verifyUser = StudentVerify::where('token', $token)->first();
+        // Find the verification record for the token
+        $verificationRecord = StudentVerify::where('token', $token)->first();
 
-        $message = 'Sorry your email cannot be identified.';
+        if ($verificationRecord) {
+            // Find the student associated with the verification record
+            $student = Student::find($verificationRecord->user_id);
 
-        if (!is_null($verifyUser) && !is_null($verifyUser->user)) {
-            $user = $verifyUser->user;
+            if ($student) {
+                // Set the student_email_verified field to 1
+                $student->student_email_verified = 1;
+                $student->student_status = 1;
+                $student->save();
 
-            if (!$user->student_email_verified) {
-                $verifyUser->user->student_email_verified = 1;
-                $verifyUser->user->save();
-                $message = "Your e-mail is verified. You can now login.";
-            } else {
-                $message = "Your e-mail is already verified. You can now login.";
+                // Delete the verification record
+                $verificationRecord->delete();
+
+                // Redirect the user to the login page with a success message
+                return redirect('student-login')->withSuccess('Email verified successfully. You can now login.');
             }
         }
 
-        return redirect()->route('student-login')->with('message', $message);
+        // If the verification token is invalid or expired, redirect the user to the registration page
+        return redirect('student-login')->withErrors(['Verification token is invalid or has expired. Please register again.']);
     }
 
 
 
-    // // // login \\
 
     public function login()
     {
@@ -232,20 +235,25 @@ class StudentController extends Controller
             'password' => 'required|min:5',
         ]);
 
-        $student = Student::where('student_email', '=', $request->student_email)->first();
+        $student = Student::where('student_email', $request->student_email)->first();
 
         if ($student) {
-            if (Hash::check($request->password, $student->password)) {
-                Auth::login($student);
-                $request->session()->put('loginId', $student->student_auto_id);
-                return view('Student.student-home');
+            if ($student->student_status == 1) {
+               
+                    Auth::login($student);
+                    $request->session()->put('loginId', $student->student_auto_id);
+                    return view('Student.student-home');
+               
             } else {
-                return back()->with('fail', 'Incorrect password');
+                // Email not verified, show error message
+                return back()->with('fail', 'Please verify your email before logging in.');
             }
         } else {
+            // Student doesn't exist, show error message
             return back()->with('fail', 'Invalid login details');
         }
     }
+
 
 
     public function dashboard()

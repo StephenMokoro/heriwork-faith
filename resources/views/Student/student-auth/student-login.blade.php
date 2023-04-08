@@ -97,7 +97,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="{{url('/')}}" class="logo d-flex align-items-center">
-                <span style="color:#ef6603;">Heriwork</span>
+                <img src="{{url('assets/img/capture.PNG')}}" alt="">
             </a>
 
             <nav id="navbar" class="navbar">
@@ -263,168 +263,10 @@
     <br><br>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
-    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 
 </body>
-<script type="text/javascript">
-    $('.itemName').select2({
-        placeholder: 'Search School',
-        ajax: {
-            url: '/select2-autocomplete-ajax',
-            dataType: 'json',
-            delay: 250,
-            processResults: function(data) {
-                return {
-                    results: $.map(data, function(item) {
-                        return {
-                            text: item.school_name,
-                            id: item.id
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    });
-</script>
-<script>
-    let state = false;
-    let password = document.getElementById("password");
-    let passwordStrength = document.getElementById("password-strength");
-    let lowUpperCase = document.querySelector(".low-upper-case i");
-    let number = document.querySelector(".one-number i");
-    let specialChar = document.querySelector(".one-special-char i");
-    let eightChar = document.querySelector(".eight-character i");
-
-    password.addEventListener("keyup", function() {
-        let pass = document.getElementById("password").value;
-        checkStrength(pass);
-    });
-
-    function toggle() {
-        if (state) {
-            document.getElementById("password").setAttribute("type", "password");
-            state = false;
-        } else {
-            document.getElementById("password").setAttribute("type", "text")
-            state = true;
-        }
-    }
-
-    function myFunction(show) {
-        show.classList.toggle("fa-eye-slash");
-    }
-
-    function checkStrength(password) {
-        let strength = 0;
-
-        //If password contains both lower and uppercase characters
-        if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
-            strength += 1;
-            lowUpperCase.classList.remove('fa-circle');
-            lowUpperCase.classList.add('fa-check');
-        } else {
-            lowUpperCase.classList.add('fa-circle');
-            lowUpperCase.classList.remove('fa-check');
-        }
-        //If it has numbers and characters
-        if (password.match(/([0-9])/)) {
-            strength += 1;
-            number.classList.remove('fa-circle');
-            number.classList.add('fa-check');
-        } else {
-            number.classList.add('fa-circle');
-            number.classList.remove('fa-check');
-        }
-        //If it has one special character
-        if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
-            strength += 1;
-            specialChar.classList.remove('fa-circle');
-            specialChar.classList.add('fa-check');
-        } else {
-            specialChar.classList.add('fa-circle');
-            specialChar.classList.remove('fa-check');
-        }
-        //If password is greater than 7
-        if (password.length > 7) {
-            strength += 1;
-            eightChar.classList.remove('fa-circle');
-            eightChar.classList.add('fa-check');
-        } else {
-            eightChar.classList.add('fa-circle');
-            eightChar.classList.remove('fa-check');
-        }
-
-        // If value is less than 2
-        if (strength < 2) {
-            passwordStrength.classList.remove('progress-bar-warning');
-            passwordStrength.classList.remove('progress-bar-success');
-            passwordStrength.classList.add('progress-bar-danger');
-            passwordStrength.style = 'width: 10%';
-        } else if (strength == 3) {
-            passwordStrength.classList.remove('progress-bar-success');
-            passwordStrength.classList.remove('progress-bar-danger');
-            passwordStrength.classList.add('progress-bar-warning');
-            passwordStrength.style = 'width: 60%';
-        } else if (strength == 4) {
-            passwordStrength.classList.remove('progress-bar-warning');
-            passwordStrength.classList.remove('progress-bar-danger');
-            passwordStrength.classList.add('progress-bar-success');
-            passwordStrength.style = 'width: 100%';
-        }
-    }
-    if ($("#validateForm").length > 0) {
-        $("#validateForm").validate({
-            rules: {
-                student_first_name: {
-                    required: true,
-                },
-
-                student_last_name: {
-                    required: true,
-                },
-
-                student_email: {
-                    required: true,
-                    maxlength: 60,
-                    email: true,
-                },
-
-                student_phone: {
-                    required: true,
-                },
-
-                password: {
-                    required: true,
-                    minlength: 5
-                },
-
-                confirm_password: {
-                    required: true,
-                    minlength: 5,
-                    equalTo: '[name="password"]'
-                }
-            },
 
 
-            messages: {
-                name: {
-                    required: "Name is required.",
-                },
-                email: {
-                    required: "Email is required.",
-                    email: "It does not seem to be a valid email.",
-                    maxlength: "The email should be or equal to 60 chars.",
-                },
-                confirm_password: {
-                    equalTo: "Please enter the same password!"
-                },
-            },
-        })
-    }
-</script>
+
 
 </html>

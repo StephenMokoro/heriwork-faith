@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('student_verify', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('user_id');
-
             $table->string ('token');
             $table->timestamps();
         });
