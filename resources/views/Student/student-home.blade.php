@@ -101,7 +101,7 @@
                     <h5 style=" color:black; font-weight:bolder;"> We believe that every student deserves the opportunity to pursue their education to completion regardless of their financial background. That is why we are excited to help deserving students like yourself to raise some income for your upkeep and fees through paid workstudy and internship opportunities courtesy of our partners. In addition to raising some income, you will gain valuable experience that will help you grow your career.
                     </h5>
                     <br>
-                    <h5 style=" color:black; font-weight:bolder;">We'll be sure to keep you informed as we make progress towards launch, and we'll let you know as soon as our platform is ready for you to start posting job opportunities. In the meantime, if you have any questions or feedback, please call us on <a href="#">0712345678</a> or email us on <a href="#">engageus@heriwork.com</a>
+                    <h5 style=" color:black; font-weight:bolder;">We'll be sure to keep you informed as we make progress towards launch, and we'll let you know as soon as our platform is ready for you to apply job opportunities. In the meantime, if you have any questions or feedback, please call us on <a href="#">0712345678</a> or email us on <a href="#">engageus@heriwork.com</a>
 
                     </h5>
 

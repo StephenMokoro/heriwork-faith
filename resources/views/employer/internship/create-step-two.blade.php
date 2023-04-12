@@ -57,7 +57,7 @@
                                     @endif
 
                                     <div class="col-12">
-                                        <label for="" style="font-weight: 600;">Select Job category</label>
+                                        <label for="" style="font-weight: 600;">Select job category</label>
                                         <br>
                                         <select id="" class="jobCategory form-control select2-search" name="ijob_category"></select>
                                         <!-- <input type="text" name="school_name" id="selected_value" hidden> -->
@@ -138,7 +138,7 @@
 
 <script>
     $('.jobCategory').select2({
-        placeholder: 'Select JobCategory',
+        placeholder: 'Select job category',
         templateResult: function(result, container) {
             if (!result.id) {
                 return result.text;

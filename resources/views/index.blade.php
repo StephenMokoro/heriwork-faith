@@ -48,7 +48,7 @@
                             <h1 data-aos="fade-up">Heriwork</h1>
                             <h4 data-aos="fade-up" class="text-black"> <b>Empowering students through work</b> </h4>
 
-                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate to expand paid workstudy jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. Enabling the students to support their education unlocks their future. </h2>
+                            <h2 class="custom-line-height1" data-aos="fade-up" data-aos-delay="400">We collaborate with individuals and corporates to expand paid work-study jobs and internship opportunities for underprivileged college students to generate some income for upkeep and fees. </h2>
 
                             <div data-aos="fade-up" data-aos-delay="600">
                                 <div class="text-center text-lg-start">
@@ -108,7 +108,7 @@
                             <div class="row">
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-8">
-                                    <h4 class="text-black float-left">Our impact employers have engaged our students in varying work-study jobs depending on their needs.The example below will get you started</h4>
+                                    <h4 class="text-black float-left">Our impact employers have engaged our students in varying work-study jobs depending on their needs.The examples below will get you started</h4>
                                 </div>
                                 <div class="col-lg-2"></div>
                             </div>
@@ -145,7 +145,7 @@
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                                 <div class="service-box red">
                                     <i class="bi bi-telephone-forward fa-3x"></i>
-                                    <h3>Customer  support</h3>
+                                    <h3>Customer support</h3>
                                     <p>Handling customer inquiries, complaints, and feedback via phone, email, or chat with excellent communication and problem-solving skills.</p>
                                 </div>
                             </div>
@@ -155,11 +155,11 @@
                                     <i class="bi bi-bank2 fa-3x"></i>
                                     <h3>Marketing and sales support </h3>
                                     <p>Assisting with marketing and sales support tasks such as lead generation, market research, sales outreach, and social media management.
- </p>
+                                    </p>
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                                 <div class="service-box pink">
@@ -191,8 +191,6 @@
 
                         <br>
                         <div class="row">
-                            <!-- section starts here -->
-
                             <div class="col-lg-6  mb-5 col-project-card">
                                 <div class="card border mb-4 project-card">
                                     <div class="highlight">
@@ -200,23 +198,27 @@
                                     </div>
                                     <div class="card-body p-0 ml-0 mr-0 mt-4 mb-0">
                                         <div class="row">
-                                            <div class="col-lg-12 ps-5 pe-5 pt-5">
+                                            <div class="col-lg-12 ps-5 pr-5 pt-5">
                                                 <a href="">
                                                     <h3 class="card-title text-black un_ mt-5 line-height"><b>Article writing</b> </h3>
-                                                </a>
 
+                                                </a>
                                                 <p class="card-text line-height">Conducting thorough research on industry-related topics, generating ideas for new content types and proofreading articles before publication. If you're familiar with producing online content and have an eye for detail.</p>
 
+                                                <div class="col-lg-12 project-card-image-small mb-4 d-sm-block d-lg-none d-md-none">
+                                                </div>
+
+                                                <div class="bg-green pt-4 pb-2 ps-4 ps-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
+                                                    <h5 class="mb-4 mt-2"><a class="btn btn-warning" href="{{url('student-login')}}"><b>Apply now!</b></a></h5>
+
+                                                    <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span>@php $today = date('Y-m-d'); $stop_date = date('Y-m-d', strtotime('+1 day')); echo date('j F, Y', strtotime($stop_date)); @endphp</h6>
+
+                                                </div>
                                             </div>
 
-                                            <div class="bg-green pt-4 pb-2 ps-4 pe-4 mb-4" style="border-left: 10px solid rgba(212, 172, 13,0.8);">
-                                                <h5 class="mb-4 mt-2"><a class="btn btn-warning" href="{{url('student-login')}}"><b>Apply now!</b></a></h5>
-                                                <h6 class="mb-2 mt-2 text-black"><span style="color: red;">Apply by date — &nbsp;</span>@php $today = date('Y-m-d'); $stop_date = date('Y-m-d', strtotime('+1 day')); echo date('j F, Y', strtotime($stop_date)); @endphp</h6>
-
-                                            </div>
                                         </div>
-
                                     </div>
+
                                     <div class="row card-body">
                                         <div class="col-lg-12 ps-2 pe-2 mt-2 order-sm-1 order-md-1 order-lg-2">
                                             <div class="col-lg-12 ps-2 pe-2">
@@ -233,6 +235,8 @@
 
                                 </div>
                             </div>
+
+
 
                             <!-- Section ends here -->
 
@@ -279,6 +283,8 @@
 
                                 </div>
                             </div>
+
+
                             <br>
                             <div class="col-lg-12 text-center mb-4">
                                 <a href="#" class="btn border-0 explore btn btn-primary" style="color:#fff;">Load more projects</a>

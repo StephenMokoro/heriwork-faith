@@ -65,7 +65,7 @@
                                         <br><small class="text-secondary">Because our students will work between the school calendar, we're unable to provide for hourly rate. We appreciate your understanding.</small>
                                     </p>
 
-                                    <input class="form-control form-control-lg" type="text" placeholder="" name="ijob_budget_amount" {{{ $product->ijob_budget_amount ?? '' }}}>
+                                    <input class="form-control form-control-lg" type="text" placeholder="" name="ijob_budget_amount" value="{{ $product->ijob_budget_amount ?? '' }}">
 
                                     <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-heart text-danger"></span> Thank you for being considerate in your budget proposal.</p>
                                 </div>

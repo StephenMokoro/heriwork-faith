@@ -44,7 +44,7 @@
                                     </div>
                                     @endif
 
-                                    <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-heart text-danger"></span> Thank you in advance for being considerate in your scope and timeline.</p>
+                                    <!-- <p class="card-text mt-3 text-success" style="font-weight: 500;font-size: 14px;"><span class="fa fa-heart text-danger"></span> Thank you in advance for being considerate in your scope and timeline.</p>
                                     <p class="text-black" style="font-weight: 600;">What is the size of your work?
                                     </p>
                                     <div class="form-check form-group">
@@ -61,7 +61,7 @@
 
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="col-lg-12 pl-5 pr-5 mb-3 mt-4 form-group">
                                     <p class="text-black" style="font-weight: 600;">How long will this task take to complete?

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('internship_jobs', function (Blueprint $table) {
             $table->string('ijob_title');
             $table->string('ijob_category');
-            $table->string('ijob_skills');
+            $table->string('ijob_skills')->nullable();
             $table->string('intern_skills');
-            $table->integer('ijob_size')->default(0);
+            // $table->integer('ijob_size')->default(0);
             $table->integer('ijob_task')->default(0);
             $table->integer('ijob_task_run')->default(0);
             $table->boolean('ijob_budget_currency')->default(0);

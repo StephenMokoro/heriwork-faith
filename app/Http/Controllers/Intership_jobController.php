@@ -159,7 +159,7 @@ class Intership_jobController extends Controller
     public function postCreateStepThree(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_skills' => 'required',
+            'ijob_skills',
             'intern_skills' => 'required',
 
 
@@ -194,7 +194,7 @@ class Intership_jobController extends Controller
     public function postCreateStepFour(Request $request)
     {
         $validatedData = $request->validate([
-            'ijob_size' => 'required',
+            // 'ijob_size' => 'required',
             'ijob_task' => 'required',
             'ijob_task_run' => 'required',
 

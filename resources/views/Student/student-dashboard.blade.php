@@ -127,7 +127,7 @@
                             <div class="card-body p-0 ml-0 mr-0 mb-0">
                                 <div class="row  pl-5 pr-5">
                                     <div class="col-lg-12">
-                                        <span class="card-title  line-height" style="font-weight: 700; color:#05115d;"> @php echo Session::get('greeting'); @endphp {{$data->student_first_name}}</span>
+                                        <span class="card-title  line-height" style="font-weight: 700; color:#05115d;"></span>
 
                                     </div>
                                 </div>
@@ -150,9 +150,7 @@
                                 </a>
                             </div>
 
-                            <!-- <div class="col-lg-4">
-                                <h6 class="text-secondary" style="font-weight: bold;font-size:larger;"> <span style="color:#05115d; font-weight:bolder; font-size:large;"> @php echo Session::get('greeting'); @endphp {{$data->student_first_name}}</span> </h6>
-                            </div> -->
+                           
                         </div>
                     </div>
                 </div>
@@ -357,20 +355,6 @@ toggle between hiding and showing the dropdown content */
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-    <script>
-        var myDate = new Date();
-        var hrs = myDate.getHours();
-        var greet;
-        if (hrs < 12)
-            greet = 'Good Morning ';
-        else if (hrs >= 12 && hrs <= 17)
-            greet = 'Good Afternoon ';
-        else if (hrs >= 17 && hrs <= 24)
-            greet = 'Good Evening ';
-        document.getElementById('lblGreetings').innerHTML =
-            '<b>' + greet + '{{$data->student_first_name}}';
-    </script>
 
 
 </body>

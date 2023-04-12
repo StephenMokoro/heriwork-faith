@@ -43,7 +43,7 @@
                     </ul>
                   </div>
                   @endif
-                  
+
                   <div class="form-group">
                     <label class="text-black" style="font-weight: 600;">Search skills or type your own</label>
                     <!-- <select name="ijob_skills" class="itemName form-control" value="{{{ $product->ijob_skills ?? '' }}}" id="" multiple="multiple"></select> -->
@@ -67,9 +67,9 @@
                       @endforeach
                     </div>
                   </div>
-                  
+
                   <div class="col-lg-12 text-end">
-                    <a href="{{ route('internship.create.step.one') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
+                    <a href="{{ route('internship.create.step.two') }}" class="btn rounded-pill pl-4 pr-4 ml-3 mr-3 border">Back</a>
                     &nbsp;&nbsp;
 
                     <button type="submit" class="btn rounded-pill btn-success">Next: Scope</button>
@@ -82,10 +82,9 @@
 </div>
 @include('footer-links')
 <script type="text/javascript">
-  
+
 </script>
 <script>
-  
   // Get the original and new divs
   // Get the input element and all the spans
   const myInput = document.getElementById('selected');

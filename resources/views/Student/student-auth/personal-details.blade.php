@@ -55,8 +55,9 @@
 
 
                   <div class="form-group">
-                    <label for="" class="text-black" style="font-weight: 600;">What is your phone number <span>*</span></label>
-                    <input class="form-control form-control-lg" type="tel" placeholder="" name="student_phone" value="{{ $student->student_phone ?? '' }}">
+                    <label class="text-black" style="font-weight: 600;">Enter your phone number<span style="color:red;">*</span></label>
+                    <br>
+                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $partner->student_phone ?? '' }}" placeholder="712219585" name="student_phone" pattern="[1-9][0-9]{8}">
 
                   </div>
 

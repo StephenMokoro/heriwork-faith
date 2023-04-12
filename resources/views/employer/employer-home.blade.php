@@ -51,19 +51,17 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#">Partner with us</a></li>
-          <li><a class="nav-link scrollto active" href="#">Donate</a></li>
           <!-- <li><a class="nav-link scrollto active" href="{{url('internship')}}">Post a job</a></li> -->
           <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
               <i class="bi bi-person-circle rounded-circle"></i>
-              <span class="d-none d-md-block dropdown-toggle ps-2">Faith
+              <span class="d-none d-md-block dropdown-toggle ps-2">{{ ucfirst(Auth()->user()->employer_first_name) }}
               </span>
             </a><!-- End Profile Iamge Icon -->
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
               <li class="dropdown-header">
-                </h6>
-                <span>Web Designer</span>
+               
               </li>
               <li>
                 <hr class="dropdown-divider">

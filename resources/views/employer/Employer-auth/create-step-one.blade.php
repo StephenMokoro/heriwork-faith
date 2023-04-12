@@ -56,10 +56,12 @@
                     <label class="text-black" style="font-weight: 600;">Enter your Last name<span>*</span></label>
                     <input class="form-control form-control-lg" type="text" placeholder="" value="{{ $employer->employer_last_name ?? '' }}" name="employer_last_name">
                   </div>
-                 
+
                   <div class="form-group">
-                    <label class="text-black" style="font-weight: 600;">Enter your phone number<span>*</span></label>
-                    <input class="form-control form-control-lg" type="tel" placeholder="" value="{{ $employer->employer_phone ?? '' }}" name="employer_phone">
+                    <label class="text-black" style="font-weight: 600;">Enter your phone number<span style="color:red;">*</span></label>
+                    <br>
+                    <input id="telephone-input" type="tel " class="form-control form-control-lg" style="width:100%!important; " value="{{ $partner->employer_phone ?? '' }}" placeholder="712219585" name="employer_phone" pattern="[1-9][0-9]{8}">
+
                   </div>
                   <label for="" class="text-black" style="font-weight: 600;">What gender do you identify with? <span>*</span></label>
 
@@ -99,6 +101,12 @@
     </div>
   </div>
 </div>
+@include('footer-links')
+<script>
+  $("#telephone-input").intlTelInput({
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
+  });
+</script>
 <script>
   if ($("#validateForm").length > 0) {
     $("#validateForm").validate({

@@ -158,3 +158,4 @@ Route::get('studentforget-password', [StudentController::class, 'showForgetPassw
 Route::post('studentforget-password', [StudentController::class, 'submitForgetPasswordForm'])->name('studentforget.password.post');
 Route::get('studentreset-password/{token}', [StudentController::class, 'showResetPasswordForm'])->name('studentreset.password.get');
 Route::post('studentreset-password', [StudentController::class, 'submitResetPasswordForm'])->name('studentreset.password.post');
+Route::view('employer-dashboard','employer.employer-dashboard');

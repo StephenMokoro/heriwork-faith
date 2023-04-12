@@ -58,13 +58,13 @@
           <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle rounded-circle"></i>
+              <i class="bi bi-person-circle rounded-circle"></i>
               <span class="d-none d-md-block dropdown-toggle ps-2">Profile</span>
             </a><!-- End Profile Iamge Icon -->
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
               <li class="dropdown-header">
-</h6>
+                </h6>
                 <span>Web Designer</span>
               </li>
               <li>
