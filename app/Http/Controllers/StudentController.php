@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+
+
+use Carbon\Carbon;
 use App\Models\School;
 use App\Models\Country;
-use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\Session;
-use Carbon\Carbon;
-use Mail;
-use Illuminate\Support\Facades\Hash;
-use DB;
-use App\Models\StudentVerify;
-
-use Illuminate\Support\Facades\Auth;
+use App\Models\Student;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\StudentVerify;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class StudentController extends Controller
 {

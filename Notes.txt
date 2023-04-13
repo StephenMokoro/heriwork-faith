@@ -1,0 +1,8 @@
+Find work. 
+
+Tasks. 
+
+1. Multi-Login - redirected to personal dashboards after login. 
+2. Manage Users - 
+3. Manage Jobs
+4. Candidate Applications - Students be able to apply for the posted jobs. 

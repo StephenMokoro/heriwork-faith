@@ -2,14 +2,15 @@
   
 namespace App\Http\Controllers; 
   
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request; 
-use DB; 
+
 use Carbon\Carbon; 
 use App\Models\Employer; 
-use Mail; 
-use Hash;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
   
 class ForgotPasswordController extends Controller
 {
